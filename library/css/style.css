@@ -1020,6 +1020,15 @@ POSTS & CONTENT STYLES
 /* image gallery styles */
 /* end .gallery */
 /* gallery caption styles */
+.sbver ul {
+  margin: 0;
+  padding: 0;
+}
+.sbver ul li {
+  list-style-type: none;
+  float: left;
+  margin-right: 10px;
+}
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
