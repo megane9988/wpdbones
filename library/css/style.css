@@ -171,7 +171,7 @@ mark {
  */
 p,
 pre {
-  margin: 1em 0;
+  margin: 1.5em 0;
 }
 /*
  * Corrects font family set oddly in IE6, S4/5, Chrome.
@@ -755,7 +755,7 @@ GENERAL STYLES
 *********************/
 body {
   font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic";
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5;
   color: #565656;
 }
@@ -872,7 +872,7 @@ h5 a,
 }
 h1,
 .h1 {
-  font-size: 2.5em;
+  font-size: 2em;
   line-height: 1.333em;
 }
 h2,
@@ -1297,6 +1297,12 @@ SIDEBARS & ASIDES
 .widget ul li {
   /* deep nesting */
 
+}
+.hatena-module {
+  width: 100% !important;
+}
+.hatena-moduletitle {
+  display: none;
 }
 /*********************
 FOOTER STYLES
