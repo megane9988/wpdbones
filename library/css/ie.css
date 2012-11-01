@@ -105,7 +105,7 @@ http://simplebits.com/notebook/2008/08/14/ampersands-2/
 */
 /* line 111, ../scss/_mixins.scss */
 span.amp {
-  font-family: Helvetica, “ヒラギノ角ゴ Pro W3″, ”Hiragino Kaku Gothic Pro W3″, "メイリオ", Meiryo, Osaka, ”ＭＳ Ｐゴシック”, "MS PGothic", sans-serif;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic";
 }
 
 /* line 116, ../scss/_mixins.scss */
@@ -198,7 +198,7 @@ BUTTONS
 *********************/
 /* line 252, ../scss/_mixins.scss */
 .button, .button:visited {
-  font-family: Helvetica, “ヒラギノ角ゴ Pro W3″, ”Hiragino Kaku Gothic Pro W3″, "メイリオ", Meiryo, Osaka, ”ＭＳ Ｐゴシック”, "MS PGothic", sans-serif;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic";
   border: 1px solid #195a76;
   border-top-color: #1f6d90;
   border-left-color: #1f6d90;

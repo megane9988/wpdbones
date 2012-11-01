@@ -158,7 +158,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 function wpdbones_bookmarks(){
 	?>
 <script>(function(w,d){
-  w._gaq=[["_setAccount","UA-XXXXXXXX-X"],["_trackPageview"]];
+  w._gaq=[["_setAccount","UA-33477429-1"],["_trackPageview"]];
   w.___gcfg={lang:"ja"};
   var s,e = d.getElementsByTagName("script")[0],
   a=function(u,f){if(!d.getElementById(f)){s=d.createElement("script");
