@@ -14,16 +14,16 @@ without the media queries. No need to worry about editing anything!
 Remember, all the BASE styles are called already since IE can
 read those. Below, we need to import only the stuff IE can't 
 understand (what's inside the media queries). We also need to
-import the mixins file so LESS can understand the variables.
+import the mixins file so SASS can understand the variables.
 */
 /* import mixins */
 /******************************************************************
-Site Name: 
-Author: 
+Site Name:
+Author:
 
 Stylesheet: Mixins & Constants Stylesheet
 
-This is where you can take advantage of LESS' great features: 
+This is where you can take advantage of Sass' great features:
 Mixins & Constants. I won't go in-depth on how they work exactly,
 there are a few articles below that will help do that. What I will
 tell you is that this will help speed up simple changes like
@@ -31,36 +31,43 @@ changing a color or adding CSS3 techniques like box shadow and
 border-radius.
 
 A WORD OF WARNING: It's very easy to overdo it here. Be careful and
-remember less is more. 
+remember less is more.
 
 ******************************************************************/
 /*********************
 CLEARFIXIN'
 *********************/
+/* line 24, ../scss/_mixins.scss */
 .clearfix {
   zoom: 1;
 }
-.clearfix:before,
-.clearfix:after {
+/* line 26, ../scss/_mixins.scss */
+.clearfix:before, .clearfix:after {
   content: "";
   display: table;
 }
+/* line 27, ../scss/_mixins.scss */
 .clearfix:after {
   clear: both;
 }
+
 /*********************
 TOOLS
 *********************/
+/* line 35, ../scss/_mixins.scss */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+/* line 42, ../scss/_mixins.scss */
 .image-replacement {
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
 }
+
 /*********************
 COLORS
 Need help w/ choosing your colors? Try this site out:
@@ -75,7 +82,7 @@ http://sachagreif.com/sass-color-variables/
 TYPOGRAPHY
 *********************/
 /* 	To embed your own fonts, use this syntax
-	and place your fonts inside the 
+	and place your fonts inside the
 	library/fonts folder. For more information
 	on embedding fonts, go to:
 	http://www.fontsquirrel.com/
@@ -83,99 +90,120 @@ TYPOGRAPHY
 */
 /*	@font-face {
     	font-family: 'Font Name';
-    	src: url('../fonts/font-name.eot');
-    	src: url('../fonts/font-name.eot?#iefix') format('embedded-opentype'),
-             url('../fonts/font-name.woff') format('woff'),
-             url('../fonts/font-name.ttf') format('truetype'),
-             url('../fonts/font-name.svg#font-name') format('svg');
+    	src: url('library/fonts/font-name.eot');
+    	src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
+             url('library/fonts/font-name.woff') format('woff'),
+             url('library/fonts/font-name.ttf') format('truetype'),
+             url('library/fonts/font-name.svg#font-name') format('svg');
     	font-weight: normal;
     	font-style: normal;
 	}
 */
-/* 
-use the best ampersand 
+/*
+use the best ampersand
 http://simplebits.com/notebook/2008/08/14/ampersands-2/
 */
+/* line 111, ../scss/_mixins.scss */
 span.amp {
-  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic";
+  font-family: Helvetica, “ヒラギノ角ゴ Pro W3″, ”Hiragino Kaku Gothic Pro W3″, "メイリオ", Meiryo, Osaka, ”ＭＳ Ｐゴシック”, "MS PGothic", sans-serif;
 }
-/* text alignment */
+
+/* line 116, ../scss/_mixins.scss */
 .text-left {
   text-align: left;
 }
+
+/* line 117, ../scss/_mixins.scss */
 .text-center {
   text-align: center;
 }
+
+/* line 118, ../scss/_mixins.scss */
 .text-right {
   text-align: right;
 }
-.alert {
+
+/* line 122, ../scss/_mixins.scss */
+.alert-help, .alert-info, .alert-error, .alert-success {
   margin: 10px;
   padding: 5px 18px;
   border: 1px solid;
 }
+
+/* line 128, ../scss/_mixins.scss */
 .alert-help {
-  margin: 10px;
-  padding: 5px 18px;
-  border: 1px solid;
   border-color: #e8dc59;
   background: #ebe16f;
 }
+
+/* line 134, ../scss/_mixins.scss */
 .alert-info {
-  margin: 10px;
-  padding: 5px 18px;
-  border: 1px solid;
   border-color: #bfe4f4;
   background: #d5edf8;
 }
+
+/* line 140, ../scss/_mixins.scss */
 .alert-error {
-  margin: 10px;
-  padding: 5px 18px;
-  border: 1px solid;
   border-color: #f8cdce;
   background: #fbe3e4;
 }
+
+/* line 146, ../scss/_mixins.scss */
 .alert-success {
-  margin: 10px;
-  padding: 5px 18px;
-  border: 1px solid;
   border-color: #deeaae;
   background: #e6efc2;
 }
+
 /*********************
 BORDER RADIUS
 *********************/
-/* 
-NOTE: For older browser support (and some mobile), 
-don't use the shorthand to define *different* corners. 
-
-USAGE: .border-radius(4px); 
-
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include border-radius(4px 4px 0 0);
 */
 /*********************
 TRANISTION
 *********************/
-/* .transition(all,2s); */
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include transition(all 0.2s ease-in-out);
+*/
+/*********************
+BOX SHADOWS
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include box-shadow(inset 0 0 4px rgba(0,0,0,0.22));
+*/
 /*********************
 CSS3 GRADIENTS
-Be careful with these since they can 
-really slow down your CSS. Don't overdo it.
+Be careful with these since they can
+really slow down your CSS. Don't overdue it.
 *********************/
-/* .css-gradient(#dfdfdf,#f8f8f8); */
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
 /*********************
-BOX SHADOW
+BOX SIZING
 *********************/
-/* .boxShadow(0,0,4px,#444); */
+/* @include box-sizing(border-box); */
+/* NOTE: value of "padding-box" is only supported in Gecko. So
+probably best not to use it. I mean, were you going to anyway? */
 /*********************
 BUTTONS
 *********************/
-.button,
-.button:visited {
+/* line 252, ../scss/_mixins.scss */
+.button, .button:visited {
+  font-family: Helvetica, “ヒラギノ角ゴ Pro W3″, ”Hiragino Kaku Gothic Pro W3″, "メイリオ", Meiryo, Osaka, ”ＭＳ Ｐゴシック”, "MS PGothic", sans-serif;
   border: 1px solid #195a76;
   border-top-color: #1f6d90;
   border-left-color: #1f6d90;
   padding: 4px 12px;
-  color: #ffffff;
+  color: white;
   display: inline-block;
   font-size: 11px;
   font-weight: bold;
@@ -184,13 +212,11 @@ BUTTONS
   cursor: pointer;
   margin-bottom: 20px;
   line-height: 21px;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  -border-radius: 4px;
   border-radius: 4px;
   background-color: #217398;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#2583ad), to(#217398));
@@ -199,11 +225,9 @@ BUTTONS
   background-image: -o-linear-gradient(top, #2583ad, #217398);
   background-image: linear-gradient(to bottom, #2583ad, #217398);
 }
-.button:hover,
-.button:visited:hover,
-.button:focus,
-.button:visited:focus {
-  color: #ffffff;
+/* line 271, ../scss/_mixins.scss */
+.button:hover, .button:focus, .button:visited:hover, .button:visited:focus {
+  color: white;
   border: 1px solid #195a76;
   border-top-color: #134359;
   border-left-color: #134359;
@@ -214,8 +238,8 @@ BUTTONS
   background-image: -o-linear-gradient(top, #217398, #1c6383);
   background-image: linear-gradient(to bottom, #217398, #1c6383);
 }
-.button:active,
-.button:visited:active {
+/* line 279, ../scss/_mixins.scss */
+.button:active, .button:visited:active {
   background-color: #2583ad;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#217398), to(#2583ad));
   background-image: -webkit-linear-gradient(top, #217398, #2583ad);
@@ -223,8 +247,9 @@ BUTTONS
   background-image: -o-linear-gradient(top, #217398, #2583ad);
   background-image: linear-gradient(to bottom, #217398, #2583ad);
 }
-.blue-button,
-.blue-button:visited {
+
+/* line 284, ../scss/_mixins.scss */
+.blue-button, .blue-button:visited {
   border-color: #1472ad;
   text-shadow: 0 1px 1px #1472ad;
   background-color: #1681c4;
@@ -235,12 +260,13 @@ BUTTONS
   background-image: linear-gradient(to bottom, #1990db, #1681c4);
   -webkit-box-shadow: inset 0 0 3px #59b3ec;
   -moz-box-shadow: inset 0 0 3px #59b3ec;
+  -ms-box-shadow: inset 0 0 3px #59b3ec;
+  -o-box-shadow: inset 0 0 3px #59b3ec;
+  -box-shadow: inset 0 0 3px #59b3ec;
   box-shadow: inset 0 0 3px #59b3ec;
 }
-.blue-button:hover,
-.blue-button:visited:hover,
-.blue-button:focus,
-.blue-button:visited:focus {
+/* line 290, ../scss/_mixins.scss */
+.blue-button:hover, .blue-button:focus, .blue-button:visited:hover, .blue-button:visited:focus {
   border-color: #116396;
   background-color: #1472ad;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#1784c9), to(#1472ad));
@@ -249,8 +275,8 @@ BUTTONS
   background-image: -o-linear-gradient(top, #1784c9, #1472ad);
   background-image: linear-gradient(to bottom, #1784c9, #1472ad);
 }
-.blue-button:active,
-.blue-button:visited:active {
+/* line 294, ../scss/_mixins.scss */
+.blue-button:active, .blue-button:visited:active {
   background-color: #1990db;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#1681c4), to(#1990db));
   background-image: -webkit-linear-gradient(top, #1681c4, #1990db);
@@ -258,6 +284,7 @@ BUTTONS
   background-image: -o-linear-gradient(top, #1681c4, #1990db);
   background-image: linear-gradient(to bottom, #1681c4, #1990db);
 }
+
 /******************************************************************
 Site Name: 
 Author: 
@@ -271,66 +298,66 @@ extra styles on that same mobile connection.
 
 A word of warning. This size COULD be a larger mobile device,
 so you still want to keep it pretty light and simply expand
-upon your base.less styles.
+upon your base.scss styles.
 
 ******************************************************************/
 /*********************
 NAVIGATION STYLES
 *********************/
 /* .menu is clearfixed inside mixins.scss */
+/* line 27, ../scss/_481up.scss */
 .menu {
   /* end .menu ul */
-
 }
+/* line 28, ../scss/_481up.scss */
 .menu ul {
   /* end .menu ul li */
-
   /* highlight current page */
-
   /* end current highlighters */
-
 }
+/* line 29, ../scss/_481up.scss */
 .menu ul li {
   /*
-				plan your menus and drop-downs wisely.
-				*/
-
+  plan your menus and drop-downs wisely.
+  */
 }
+/* line 30, ../scss/_481up.scss */
 .menu ul li a {
   /*
-					you can use hover styles here even though this size
-					has the possibility of being a mobile device.
-					*/
-
+  you can use hover styles here even though this size
+  has the possibility of being a mobile device.
+  */
 }
+
 /* end .menu */
 /*********************
 POSTS & CONTENT STYLES
 *********************/
 /* entry content */
+/* line 75, ../scss/_481up.scss */
 .entry-content {
   /* at this larger size, we can start to align images */
-
 }
-.entry-content .alignleft,
-.entry-content img.alignleft {
+/* line 79, ../scss/_481up.scss */
+.entry-content .alignleft, .entry-content img.alignleft {
   margin-right: 1.5em;
   display: inline;
   float: left;
 }
-.entry-content .alignright,
-.entry-content img.alignright {
+/* line 84, ../scss/_481up.scss */
+.entry-content .alignright, .entry-content img.alignright {
   margin-left: 1.5em;
   display: inline;
   float: right;
 }
-.entry-content .aligncenter,
-.entry-content img.aligncenter {
+/* line 89, ../scss/_481up.scss */
+.entry-content .aligncenter, .entry-content img.aligncenter {
   margin-right: auto;
   margin-left: auto;
   display: block;
   clear: both;
 }
+
 /* end .entry-content */
 /*********************
 FOOTER STYLES
@@ -359,47 +386,47 @@ GENERAL STYLES
 /*********************
 LAYOUT & GRID STYLES
 *********************/
+/* line 26, ../scss/_768up.scss */
 .wrap {
   max-width: 1140px;
 }
+
 /*********************
 HEADER SYTLES
 *********************/
 /*********************
 NAVIGATION STYLES
 *********************/
+/* line 42, ../scss/_768up.scss */
 .nav {
   background: #eee;
   border: 0;
   /* end .menu ul li */
-
   /* highlight current page */
-
   /* end current highlighters */
-
 }
+/* line 46, ../scss/_768up.scss */
 .nav li {
   float: left;
   position: relative;
   /*
-		plan your menus and drop-downs wisely.
-		*/
-
+  plan your menus and drop-downs wisely.
+  */
   /* showing sub-menus */
-
 }
+/* line 50, ../scss/_768up.scss */
 .nav li a {
   border-bottom: 0;
   /*
-			you can use hover styles here even though this size
-			has the possibility of being a mobile device.
-			*/
-
+  you can use hover styles here even though this size
+  has the possibility of being a mobile device.
+  */
 }
-.nav li a:hover,
-.nav li a:focus {
+/* line 57, ../scss/_768up.scss */
+.nav li a:hover, .nav li a:focus {
   background-color: #dedede;
 }
+/* line 70, ../scss/_768up.scss */
 .nav li ul.sub-menu,
 .nav li ul.children {
   width: 200px;
@@ -409,17 +436,17 @@ NAVIGATION STYLES
   display: none;
   z-index: 8999;
   /* highlight sub-menu current page */
-
 }
+/* line 78, ../scss/_768up.scss */
 .nav li ul.sub-menu li,
 .nav li ul.children li {
   /*
-				if you need to go deeper, go nuts
-				just remember deeper menus suck
-				for usability. k, bai.
-				*/
-
+  if you need to go deeper, go nuts
+  just remember deeper menus suck
+  for usability. k, bai.
+  */
 }
+/* line 80, ../scss/_768up.scss */
 .nav li ul.sub-menu li a,
 .nav li ul.children li a {
   padding-left: 10px;
@@ -428,38 +455,48 @@ NAVIGATION STYLES
   width: 180px;
   border-bottom: 1px solid #ccc;
 }
+/* line 97, ../scss/_768up.scss */
 .nav li ul.sub-menu li:last-child a,
 .nav li ul.children li:last-child a {
   border-bottom: 0;
 }
+/* line 119, ../scss/_768up.scss */
 .nav li:hover ul {
   top: auto;
   display: block;
 }
+
 /* end .nav */
 /*********************
 SIDEBARS & ASIDES
 *********************/
+/* line 139, ../scss/_768up.scss */
 .sidebar {
   margin-top: 2.2em;
 }
+
+/* line 143, ../scss/_768up.scss */
 .widgettitle {
   border-bottom: 2px solid #444;
   margin-bottom: 0.75em;
 }
+
+/* line 148, ../scss/_768up.scss */
 .widget {
   padding: 0 10px;
   margin: 2.2em 0;
 }
+/* line 153, ../scss/_768up.scss */
 .widget ul li {
   margin-bottom: 0.75em;
   /* deep nesting */
-
 }
+/* line 161, ../scss/_768up.scss */
 .widget ul li ul {
   margin-top: 0.75em;
   padding-left: 1em;
 }
+
 /* links widget */
 /* meta widget */
 /* pages widget */
@@ -479,14 +516,15 @@ you'll probably need to do quite a bit
 of overriding here if you styled them for
 mobile. Make sure to double check these!
 */
+/* line 269, ../scss/_768up.scss */
 .footer-links ul li {
   /*
-			be careful with the depth of your menus.
-			it's very rare to have multi-depth menus in
-			the footer.
-			*/
-
+  be careful with the depth of your menus.
+  it's very rare to have multi-depth menus in
+  the footer.
+  */
 }
+
 /* end .footer-links */
 /******************************************************************
 Site Name: 

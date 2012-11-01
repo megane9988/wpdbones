@@ -3,7 +3,55 @@
  * wpdbones functions and definitions
  */
 
+/*********************
+MENUS & NAVIGATION
+*********************/
 
+// the main menu
+function wpdbones_main_nav() {
+  // display the wp3 menu if available
+    wp_nav_menu(array(
+      'container' => ture,                           // remove nav container
+      'container_class' => 'menu clearfix',           // class of container (should you choose to use it)
+      'menu' => 'The Main Menu',                      // nav name
+      'menu_class' => 'nav top-nav clearfix',         // adding custom nav class
+      'theme_location' => 'main-nav',                 // where it's located in the theme
+      'before' => '',                                 // before the menu
+        'after' => '',                                  // after the menu
+        'link_before' => '',                            // before each link
+        'link_after' => '',                             // after each link
+        'depth' => 0,                                   // limit the depth of the nav
+      'fallback_cb' => 'wpdbones_main_nav_fallback'      // fallback function
+  ));
+} /* end wpdbones main nav */
+
+// the footer menu (should you choose to use one)
+function wpdbones_footer_links() {
+  // display the wp3 menu if available
+    wp_nav_menu(array(
+      'container' => '',                              // remove nav container
+      'container_class' => 'footer-links clearfix',   // class of container (should you choose to use it)
+      'menu' => 'Footer Links',                       // nav name
+      'menu_class' => 'nav footer-nav clearfix',      // adding custom nav class
+      'theme_location' => 'footer-links',             // where it's located in the theme
+      'before' => '',                                 // before the menu
+        'after' => '',                                  // after the menu
+        'link_before' => '',                            // before each link
+        'link_after' => '',                             // after each link
+        'depth' => 0,                                   // limit the depth of the nav
+      'fallback_cb' => 'wpdbones_footer_links_fallback'  // fallback function
+  ));
+} /* end wpdbones footer link */
+
+// this is the fallback for header menu
+function wpdbones_main_nav_fallback() {
+  wp_page_menu( 'show_home=Home' );
+}
+
+// this is the fallback for footer menu
+function wpdbones_footer_links_fallback() {
+  /* you can put a default here if you like */
+}
 /**
  * Fix Facebook locale setting
  */
@@ -18,8 +66,10 @@ add_filter('fb_locale','filter_facebook_locale');
 /**
  * Ad Manage
  */
-function wpdbones_ad_header(){
-	if ( preg_match("/iPhone|Android/i", $_SERVER['HTTP_USER_AGENT']) ) : ?>
+
+function wpdbones_ad_content_above(){
+if ( function_exists('wp_is_mobile') && wp_is_mobile() ) :?>
+<div class="adtxt">スポンサードリンク</div>
 <script type="text/javascript"><!--
 google_ad_client = "ca-pub-2866035444666228";
 /* mobile */
@@ -30,13 +80,14 @@ google_ad_height = 50;
 </script>
 <script type="text/javascript"
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script><?php else: ?>
-<script type="text/javascript"><!--
+</script>
+<?php else: ?>
+<div class="adtxt">スポンサードリンク</div><script type="text/javascript"><!--
 google_ad_client = "ca-pub-2866035444666228";
-/* サイト名下 */
-google_ad_slot = "2339695504";
+/* su-pa- */
+google_ad_slot = "5313631022";
 google_ad_width = 728;
-google_ad_height = 15;
+google_ad_height = 90;
 //-->
 </script>
 <script type="text/javascript"
@@ -45,24 +96,46 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <?php endif;
 }
 
-function wpdbones_ad_content_above(){
-	?>
-<div class="adtxt">スポンサードリンク</div><script type="text/javascript"><!--
+function wpdbones_ad_content_below(){
+if ( function_exists('wp_is_mobile') && wp_is_mobile() ) :?>
+  <div class="clr"></div>
+  <div class="related_entries">
+  <?php related_posts(); ?>
+  </div>
+<?php else: ?>
+<div class="clr"></div>
+  <script type="text/javascript"><!--
+  google_ad_client = "ca-pub-2866035444666228";
+  /* su-pa- */
+  google_ad_slot = "5313631022";
+  google_ad_width = 728;
+  google_ad_height = 90;
+  //-->
+  </script>
+  <script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+  </script>
+  <div class="related_entries">
+  <?php related_posts(); ?>
+  </div>
+<?php endif;
+}
+
+
+function wpdbones_ad_content_side(){
+if ( function_exists('wp_is_mobile') && wp_is_mobile() ) :?>
+<script type="text/javascript"><!--
 google_ad_client = "ca-pub-2866035444666228";
-/* 新1 */
-google_ad_slot = "6271049840";
-google_ad_width = 300;
-google_ad_height = 250;
+/* 小さいの */
+google_ad_slot = "7605205182";
+google_ad_width = 234;
+google_ad_height = 60;
 //-->
 </script>
 <script type="text/javascript"
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
-	<?php
-}
-
-function wpdbones_ad_content_below(){
-	?>
+<?php else: ?>
 <div class="clr"></div>
 <script type="text/javascript"><!--
 google_ad_client = "ca-pub-2866035444666228";
@@ -75,13 +148,9 @@ google_ad_height = 250;
 <script type="text/javascript"
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
-<div class="fb-like-box" data-href="https://www.facebook.com/pages/WP-D/292801787485325" data-width="292" data-show-faces="true" data-stream="false" data-header="true"></div>
-<?php if(function_exists('related_posts')): ?>
-<div class="related_entries">
-<?php related_posts(); ?>
-</div>
 <?php endif;
 }
+
 
 /**
  * Bookmark Manage

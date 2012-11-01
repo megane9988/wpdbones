@@ -16,8 +16,8 @@ GENERAL STYLES
 *********************/
 
 body {
-	font-family: Georgia, serif;
-	font-size: 14px;
+	font-family: $wpdsans;
+	font-size: 16px;
 	line-height: 1.5;
 	color: #565656;
 }
@@ -105,7 +105,7 @@ H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-	font-family: $sans-serif;
+	font-family: $wpdsans;
 	text-rendering: optimizelegibility;
 	font-weight: 500;
 	/*
@@ -367,9 +367,22 @@ POSTS & CONTENT STYLES
 				margin: 4px 0 7px;
 				text-align: center;
 			}
-
+		
 		} /* end .wp-caption */
-
+		.sbver {
+			ul{
+				margin:0;
+				padding:0;
+			}
+			li{
+				list-style-type: none;
+				float: left;
+				margin-right: 10px;
+			}
+		}
+		.adtxt {
+			clear: both;
+		}
 		/* image gallery styles */
 		.gallery {
 
@@ -602,7 +615,7 @@ COMMENT STYLES
 
 	/* vcard */
 	.vcard {
-		margin-left: 50px;
+		margin-left: 70px;
 
 		cite.fn {
 			font-weight: 700;
@@ -655,7 +668,7 @@ COMMENT STYLES
 
 	/* comment content */
 	.comment_content {
-		margin-left: 50px;
+		margin-left: 70px;
 
 		p {
 			margin: 0.7335em 0 1.5em;

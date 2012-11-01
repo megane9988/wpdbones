@@ -62,8 +62,10 @@ $white:             #fff;
 
 $bones-pink:        #f01d4f;
 $bones-blue:        #1990db;
+$wpd-blue:          #2583AD;
 
-$link-color:        $bones-pink;
+
+$link-color:        $wpd-blue;
 $link-hover:        darken($link-color, 9%);
 
 /*
@@ -79,6 +81,7 @@ TYPOGRAPHY
 
 $sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
+$wpdsans:           Helvetica, “ヒラギノ角ゴ Pro W3″,”Hiragino Kaku Gothic Pro W3″, "メイリオ" , Meiryo, Osaka, ”ＭＳ Ｐゴシック”, "MS PGothic" ,sans-serif;
 
 
 /* 	To embed your own fonts, use this syntax
@@ -106,8 +109,7 @@ use the best ampersand
 http://simplebits.com/notebook/2008/08/14/ampersands-2/
 */
 span.amp {
-  font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
-  font-style: italic;
+  font-family: $wpdsans;
 }
 
 // text alignment 
@@ -248,7 +250,7 @@ BUTTONS
 *********************/
 
 .button, .button:visited {
-	font-family: $sans-serif;
+	font-family: $wpdsans;
 	border: 1px solid darken($link-color, 13%);
 	border-top-color: darken($link-color, 7%);
 	border-left-color: darken($link-color, 7%);
