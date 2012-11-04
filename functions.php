@@ -227,3 +227,4 @@ add_action( 'wpdbones-ad-content-above', 'wpdbones_ad_content_above' );
 add_action( 'wpdbones-ad-content-below', 'wpdbones_ad_content_below' );
 add_action('wp_footer', 'wpdbones_bookmarks');
 add_action('wp_footer', 'heatmap');
+add_image_size('meganeogp', 200, 200, true);
