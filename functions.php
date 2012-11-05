@@ -221,6 +221,14 @@ function heatmap()
 <?php }
 
 
+// アイキャッチ画像を使用
+add_theme_support('post-thumbnails');
+
+// 幅 100px、高さ 100px、切り抜きモード
+set_post_thumbnail_size(200, 200, true);
+
+
+
 // add actions
 add_action( 'wpdbones-ad-header', 'wpdbones_ad_header' );
 add_action( 'wpdbones-ad-content-above', 'wpdbones_ad_content_above' );
