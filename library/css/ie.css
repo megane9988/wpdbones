@@ -103,52 +103,52 @@ TYPOGRAPHY
 use the best ampersand
 http://simplebits.com/notebook/2008/08/14/ampersands-2/
 */
-/* line 111, ../scss/_mixins.scss */
+/* line 113, ../scss/_mixins.scss */
 span.amp {
   font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
 }
 
-/* line 116, ../scss/_mixins.scss */
+/* line 118, ../scss/_mixins.scss */
 .text-left {
   text-align: left;
 }
 
-/* line 117, ../scss/_mixins.scss */
+/* line 119, ../scss/_mixins.scss */
 .text-center {
   text-align: center;
 }
 
-/* line 118, ../scss/_mixins.scss */
+/* line 120, ../scss/_mixins.scss */
 .text-right {
   text-align: right;
 }
 
-/* line 122, ../scss/_mixins.scss */
+/* line 124, ../scss/_mixins.scss */
 .alert-help, .alert-info, .alert-error, .alert-success {
   margin: 10px;
   padding: 5px 18px;
   border: 1px solid;
 }
 
-/* line 128, ../scss/_mixins.scss */
+/* line 130, ../scss/_mixins.scss */
 .alert-help {
   border-color: #e8dc59;
   background: #ebe16f;
 }
 
-/* line 134, ../scss/_mixins.scss */
+/* line 136, ../scss/_mixins.scss */
 .alert-info {
   border-color: #bfe4f4;
   background: #d5edf8;
 }
 
-/* line 140, ../scss/_mixins.scss */
+/* line 142, ../scss/_mixins.scss */
 .alert-error {
   border-color: #f8cdce;
   background: #fbe3e4;
 }
 
-/* line 146, ../scss/_mixins.scss */
+/* line 148, ../scss/_mixins.scss */
 .alert-success {
   border-color: #deeaae;
   background: #e6efc2;
@@ -196,7 +196,7 @@ probably best not to use it. I mean, were you going to anyway? */
 /*********************
 BUTTONS
 *********************/
-/* line 252, ../scss/_mixins.scss */
+/* line 254, ../scss/_mixins.scss */
 .button, .button:visited {
   font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
   border: 1px solid #195a76;
@@ -225,7 +225,7 @@ BUTTONS
   background-image: -o-linear-gradient(top, #2583ad, #217398);
   background-image: linear-gradient(to bottom, #2583ad, #217398);
 }
-/* line 271, ../scss/_mixins.scss */
+/* line 273, ../scss/_mixins.scss */
 .button:hover, .button:focus, .button:visited:hover, .button:visited:focus {
   color: white;
   border: 1px solid #195a76;
@@ -238,7 +238,7 @@ BUTTONS
   background-image: -o-linear-gradient(top, #217398, #1c6383);
   background-image: linear-gradient(to bottom, #217398, #1c6383);
 }
-/* line 279, ../scss/_mixins.scss */
+/* line 281, ../scss/_mixins.scss */
 .button:active, .button:visited:active {
   background-color: #2583ad;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#217398), to(#2583ad));
@@ -248,7 +248,7 @@ BUTTONS
   background-image: linear-gradient(to bottom, #217398, #2583ad);
 }
 
-/* line 284, ../scss/_mixins.scss */
+/* line 286, ../scss/_mixins.scss */
 .blue-button, .blue-button:visited {
   border-color: #1472ad;
   text-shadow: 0 1px 1px #1472ad;
@@ -265,7 +265,7 @@ BUTTONS
   -box-shadow: inset 0 0 3px #59b3ec;
   box-shadow: inset 0 0 3px #59b3ec;
 }
-/* line 290, ../scss/_mixins.scss */
+/* line 292, ../scss/_mixins.scss */
 .blue-button:hover, .blue-button:focus, .blue-button:visited:hover, .blue-button:visited:focus {
   border-color: #116396;
   background-color: #1472ad;
@@ -275,7 +275,7 @@ BUTTONS
   background-image: -o-linear-gradient(top, #1784c9, #1472ad);
   background-image: linear-gradient(to bottom, #1784c9, #1472ad);
 }
-/* line 294, ../scss/_mixins.scss */
+/* line 296, ../scss/_mixins.scss */
 .blue-button:active, .blue-button:visited:active {
   background-color: #1990db;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#1681c4), to(#1990db));

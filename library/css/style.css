@@ -668,52 +668,52 @@ TYPOGRAPHY
 use the best ampersand
 http://simplebits.com/notebook/2008/08/14/ampersands-2/
 */
-/* line 111, ../scss/_mixins.scss */
+/* line 113, ../scss/_mixins.scss */
 span.amp {
   font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
 }
 
-/* line 116, ../scss/_mixins.scss */
+/* line 118, ../scss/_mixins.scss */
 .text-left {
   text-align: left;
 }
 
-/* line 117, ../scss/_mixins.scss */
+/* line 119, ../scss/_mixins.scss */
 .text-center {
   text-align: center;
 }
 
-/* line 118, ../scss/_mixins.scss */
+/* line 120, ../scss/_mixins.scss */
 .text-right {
   text-align: right;
 }
 
-/* line 122, ../scss/_mixins.scss */
+/* line 124, ../scss/_mixins.scss */
 .alert-help, .alert-info, .alert-error, .alert-success {
   margin: 10px;
   padding: 5px 18px;
   border: 1px solid;
 }
 
-/* line 128, ../scss/_mixins.scss */
+/* line 130, ../scss/_mixins.scss */
 .alert-help {
   border-color: #e8dc59;
   background: #ebe16f;
 }
 
-/* line 134, ../scss/_mixins.scss */
+/* line 136, ../scss/_mixins.scss */
 .alert-info {
   border-color: #bfe4f4;
   background: #d5edf8;
 }
 
-/* line 140, ../scss/_mixins.scss */
+/* line 142, ../scss/_mixins.scss */
 .alert-error {
   border-color: #f8cdce;
   background: #fbe3e4;
 }
 
-/* line 146, ../scss/_mixins.scss */
+/* line 148, ../scss/_mixins.scss */
 .alert-success {
   border-color: #deeaae;
   background: #e6efc2;
@@ -761,7 +761,7 @@ probably best not to use it. I mean, were you going to anyway? */
 /*********************
 BUTTONS
 *********************/
-/* line 252, ../scss/_mixins.scss */
+/* line 254, ../scss/_mixins.scss */
 .button, .button:visited {
   font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
   border: 1px solid #195a76;
@@ -790,7 +790,7 @@ BUTTONS
   background-image: -o-linear-gradient(top, #2583ad, #217398);
   background-image: linear-gradient(to bottom, #2583ad, #217398);
 }
-/* line 271, ../scss/_mixins.scss */
+/* line 273, ../scss/_mixins.scss */
 .button:hover, .button:focus, .button:visited:hover, .button:visited:focus {
   color: white;
   border: 1px solid #195a76;
@@ -803,7 +803,7 @@ BUTTONS
   background-image: -o-linear-gradient(top, #217398, #1c6383);
   background-image: linear-gradient(to bottom, #217398, #1c6383);
 }
-/* line 279, ../scss/_mixins.scss */
+/* line 281, ../scss/_mixins.scss */
 .button:active, .button:visited:active {
   background-color: #2583ad;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#217398), to(#2583ad));
@@ -813,7 +813,7 @@ BUTTONS
   background-image: linear-gradient(to bottom, #217398, #2583ad);
 }
 
-/* line 284, ../scss/_mixins.scss */
+/* line 286, ../scss/_mixins.scss */
 .blue-button, .blue-button:visited {
   border-color: #1472ad;
   text-shadow: 0 1px 1px #1472ad;
@@ -830,7 +830,7 @@ BUTTONS
   -box-shadow: inset 0 0 3px #59b3ec;
   box-shadow: inset 0 0 3px #59b3ec;
 }
-/* line 290, ../scss/_mixins.scss */
+/* line 292, ../scss/_mixins.scss */
 .blue-button:hover, .blue-button:focus, .blue-button:visited:hover, .blue-button:visited:focus {
   border-color: #116396;
   background-color: #1472ad;
@@ -840,7 +840,7 @@ BUTTONS
   background-image: -o-linear-gradient(top, #1784c9, #1472ad);
   background-image: linear-gradient(to bottom, #1784c9, #1472ad);
 }
-/* line 294, ../scss/_mixins.scss */
+/* line 296, ../scss/_mixins.scss */
 .blue-button:active, .blue-button:visited:active {
   background-color: #1990db;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#1681c4), to(#1990db));
@@ -871,7 +871,7 @@ and will be used across all viewports.
 /*********************
 GENERAL STYLES
 *********************/
-/* line 18, ../scss/_base.scss */
+/* line 19, ../scss/_base.scss */
 body {
   font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
   font-size: 16px;
@@ -921,7 +921,7 @@ style a page via class
 /*********************
 LAYOUT & GRID STYLES
 *********************/
-/* line 70, ../scss/_base.scss */
+/* line 71, ../scss/_base.scss */
 .wrap {
   width: 96%;
   margin: 0 auto;
@@ -930,19 +930,19 @@ LAYOUT & GRID STYLES
 /*********************
 LINK STYLES
 *********************/
-/* line 79, ../scss/_base.scss */
-a, a:visited {
+/* line 80, ../scss/_base.scss */
+a {
   color: #2583ad;
   /* on hover */
   /* on click */
   /* mobile tap color */
 }
-/* line 83, ../scss/_base.scss */
-a:hover, a:focus, a:visited:hover, a:visited:focus {
+/* line 84, ../scss/_base.scss */
+a:hover, a:focus {
   color: #1d6687;
 }
-/* line 93, ../scss/_base.scss */
-a:link, a:visited:link {
+/* line 94, ../scss/_base.scss */
+a:link {
   /*
   this highlights links on iPhones/iPads.
   so it basically works like the :hover selector
@@ -950,11 +950,15 @@ a:link, a:visited:link {
   */
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
 }
+/* line 103, ../scss/_base.scss */
+a:visited {
+  color: #145470;
+}
 
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
-/* line 107, ../scss/_base.scss */
+/* line 112, ../scss/_base.scss */
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
   text-rendering: optimizelegibility;
@@ -965,36 +969,36 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   */
   /* removing text decoration from all headline links */
 }
-/* line 117, ../scss/_base.scss */
+/* line 122, ../scss/_base.scss */
 h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
   text-decoration: none;
 }
 
-/* line 122, ../scss/_base.scss */
+/* line 127, ../scss/_base.scss */
 h1, .h1 {
   font-size: 2.5em;
   line-height: 1.333em;
 }
 
-/* line 127, ../scss/_base.scss */
+/* line 132, ../scss/_base.scss */
 h2, .h2 {
   font-size: 1.75em;
   line-height: 1.4em;
   margin-bottom: 0.375em;
 }
 
-/* line 133, ../scss/_base.scss */
+/* line 138, ../scss/_base.scss */
 h3, .h3 {
   font-size: 1.125em;
 }
 
-/* line 137, ../scss/_base.scss */
+/* line 142, ../scss/_base.scss */
 h4, .h4 {
   font-size: 1.1em;
   font-weight: 700;
 }
 
-/* line 142, ../scss/_base.scss */
+/* line 147, ../scss/_base.scss */
 h5, .h5 {
   font-size: 0.846em;
   line-height: 2.09em;
@@ -1015,7 +1019,7 @@ easily just write on group of styles for
 the navs on the site and our css is cleaner
 and moe scalable.
 */
-/* line 169, ../scss/_base.scss */
+/* line 174, ../scss/_base.scss */
 .nav {
   border: 1px solid #ccc;
   border-bottom: 0;
@@ -1023,7 +1027,7 @@ and moe scalable.
   /* highlight current page */
   /* end current highlighters */
 }
-/* line 173, ../scss/_base.scss */
+/* line 178, ../scss/_base.scss */
 .nav li {
   /*
   so you really have to rethink your dropdowns for mobile.
@@ -1033,7 +1037,7 @@ and moe scalable.
   http://www.alistapart.com/articles/organizing-mobile/
   */
 }
-/* line 175, ../scss/_base.scss */
+/* line 180, ../scss/_base.scss */
 .nav li a {
   display: block;
   text-decoration: none;
@@ -1047,7 +1051,7 @@ and moe scalable.
   keep this file as small as possible!
   */
 }
-/* line 209, ../scss/_base.scss */
+/* line 214, ../scss/_base.scss */
 .nav li ul.sub-menu li a,
 .nav li ul.children li a {
   padding-left: 30px;
@@ -1057,7 +1061,14 @@ and moe scalable.
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-/* line 245, ../scss/_base.scss */
+/* line 249, ../scss/_base.scss */
+article {
+  border-top: 1px solid;
+  border-color: #cccccc;
+  padding-top: 20px;
+}
+
+/* line 255, ../scss/_base.scss */
 #content {
   margin-top: 2.2em;
 }
@@ -1073,13 +1084,13 @@ POSTS & CONTENT STYLES
 /* style by category (i.e. category-videos) */
 /* style by tag (i.e. tag-news) */
 /* post meta */
-/* line 277, ../scss/_base.scss */
+/* line 287, ../scss/_base.scss */
 .byline {
   color: #999;
 }
 
 /* entry content */
-/* line 284, ../scss/_base.scss */
+/* line 294, ../scss/_base.scss */
 .entry-content {
   /*
   image alignment on a screen this size may be
@@ -1088,25 +1099,25 @@ POSTS & CONTENT STYLES
   but it's up to you. Feel free to change it up.
   */
 }
-/* line 319, ../scss/_base.scss */
+/* line 329, ../scss/_base.scss */
 .entry-content dd {
   margin-left: 0;
   font-size: 0.9em;
   color: #787878;
   margin-bottom: 1.5em;
 }
-/* line 326, ../scss/_base.scss */
+/* line 336, ../scss/_base.scss */
 .entry-content img {
   margin: 0 0 1.5em 0;
   max-width: 100%;
   height: auto;
 }
-/* line 342, ../scss/_base.scss */
+/* line 352, ../scss/_base.scss */
 .entry-content video, .entry-content object {
   max-width: 100%;
   height: auto;
 }
-/* line 347, ../scss/_base.scss */
+/* line 357, ../scss/_base.scss */
 .entry-content pre {
   background: #eee;
   border: 1px solid #cecece;
@@ -1114,18 +1125,18 @@ POSTS & CONTENT STYLES
 }
 
 /* end .entry-content */
-/* line 355, ../scss/_base.scss */
+/* line 365, ../scss/_base.scss */
 .wp-caption {
   background: #eee;
   padding: 5px;
   /* images inside wp-caption */
 }
-/* line 360, ../scss/_base.scss */
+/* line 370, ../scss/_base.scss */
 .wp-caption img {
   margin-bottom: 0;
   width: 100%;
 }
-/* line 365, ../scss/_base.scss */
+/* line 375, ../scss/_base.scss */
 .wp-caption p.wp-caption-text {
   font-size: 0.85em;
   margin: 4px 0 7px;
@@ -1133,26 +1144,37 @@ POSTS & CONTENT STYLES
 }
 
 /* end .wp-caption */
-/* line 373, ../scss/_base.scss */
+/* line 383, ../scss/_base.scss */
 .sbver ul {
   margin: 0;
   padding: 0;
 }
-/* line 377, ../scss/_base.scss */
+/* line 387, ../scss/_base.scss */
 .sbver li {
   list-style-type: none;
   float: left;
   margin-right: 10px;
 }
 
-/* line 383, ../scss/_base.scss */
+/* line 393, ../scss/_base.scss */
 .adtxt {
   clear: both;
 }
 
-/* line 386, ../scss/_base.scss */
+/* line 396, ../scss/_base.scss */
 .related_entries li {
   margin-bottom: 10px;
+}
+
+/* line 399, ../scss/_base.scss */
+.archive h3 {
+  margin-top: 0px;
+}
+
+/* line 402, ../scss/_base.scss */
+.archivethum {
+  float: left;
+  margin-right: 10px;
 }
 
 /* image gallery styles */
@@ -1161,13 +1183,13 @@ POSTS & CONTENT STYLES
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
-/* line 419, ../scss/_base.scss */
+/* line 437, ../scss/_base.scss */
 .page-navigation,
 .wp-prev-next {
   margin: 1.1em 0 2.2em;
 }
 
-/* line 422, ../scss/_base.scss */
+/* line 440, ../scss/_base.scss */
 .bones_page_navi {
   /* current page link */
   /* end .bones_page_navi .bpn-current */
@@ -1178,44 +1200,44 @@ PAGE NAVI STYLES
   /* first page link */
   /* last page link */
 }
-/* line 424, ../scss/_base.scss */
+/* line 442, ../scss/_base.scss */
 .bones_page_navi li {
   float: left;
   margin-left: 10px;
 }
-/* line 428, ../scss/_base.scss */
+/* line 446, ../scss/_base.scss */
 .bones_page_navi li a {
   padding: 3px 6px;
   display: block;
   text-decoration: none;
   position: relative;
 }
-/* line 435, ../scss/_base.scss */
+/* line 453, ../scss/_base.scss */
 .bones_page_navi li a:hover, .bones_page_navi li a:focus {
   color: #f01d4f;
   text-decoration: underline;
 }
-/* line 444, ../scss/_base.scss */
+/* line 462, ../scss/_base.scss */
 .bones_page_navi li.bpn-current {
   padding: 3px 6px;
   border-bottom: 2px solid #f01d4f;
   position: relative;
 }
-/* line 449, ../scss/_base.scss */
+/* line 467, ../scss/_base.scss */
 .bones_page_navi li.bpn-current a {
   /* hovering on current page link */
 }
-/* line 460, ../scss/_base.scss */
+/* line 478, ../scss/_base.scss */
 .bones_page_navi li.bpn-prev-link,
 .bones_page_navi li.bpn-next-link {
   font-weight: 700;
 }
-/* line 463, ../scss/_base.scss */
+/* line 481, ../scss/_base.scss */
 .bones_page_navi li.bpn-prev-link a,
 .bones_page_navi li.bpn-next-link a {
   padding: 0;
 }
-/* line 472, ../scss/_base.scss */
+/* line 490, ../scss/_base.scss */
 .bones_page_navi li.bpn-prev-link a:hover,
 .bones_page_navi li.bpn-next-link a:hover,
 .bones_page_navi li.bpn-first-page-link a:hover,
@@ -1225,11 +1247,11 @@ PAGE NAVI STYLES
 
 /* end .bones_page_navi */
 /* fallback previous & next links */
-/* line 515, ../scss/_base.scss */
+/* line 533, ../scss/_base.scss */
 .wp-prev-next .prev-link {
   float: left;
 }
-/* line 519, ../scss/_base.scss */
+/* line 537, ../scss/_base.scss */
 .wp-prev-next .next-link {
   float: right;
 }
@@ -1239,12 +1261,12 @@ PAGE NAVI STYLES
 COMMENT STYLES
 ******************************************************************/
 /* h3 comment title */
-/* line 530, ../scss/_base.scss */
+/* line 548, ../scss/_base.scss */
 #comments {
   /* number of comments span */
 }
 
-/* line 547, ../scss/_base.scss */
+/* line 565, ../scss/_base.scss */
 .commentlist {
   /* general comment classes */
   /* vcard */
@@ -1255,7 +1277,7 @@ COMMENT STYLES
   /* comment reply link */
   /* end .commentlist .comment-reply-link */
 }
-/* line 549, ../scss/_base.scss */
+/* line 567, ../scss/_base.scss */
 .commentlist li {
   position: relative;
   clear: both;
@@ -1265,63 +1287,63 @@ COMMENT STYLES
   padding: 0.7335em 10px;
   /* end .commentlist li ul.children */
 }
-/* line 557, ../scss/_base.scss */
+/* line 575, ../scss/_base.scss */
 .commentlist li:last-child {
   margin-bottom: 0;
 }
-/* line 561, ../scss/_base.scss */
+/* line 579, ../scss/_base.scss */
 .commentlist li ul.children {
   margin: 0;
   /* variations */
   /* change number for different depth */
 }
-/* line 579, ../scss/_base.scss */
+/* line 597, ../scss/_base.scss */
 .commentlist li[class*=depth-] {
   margin-top: 1.1em;
 }
-/* line 583, ../scss/_base.scss */
+/* line 601, ../scss/_base.scss */
 .commentlist li.depth-1 {
   margin-left: 0;
   margin-top: 0;
 }
-/* line 588, ../scss/_base.scss */
+/* line 606, ../scss/_base.scss */
 .commentlist li:not(.depth-1) {
   margin-right: -10px;
   margin-left: -10px;
   margin-top: 0;
   padding-bottom: 0;
 }
-/* line 602, ../scss/_base.scss */
+/* line 620, ../scss/_base.scss */
 .commentlist .odd {
   background: #eee;
 }
-/* line 605, ../scss/_base.scss */
+/* line 623, ../scss/_base.scss */
 .commentlist .even {
   background: #fefefe;
 }
-/* line 620, ../scss/_base.scss */
+/* line 638, ../scss/_base.scss */
 .commentlist .vcard {
   margin-left: 70px;
 }
-/* line 623, ../scss/_base.scss */
+/* line 641, ../scss/_base.scss */
 .commentlist .vcard cite.fn {
   font-weight: 700;
   font-style: normal;
 }
-/* line 631, ../scss/_base.scss */
+/* line 649, ../scss/_base.scss */
 .commentlist .vcard time {
   float: right;
 }
-/* line 634, ../scss/_base.scss */
+/* line 652, ../scss/_base.scss */
 .commentlist .vcard time a {
   color: #999;
   text-decoration: none;
 }
-/* line 638, ../scss/_base.scss */
+/* line 656, ../scss/_base.scss */
 .commentlist .vcard time a:hover {
   text-decoration: underline;
 }
-/* line 648, ../scss/_base.scss */
+/* line 666, ../scss/_base.scss */
 .commentlist .vcard img.avatar {
   position: absolute;
   left: 10px;
@@ -1329,17 +1351,17 @@ COMMENT STYLES
   border: 1px solid #cecece;
   background: #fff;
 }
-/* line 673, ../scss/_base.scss */
+/* line 691, ../scss/_base.scss */
 .commentlist .comment_content {
   margin-left: 70px;
 }
-/* line 676, ../scss/_base.scss */
+/* line 694, ../scss/_base.scss */
 .commentlist .comment_content p {
   margin: 0.7335em 0 1.5em;
   font-size: 1em;
   line-height: 1.5em;
 }
-/* line 685, ../scss/_base.scss */
+/* line 703, ../scss/_base.scss */
 .commentlist .comment-reply-link {
   text-decoration: none;
   float: right;
@@ -1351,7 +1373,7 @@ COMMENT STYLES
   font-weight: 700;
   font-size: 0.9em;
 }
-/* line 697, ../scss/_base.scss */
+/* line 715, ../scss/_base.scss */
 .commentlist .comment-reply-link:hover, .commentlist .comment-reply-link:focus {
   opacity: 1;
 }
@@ -1360,27 +1382,27 @@ COMMENT STYLES
 /******************************************************************
 COMMENT FORM STYLES
 ******************************************************************/
-/* line 709, ../scss/_base.scss */
+/* line 727, ../scss/_base.scss */
 .respond-form {
   margin: 1.5em 10px;
   padding-bottom: 2.2em;
 }
-/* line 713, ../scss/_base.scss */
+/* line 731, ../scss/_base.scss */
 .respond-form form {
   margin: 0.75em 0;
 }
-/* line 716, ../scss/_base.scss */
+/* line 734, ../scss/_base.scss */
 .respond-form form li {
   list-style-type: none;
   clear: both;
   margin-bottom: 0.7335em;
 }
-/* line 722, ../scss/_base.scss */
+/* line 740, ../scss/_base.scss */
 .respond-form form li label,
 .respond-form form li small {
   display: none;
 }
-/* line 730, ../scss/_base.scss */
+/* line 748, ../scss/_base.scss */
 .respond-form form input[type=text],
 .respond-form form input[type=email],
 .respond-form form input[type=url],
@@ -1391,14 +1413,14 @@ COMMENT FORM STYLES
   line-height: 1.5em;
   /* form validation */
 }
-/* line 736, ../scss/_base.scss */
+/* line 754, ../scss/_base.scss */
 .respond-form form input[type=text]:focus,
 .respond-form form input[type=email]:focus,
 .respond-form form input[type=url]:focus,
 .respond-form form textarea:focus {
   background: #fff;
 }
-/* line 741, ../scss/_base.scss */
+/* line 759, ../scss/_base.scss */
 .respond-form form input[type=text]:invalid,
 .respond-form form input[type=email]:invalid,
 .respond-form form input[type=url]:invalid,
@@ -1411,14 +1433,14 @@ COMMENT FORM STYLES
   -ms-box-shadow: none;
   box-shadow: none;
 }
-/* line 754, ../scss/_base.scss */
+/* line 772, ../scss/_base.scss */
 .respond-form form input[type=text],
 .respond-form form input[type=email],
 .respond-form form input[type=url] {
   max-width: 400px;
   min-width: 250px;
 }
-/* line 759, ../scss/_base.scss */
+/* line 777, ../scss/_base.scss */
 .respond-form form textarea {
   resize: none;
   width: 97.3%;
@@ -1427,7 +1449,7 @@ COMMENT FORM STYLES
 
 /* comment submit button */
 /* comment form title */
-/* line 772, ../scss/_base.scss */
+/* line 790, ../scss/_base.scss */
 #comment-form-title {
   margin: 0 0 1.1em;
 }
@@ -1435,13 +1457,13 @@ COMMENT FORM STYLES
 /* cancel comment reply link */
 /* logged in comments */
 /* allowed tags */
-/* line 785, ../scss/_base.scss */
+/* line 803, ../scss/_base.scss */
 #allowed_tags {
   margin: 1.5em 10px 0.7335em 0;
 }
 
 /* no comments */
-/* line 790, ../scss/_base.scss */
+/* line 808, ../scss/_base.scss */
 .nocomments {
   margin: 0 20px 1.1em;
 }
@@ -1449,7 +1471,7 @@ COMMENT FORM STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 806, ../scss/_base.scss */
+/* line 824, ../scss/_base.scss */
 .widget ul li {
   /* deep nesting */
 }
@@ -1457,7 +1479,7 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
-/* line 827, ../scss/_base.scss */
+/* line 845, ../scss/_base.scss */
 .footer {
   clear: both;
 }
@@ -1472,6 +1494,93 @@ override these styles for the desktop
 view.
 */
 /* end .footer-links */
+/*********************
+Au
+*********************/
+/* line 875, ../scss/_base.scss */
+.WPD-Red a {
+  background-color: red;
+  color: #fff;
+}
+
+/* line 879, ../scss/_base.scss */
+.WPD-Gold a {
+  background-color: #daa520;
+  color: #000;
+}
+
+/* line 883, ../scss/_base.scss */
+.WPD-Black a {
+  background-color: #000;
+  color: #fff;
+}
+
+/* line 887, ../scss/_base.scss */
+.WPD-Pink a {
+  background-color: #ffc0cb;
+  color: #fff;
+}
+
+/* line 891, ../scss/_base.scss */
+.WPD-Olive a {
+  background-color: #808000;
+  color: #fff;
+}
+
+/* line 895, ../scss/_base.scss */
+.WPD-Grey a {
+  background-color: #333;
+  color: #000;
+}
+
+/* line 899, ../scss/_base.scss */
+.WPD-Green a {
+  background-color: green;
+  color: #fff;
+}
+
+/* line 903, ../scss/_base.scss */
+.WPD-Purple a {
+  background-color: purple;
+  color: #fff;
+}
+
+/* line 907, ../scss/_base.scss */
+.WPD-Blue a {
+  background-color: blue;
+  color: #fff;
+}
+
+/* line 911, ../scss/_base.scss */
+.WPD-lime a {
+  background-color: #00FF00;
+  color: #000;
+}
+
+/* line 915, ../scss/_base.scss */
+.WPD-Brown a {
+  background-color: #a52a2a;
+  color: #fff;
+}
+
+/* line 919, ../scss/_base.scss */
+.WPD-White a {
+  background-color: #fff;
+  color: #000;
+}
+
+/* line 923, ../scss/_base.scss */
+.WPD-Yellow a {
+  background-color: yellow;
+  color: #000;
+}
+
+/* line 927, ../scss/_base.scss */
+.WPD-Orange a {
+  background-color: orange;
+  color: #fff;
+}
+
 /*
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's

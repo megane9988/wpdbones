@@ -63,9 +63,11 @@ $white:             #fff;
 $bones-pink:        #f01d4f;
 $bones-blue:        #1990db;
 $wpd-blue:          #2583AD;
+$wpd-bluehover:			#145470;
 
 
 $link-color:        $wpd-blue;
+$link-visited:        $wpd-bluehover;
 $link-hover:        darken($link-color, 9%);
 
 /*

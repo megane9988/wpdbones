@@ -1,3 +1,4 @@
+
 /******************************************************************
 Site Name:
 Author:
@@ -76,7 +77,7 @@ LAYOUT & GRID STYLES
 LINK STYLES
 *********************/
 
-a, a:visited {
+a {
 	color: $link-color;
 
 	/* on hover */
@@ -98,6 +99,10 @@ a, a:visited {
 		*/
 		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
 	}
+
+&:visited {
+	color: $link-visited;
+}
 }
 
 /******************************************************************
@@ -241,6 +246,11 @@ and moe scalable.
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+			article{
+				border-top: 1px solid;
+				border-color: #cccccc;
+				padding-top: 20px;
+			}
 
 #content {
 	margin-top: 2.2em;
@@ -386,6 +396,14 @@ POSTS & CONTENT STYLES
 		.related_entries li{
 			margin-bottom: 10px;
 		}
+		.archive h3{
+			margin-top: 0px;
+		}
+		.archivethum{
+			float: left;
+			margin-right: 10px;
+		}
+
 		/* image gallery styles */
 		.gallery {
 
@@ -849,4 +867,69 @@ FOOTER STYLES
 
 
 	.copyright {}
+
+
+/*********************
+Au
+*********************/
+.WPD-Red a{
+			background-color:red;
+			color: #fff;
+		}
+.WPD-Gold a{
+			background-color:#daa520;
+			color: #000;
+		}
+.WPD-Black a{
+			background-color:#000;
+			color: #fff;
+		}
+.WPD-Pink a{
+			background-color:#ffc0cb;
+			color: #fff;
+		}
+.WPD-Olive a{
+			background-color:#808000;
+			color: #fff;
+		}
+.WPD-Grey a{
+			background-color:#333;
+			color: #000;
+		}
+.WPD-Green a{
+			background-color:green;
+			color: #fff;
+		}
+.WPD-Purple a{
+			background-color:purple;
+			color: #fff;
+		}
+.WPD-Blue a{
+			background-color:blue;
+			color: #fff;
+		}
+.WPD-lime a{
+			background-color:#00FF00;
+			color: #000;
+		}
+.WPD-Brown a{
+			background-color:#a52a2a;
+			color: #fff;
+		}
+.WPD-White a{
+			background-color:#fff;
+			color: #000;
+		}
+.WPD-Yellow a{
+			background-color:yellow;
+			color: #000;
+		}
+.WPD-Orange a{
+			background-color:orange;
+			color: #fff;
+		}
+
+		
+		
+
 
