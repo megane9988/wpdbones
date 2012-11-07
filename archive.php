@@ -44,8 +44,18 @@
 					    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					    <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">	
 						    <section class="entry-content clearfix">
-						
-							   <div class="archivethum"> <?php the_post_thumbnail( 'meganeogp' ); ?></div>
+						   		<?php if ( has_post_thumbnail() )/*サムネイルがある時*/:?>
+								<div class="archivethum">
+								 		<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'meganeogp' ); ?>
+								 		</a>
+								 	</div>
+								<?php else/* サムネイルが無いとき */: ?>
+								 	<div class="archivethum">
+								 		<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
+								 			<img src="/wp-content/uploads/2012/07/599893_4337399042342_1300542086_n1-200x200.jpg" alt="wp-d thumbnail img" />
+								 		</a>
+								 	</div>
+								<?php endif; ?>
 							   <h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 							    <p class="byline vcard"><?php _e("Posted", "bonestheme"); ?> <time class="updated" datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('Y年m月d日（D）'); ?></time> <?php _e("by", "bonestheme"); ?> <span class="author <?php the_author(); ?>"><?php the_author_posts_link(); ?></span></p>			
 						    </section> <!-- end article section -->
