@@ -260,7 +260,12 @@ and moe scalable.
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-			article{
+			.archive article{
+				border-top: 1px solid;
+				border-color: #cccccc;
+				padding-top: 20px;
+			}
+			.home article{
 				border-top: 1px solid;
 				border-color: #cccccc;
 				padding-top: 20px;

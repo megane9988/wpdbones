@@ -210,17 +210,6 @@ function SocialButtonVertical()
 </div>
 <?php }
 
-function heatmap()
-{ ?>
-<script type="text/javascript">
-  window._pt_sp_2 = [];
-  _pt_sp_2.push('setSID,3bce4bf1');
-  _pt_sp_2.push('setDomain,wp-d.org');
-  var _protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-  document.write(unescape('%3Cscript src=%22' + _protocol + 'spjs.ptengine.jp/js/pta_mobile.js%22' + 'type=%22text/javascript%22%3E%3C/script%3E'));
-</script>
-<?php }
-
 
 // アイキャッチ画像を使用
 add_theme_support('post-thumbnails');
@@ -228,12 +217,9 @@ add_theme_support('post-thumbnails');
 // 幅 100px、高さ 100px、切り抜きモード
 set_post_thumbnail_size(200, 200, true);
 
-
-
 // add actions
+add_image_size('meganeogp', 200, 200, true);
 add_action( 'wpdbones-ad-header', 'wpdbones_ad_header' );
+add_action('wp_footer', 'wpdbones_bookmarks');
 add_action( 'wpdbones-ad-content-above', 'wpdbones_ad_content_above' );
 add_action( 'wpdbones-ad-content-below', 'wpdbones_ad_content_below' );
-add_action('wp_footer', 'wpdbones_bookmarks');
-add_action('wp_footer', 'heatmap');
-add_image_size('meganeogp', 200, 200, true);
