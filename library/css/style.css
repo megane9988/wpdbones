@@ -582,10 +582,24 @@ dd {
   list-style: none;
 }
 
-/* line 540, ../scss/_normalize.scss */
-.entry-content ul, ol {
+/* line 541, ../scss/_normalize.scss */
+.entry-content h3, .entry-content .h3, .related_entries h3, .related_entries .h3 {
+  border-bottom: 1px dashed #CCC;
+}
+/* line 544, ../scss/_normalize.scss */
+.entry-content ul, .related_entries ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+/* line 548, ../scss/_normalize.scss */
+.entry-content ol, .related_entries ol {
   list-style-type: decimal;
   padding-left: 20px;
+}
+
+/* line 555, ../scss/_normalize.scss */
+.home h3, .home .h3, .archive h3, .archive .h3 {
+  border: none;
 }
 
 /******************************************************************

@@ -1,3 +1,4 @@
+
 <?php
 /**
  * wpdbones functions and definitions
@@ -88,7 +89,18 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 
 function wpdbones_ad_content_below(){
 if ( function_exists('wp_is_mobile') && wp_is_mobile() ) :?>
-  <div class="clr"></div>
+<div class="clr"></div>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2866035444666228";
+/* 新1 */
+google_ad_slot = "6271049840";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
   <div class="related_entries">
   <?php related_posts(); ?>
   </div>

@@ -1,7 +1,7 @@
 3.2.2 (Media Mark)
-e093472c757aa75a1fa3bbbb1d52fd5c3a2208f2
+51094a068c3906f24249621aa7d202c992af45fa
 o:Sass::Tree::RootNode
-:@template"ß'/*! normalize.css 2012-07-07T09:50 UTC - http://github.com/necolas/normalize.css */
+:@template"Á(/*! normalize.css 2012-07-07T09:50 UTC - http://github.com/necolas/normalize.css */
 
 /* ==========================================================================
    HTML5 display definitions
@@ -540,12 +540,28 @@ dd {
 	list-style: none;
 }
 
-.entry-content ul, ol {
-    list-style-type: decimal;
-    padding-left: 20px;
+.entry-content,.related_entries {
+   h3, .h3 {
+        border-bottom: 1px dashed #CCC;
+   }
+    ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+    ol {
+        list-style-type: decimal;
+        padding-left: 20px;
+    }
 }
+
+.home,.archive {
+   h3, .h3 {
+        border: none;
+   }
+}
+
 :
-@linei:@has_childrenT:@options{ :@children[qo:Sass::Tree::CommentNode
+@linei:@has_childrenT:@options{ :@children[ro:Sass::Tree::CommentNode
 :
 @type:	loud:@value["W/* normalize.css 2012-07-07T09:50 UTC - http://github.com/necolas/normalize.css */;i;	@;
 [ o;
@@ -1233,10 +1249,30 @@ o;
 o;
 ;@R	;o;;{ ;i;[o;1;@R	;i;["commentlist;0;i;T;	@;i ;
 [o; ;o;!;;";"	none;	@;#;$;i;	@;["list-style;i ;
-[ o;;[".entry-content ul, ol;o;;" ;i;[o;;[o;
-;@Š	;o;;{ ;i;[o;1;@Š	;i;["entry-content;0o;
-;@Š	;o;;{ ;i;[o;	;@Š	;i;["ul;0;0o;;[o;
-;@Š	;o;;{ ;i;[o;	;@Š	;i;["ol;0;0;i;T;	@;i ;
-[o; ;o;!;;";"decimal;	@;#;$;i;	@;["list-style-type;i ;
-[ o; ;o;!;;";"	20px;	@;#;$;i;	@;["padding-left;i ;
+[ o;;["$.entry-content,.related_entries;o;;" ;i;[o;;[o;
+;@Š	;o;;{ ;i;[o;1;@Š	;i;["entry-content;0o;;[o;
+;@Š	;o;;{ ;i;[o;1;@Š	;i;["related_entries;0;i;T;	@;i ;
+[o;;["h3, .h3;o;;" ;i;[o;;[o;
+;@£	;o;;{ ;i;[o;	;@£	;i;["h3;0;0o;;[o;
+;@£	;o;;{ ;i;[o;1;@£	;i;["h3;0;i;T;	@;i ;
+[o; ;o;!;;";"1px dashed #CCC;	@;#;$;i;	@;["border-bottom;i ;
+[ o;;["ul;o;;" ;i ;[o;;[o;
+;@Â	;o;;{ ;i ;[o;	;@Â	;i ;["ul;0;0;i ;T;	@;i ;
+[o; ;o;!;;";"	disc;	@;#;$;i!;	@;["list-style-type;i ;
+[ o; ;o;!;;";"	20px;	@;#;$;i";	@;["padding-left;i ;
+[ o;;["ol;o;;" ;i$;[o;;[o;
+;@Þ	;o;;{ ;i$;[o;	;@Þ	;i$;["ol;0;0;i$;T;	@;i ;
+[o; ;o;!;;";"decimal;	@;#;$;i%;	@;["list-style-type;i ;
+[ o; ;o;!;;";"	20px;	@;#;$;i&;	@;["padding-left;i ;
+[ o;;[".home,.archive;o;;" ;i*;[o;;[o;
+;@ú	;o;;{ ;i*;[o;1;@ú	;i*;["	home;0o;;[o;
+;@ú	;o;;{ ;i*;[o;1;@ú	;i*;["archive;0;i*;T;	@;i ;
+[o;;["h3, .h3;o;;" ;i+;[o;;[o;
+;@
+;o;;{ ;i+;[o;	;@
+;i+;["h3;0;0o;;[o;
+;@
+;o;;{ ;i+;[o;1;@
+;i+;["h3;0;i+;T;	@;i ;
+[o; ;o;!;;";"	none;	@;#;$;i,;	@;["border;i ;
 [ 
