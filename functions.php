@@ -1,4 +1,3 @@
-
 <?php
 /**
  * wpdbones functions and definitions
@@ -12,7 +11,7 @@ MENUS & NAVIGATION
 function wpdbones_main_nav() {
   // display the wp3 menu if available
     wp_nav_menu(array(
-      'container' => ture,                           // remove nav container
+      'container' => 'ture',                           // remove nav container
       'container_class' => 'menu clearfix',           // class of container (should you choose to use it)
       'menu' => 'The Main Menu',                      // nav name
       'menu_class' => 'nav top-nav clearfix',         // adding custom nav class
@@ -231,6 +230,7 @@ set_post_thumbnail_size(200, 200, true);
 
 // add actions
 add_image_size('meganeogp', 200, 200, true);
+remove_action( 'wp_head', 'jetpack_og_tags' );
 add_action( 'wpdbones-ad-header', 'wpdbones_ad_header' );
 add_action('wp_footer', 'wpdbones_bookmarks');
 add_action( 'wpdbones-ad-content-above', 'wpdbones_ad_content_above' );

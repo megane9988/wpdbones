@@ -367,6 +367,12 @@ check your menus here. do they look good?
 do they need tweaking?
 */
 /* end .footer-links */
+/* line 110, ../scss/_481up.scss */
+.archivethum {
+  float: left;
+  margin-right: 10px;
+}
+
 /******************************************************************
 Site Name:
 Author:

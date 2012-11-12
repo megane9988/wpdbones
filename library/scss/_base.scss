@@ -425,10 +425,7 @@ POSTS & CONTENT STYLES
 		.archive h3{
 			margin-top: 0px;
 		}
-		.archivethum{
-			float: left;
-			margin-right: 10px;
-		}
+
 
 		/* image gallery styles */
 		.gallery {
@@ -906,64 +903,82 @@ Au
 *********************/
 .WPD-Red a{
 			background-color:red;
+			padding: 5px;
 			color: #fff;
 		}
 .WPD-Gold a{
 			background-color:#daa520;
+			padding: 5px;
 			color: #000;
 		}
 .WPD-Black a{
 			background-color:#000;
+			padding: 5px;
 			color: #fff;
 		}
 .WPD-Pink a{
 			background-color:#ffc0cb;
+			padding: 5px;
 			color: #fff;
 		}
 .WPD-Olive a{
 			background-color:#808000;
+			padding: 5px;
 			color: #fff;
 		}
 .WPD-Grey a{
 			background-color:#333;
+			padding: 5px;
 			color: #fff;
 		}
 .WPD-Green a{
 			background-color:green;
+			padding: 5px;
 			color: #fff;
 		}
 .WPD-Purple a{
 			background-color:purple;
+			padding: 5px;
 			color: #fff;
 		}
 .WPD-Blue a{
 			background-color:blue;
+			padding: 5px;
 			color: #fff;
 		}
 .WPD-lime a{
 			background-color:#00FF00;
+			padding: 5px;
 			color: #000;
 		}
 .WPD-Brown a{
 			background-color:#a52a2a;
+			padding: 5px;
 			color: #fff;
 		}
 .WPD-White a{
 			background-color:#fff;
+			padding: 5px;
 			color: #000;
+			border: 1px solid;
+			border-color: #CCC;
 		}
 .WPD-Yellow a{
 			background-color:yellow;
+			padding: 5px;
 			color: #000;
 		}
 .WPD-Orange a{
 			background-color:orange;
+			padding: 5px;
 			color: #fff;
 		}
 .WPD-Beige a{
 			background-color:#f5eece;
+			padding: 5px;
 			color: #000;
 		}
+
 		
 		
 		
