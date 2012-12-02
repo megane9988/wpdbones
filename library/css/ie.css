@@ -389,12 +389,85 @@ come into play. Have fun!
 /*********************
 GENERAL STYLES
 *********************/
+/* line 22, ../scss/_768up.scss */
+blockquote {
+  margin: 1em 40px;
+  background-color: #EEE;
+  padding: 20px;
+}
+
 /*********************
 LAYOUT & GRID STYLES
 *********************/
-/* line 26, ../scss/_768up.scss */
+/* line 32, ../scss/_768up.scss */
 .wrap {
   max-width: 1140px;
+}
+
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+/* line 41, ../scss/_768up.scss */
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+  text-rendering: optimizelegibility;
+  font-weight: 500;
+  /*
+  if you're going to use webfonts, be sure to check your weights
+  http://css-tricks.com/watch-your-font-weight/
+  */
+  /* removing text decoration from all headline links */
+}
+/* line 51, ../scss/_768up.scss */
+h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
+  text-decoration: none;
+}
+
+/* line 56, ../scss/_768up.scss */
+h1, .h1 {
+  font-size: 2.5em;
+  line-height: 1.333em;
+}
+
+/* line 61, ../scss/_768up.scss */
+h2, .h2 {
+  font-size: 1.75em;
+  line-height: 1.4em;
+  margin-bottom: 0.375em;
+  border-left: 5px solid;
+  padding-left: 10px;
+  margin-top: 1.75em;
+}
+
+/* line 69, ../scss/_768up.scss */
+.related_entries h2 {
+  font-size: 1.75em;
+  line-height: 1.4em;
+  margin-bottom: 0.375em;
+  border-top: 1px solid;
+  padding-top: 10px;
+  border-left: none;
+  margin-top: 1.5em;
+}
+
+/* line 79, ../scss/_768up.scss */
+h3, .h3 {
+  font-size: 1.5em;
+  margin-bottom: 0.375em;
+}
+
+/* line 84, ../scss/_768up.scss */
+h4, .h4 {
+  font-size: 1.1em;
+  font-weight: 700;
+}
+
+/* line 89, ../scss/_768up.scss */
+h5, .h5 {
+  font-size: 0.846em;
+  line-height: 2.09em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 /*********************
@@ -403,7 +476,7 @@ HEADER SYTLES
 /*********************
 NAVIGATION STYLES
 *********************/
-/* line 43, ../scss/_768up.scss */
+/* line 109, ../scss/_768up.scss */
 .nav {
   background: #eee;
   border: 0;
@@ -411,7 +484,7 @@ NAVIGATION STYLES
   /* highlight current page */
   /* end current highlighters */
 }
-/* line 47, ../scss/_768up.scss */
+/* line 113, ../scss/_768up.scss */
 .nav li {
   float: left;
   position: relative;
@@ -420,7 +493,7 @@ NAVIGATION STYLES
   */
   /* showing sub-menus */
 }
-/* line 51, ../scss/_768up.scss */
+/* line 117, ../scss/_768up.scss */
 .nav li a {
   border-bottom: 0;
   /*
@@ -428,11 +501,11 @@ NAVIGATION STYLES
   has the possibility of being a mobile device.
   */
 }
-/* line 58, ../scss/_768up.scss */
+/* line 124, ../scss/_768up.scss */
 .nav li a:hover, .nav li a:focus {
   background-color: #dedede;
 }
-/* line 71, ../scss/_768up.scss */
+/* line 137, ../scss/_768up.scss */
 .nav li ul.sub-menu,
 .nav li ul.children {
   width: 200px;
@@ -443,7 +516,7 @@ NAVIGATION STYLES
   z-index: 8999;
   /* highlight sub-menu current page */
 }
-/* line 79, ../scss/_768up.scss */
+/* line 145, ../scss/_768up.scss */
 .nav li ul.sub-menu li,
 .nav li ul.children li {
   /*
@@ -452,7 +525,7 @@ NAVIGATION STYLES
   for usability. k, bai.
   */
 }
-/* line 81, ../scss/_768up.scss */
+/* line 147, ../scss/_768up.scss */
 .nav li ul.sub-menu li a,
 .nav li ul.children li a {
   padding-left: 10px;
@@ -461,12 +534,12 @@ NAVIGATION STYLES
   width: 180px;
   border-bottom: 1px solid #ccc;
 }
-/* line 98, ../scss/_768up.scss */
+/* line 164, ../scss/_768up.scss */
 .nav li ul.sub-menu li:last-child a,
 .nav li ul.children li:last-child a {
   border-bottom: 0;
 }
-/* line 120, ../scss/_768up.scss */
+/* line 186, ../scss/_768up.scss */
 .nav li:hover ul {
   top: auto;
   display: block;
@@ -476,28 +549,28 @@ NAVIGATION STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 140, ../scss/_768up.scss */
+/* line 206, ../scss/_768up.scss */
 .sidebar {
   margin-top: 2.2em;
 }
 
-/* line 144, ../scss/_768up.scss */
+/* line 210, ../scss/_768up.scss */
 .widgettitle {
   border-bottom: 2px solid #444;
   margin-bottom: 0.75em;
 }
 
-/* line 149, ../scss/_768up.scss */
+/* line 215, ../scss/_768up.scss */
 .widget {
   padding: 0 10px;
   margin: 2.2em 0;
 }
-/* line 154, ../scss/_768up.scss */
+/* line 220, ../scss/_768up.scss */
 .widget ul li {
   margin-bottom: 0.75em;
   /* deep nesting */
 }
-/* line 162, ../scss/_768up.scss */
+/* line 228, ../scss/_768up.scss */
 .widget ul li ul {
   margin-top: 0.75em;
   padding-left: 1em;
@@ -522,7 +595,7 @@ you'll probably need to do quite a bit
 of overriding here if you styled them for
 mobile. Make sure to double check these!
 */
-/* line 270, ../scss/_768up.scss */
+/* line 336, ../scss/_768up.scss */
 .footer-links ul li {
   /*
   be careful with the depth of your menus.
@@ -532,6 +605,19 @@ mobile. Make sure to double check these!
 }
 
 /* end .footer-links */
+/******************************************************************
+COMMENT STYLES
+******************************************************************/
+/* line 359, ../scss/_768up.scss */
+.commentlist li {
+  /* end .commentlist li ul.children */
+}
+/* line 361, ../scss/_768up.scss */
+.commentlist li ul.children {
+  margin-left: 50px;
+}
+
+/* end .commentlist */
 /******************************************************************
 Site Name: 
 Author: 

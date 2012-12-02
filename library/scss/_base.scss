@@ -126,12 +126,12 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 }
 
 h1, .h1 {
-	font-size: 2.5em;
+	font-size: 1.5em;
 	line-height: 1.333em;
 }
 
 h2, .h2 {
-	font-size: 1.75em;
+	font-size: 1.25em;
 	line-height: 1.4em;
 	margin-bottom: 0.375em;
 	border-left: 5px solid;
@@ -139,7 +139,7 @@ h2, .h2 {
 	margin-top: 1.75em;
 }
 .related_entries h2{
-	font-size: 1.75em;
+	font-size: 1.25em;
 	line-height: 1.4em;
 	margin-bottom: 0.375em;
 	border-top: 1px solid;
@@ -149,7 +149,7 @@ h2, .h2 {
 }
 
 h3, .h3 {
-	font-size: 1.5em;
+	font-size: 1.2em;
 	margin-bottom: 0.375em;
 }
 
@@ -356,7 +356,7 @@ POSTS & CONTENT STYLES
 			}
 
 			img {
-				margin: 0 0 1.5em 0;
+				margin: 0 0 0 0;
 				max-width: 100%;
 				height: auto;
 			}
@@ -600,7 +600,7 @@ COMMENT STYLES
 		}
 
 		ul.children {
-			margin-left:50px;
+			margin-left:10px;
 
 			li {}
 
@@ -897,6 +897,10 @@ FOOTER STYLES
 
 	.copyright {}
 
+.wp-caption {
+max-width: 100%; /* When images are too wide for containing element, force them to fit. */
+height: auto; /* Override height to match resized width for correct aspect ratio. */
+}
 
 /*********************
 Au
@@ -979,7 +983,6 @@ Au
 			color: #000;
 		}
 
-		
 		
 		
 

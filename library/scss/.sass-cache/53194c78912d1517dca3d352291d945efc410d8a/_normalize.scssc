@@ -1,5 +1,5 @@
 3.2.2 (Media Mark)
-51094a068c3906f24249621aa7d202c992af45fa
+74eb1909da44130850816b674a9d89fc3d8296a3
 o:Sass::Tree::RootNode
 :@template"Á(/*! normalize.css 2012-07-07T09:50 UTC - http://github.com/necolas/normalize.css */
 
@@ -173,7 +173,7 @@ strong {
 }
 
 blockquote {
-    margin: 1em 40px;
+    margin: 1em 10px;
     background-color: #EEE;
     padding: 20px;
 }
@@ -782,7 +782,7 @@ o;
 [o; ;o;!;;";"	bold;	@;#;$;i©;	@;["font-weight;i ;
 [ o;;["blockquote;o;;" ;i¬;[o;;[o;
 ;@Õ;o;;{ ;i¬;[o;	;@Õ;i¬;["blockquote;0;0;i¬;T;	@;i ;
-[o; ;o;!;;";"1em 40px;	@;#;$;i­;	@;["margin;i ;
+[o; ;o;!;;";"1em 10px;	@;#;$;i­;	@;["margin;i ;
 [ o; ;o;!;;";"	#EEE;	@;#;$;i®;	@;["background-color;i ;
 [ o; ;o;!;;";"	20px;	@;#;$;i¯;	@;["padding;i ;
 [ o;
