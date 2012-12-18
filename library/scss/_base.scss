@@ -902,6 +902,11 @@ max-width: 100%; /* When images are too wide for containing element, force them 
 height: auto; /* Override height to match resized width for correct aspect ratio. */
 }
 
+.pn{
+padding: 10px;
+background-color: #EEE;
+}
+
 /*********************
 Au
 *********************/
