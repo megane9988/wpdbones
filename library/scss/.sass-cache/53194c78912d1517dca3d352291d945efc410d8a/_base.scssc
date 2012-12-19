@@ -1,2380 +1,0 @@
-3.2.2 (Media Mark)
-afa29d83021e63db7b95fc24e034f3b3cf92145c
-o:Sass::Tree::RootNode
-:@template"|A
-
-/******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Base Mobile Stylesheet
-
-Be light and don't over style since everything here will be
-loaded by mobile devices. You want to keep it as minimal as
-possible. This is called at the top of the main stylsheet
-and will be used across all viewports.
-
-******************************************************************/
-
-/*********************
-GENERAL STYLES
-*********************/
-
-body {
-	font-family: $wpdsans;
-	font-size: 16px;
-	line-height: 1.5;
-	color: #565656;
-}
-
-/********************
-WORDPRESS BODY CLASSES
-style a page via class
-********************/
-
-.rtl {}                           /* for sites that are read right to left (i.e. hebrew) */
-.home {}                          /* home page */
-.blog {}                          /* blog template page */
-.archive {}                       /* archive page */
-.date {}                          /* date archive page */
-	.date-paged-1 {}                /* replace the number to the corresponding page number */
-.search {}                        /* search page */
-	.search-results {}              /* search result page */
-	.search-no-results {}           /* no results search page */
-	.search-paged-1 {}              /* individual paged search (i.e. body.search-paged-3) */
-.error404 {}                      /* 404 page */
-.single {}                        /* single post page */
-	.postid-1 {}                    /* individual post page by id (i.e. body.postid-73) */
-	.single-paged-1 {}              /* individual paged single (i.e. body.single-paged-3) */
-.attachment {}                    /* attatchment page */
-	.attachmentid-1 {}              /* individual attatchment page (i.e. body.attachmentid-763) */
-	.attachment-mime-type {}        /* style mime type pages */
-.author {}                        /* author page */
-	.author-nicename {}             /* user nicename (i.e. body.author-samueladams) */
-	.author-paged-1 {}              /* paged author archives (i.e. body.author-paged-4) for page 4 */
-.category {}                      /* category page */
-	.category-1 {}                  /* individual category page (i.e. body.category-6) */
-	.category-paged-1 {}            /* replace the number to the corresponding page number */
-.tag {}                           /* tag page */
-	.tag-slug {}                    /* individual tag page (i.e. body.tag-news) */
-	.tag-paged-1 {}                 /* replace the number to the corresponding page number */
-.page-template {}                 /* custom page template page */
-	.page-template-page-php {}      /* individual page template (i.e. body.page-template-contact-php */
-	.page-paged-1 {}                /* replace the number to the corresponding page number */
-	.page-parent {}                 /* parent page template */
-	.page-child {}                  /* child page template */
-	.parent-pageid-1 {}             /* replace the number to the corresponding page number */
-.logged-in {}                     /* if user is logged in */
-.paged {}                         /* paged items like search results or archives */
-	.paged-1 {}                     /* individual paged (i.e. body.paged-3) */
-
-/*********************
-LAYOUT & GRID STYLES
-*********************/
-
-.wrap {
-	width: 96%;
-	margin: 0 auto;
-}
-
-/*********************
-LINK STYLES
-*********************/
-
-a {
-	color: $link-color;
-
-	/* on hover */
-	&:hover, &:focus {
-		color: $link-hover;
-	}
-
-	/* on click */
-	&:active {
-
-	}
-
-	/* mobile tap color */
-	&:link {
-		/*
-		this highlights links on iPhones/iPads.
-		so it basically works like the :hover selector
-		for mobile devices.
-		*/
-		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
-	}
-
-&:visited {
-	color: $link-visited;
-}
-}
-
-/******************************************************************
-H1, H2, H3, H4, H5 STYLES
-******************************************************************/
-
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-	font-family: $wpdsans;
-	text-rendering: optimizelegibility;
-	font-weight: 500;
-	/*
-	if you're going to use webfonts, be sure to check your weights
-	http://css-tricks.com/watch-your-font-weight/
-	*/
-
-	/* removing text decoration from all headline links */
-	a {
-		text-decoration: none;
-	}
-}
-
-h1, .h1 {
-	font-size: 1.5em;
-	line-height: 1.333em;
-}
-
-h2, .h2 {
-	font-size: 1.25em;
-	line-height: 1.4em;
-	margin-bottom: 0.375em;
-	border-left: 5px solid;
-	padding-left: 10px;	
-	margin-top: 1.75em;
-}
-.related_entries h2{
-	font-size: 1.25em;
-	line-height: 1.4em;
-	margin-bottom: 0.375em;
-	border-top: 1px solid;
-	padding-top: 10px;
-	border-left: none;
-	margin-top: 1.5em;
-}
-
-h3, .h3 {
-	font-size: 1.2em;
-	margin-bottom: 0.375em;
-}
-
-h4, .h4 {
-	font-size: 1.1em;
-	font-weight: 700;
-}
-
-h5, .h5 {
-	font-size: 0.846em;
-	line-height: 2.09em;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-}
-
-/*********************
-HEADER SYTLES
-*********************/
-
-.header {}
-
-	#logo {}
-
-/*********************
-NAVIGATION STYLES
-*********************/
-
-/*
-all navs have a .nav class applied via
-the wp_menu function, this is so we can
-easily just write on group of styles for
-the navs on the site and our css is cleaner
-and moe scalable.
-*/
-
-.nav {
-	border: 1px solid #ccc;
-	border-bottom: 0;
-
-	li {
-
-		a {
-			display: block;
-			text-decoration: none;
-			padding: 10px 10px;
-			background-color: #eee;
-			border-bottom: 1px solid #ccc;
-
-			/*
-			remember this is for mobile ONLY, so there's no need
-			to even declare hover styles here, you can do it in
-			the style.scss file where it's relevant. We want to
-			keep this file as small as possible!
-			*/
-			&:hover, &:focus {
-
-			}
-		}
-
-		&:first-child {}
-
-		&:last-child {}
-
-		/*
-		so you really have to rethink your dropdowns for mobile.
-		you don't want to have it expand too much because the
-		screen is so small. How you manage your menu should
-		depend on the project. Here's some great info on it:
-		http://www.alistapart.com/articles/organizing-mobile/
-		*/
-		ul.sub-menu,
-		ul.children {
-
-			li {
-
-				a {
-					padding-left: 30px;
-
-					&:hover,
-					&:focus {}
-
-					&:link {}
-
-				}
-
-				&:first-child {}
-
-				&:last-child {}
-
-			}
-
-		}
-
-	} /* end .menu li */
-
-	/* highlight current page */
-	li.current-menu-item,
-	li.current_page_item,
-	li.current-page-ancestor {
-
-		a {}
-
-	}  /* end current highlighters */
-
-} /* end .nav */
-
-
-/*********************
-POSTS & CONTENT STYLES
-*********************/
-			.archive article{
-				border-top: 1px solid;
-				border-color: #cccccc;
-				padding-top: 20px;
-			}
-			.home article{
-				border-top: 1px solid;
-				border-color: #cccccc;
-				padding-top: 20px;
-			}
-
-#content {
-	margin-top: 2.2em;
-}
-
-		.hentry {
-
-			header {}
-
-			footer {}
-
-		} /* end .hentry */
-
-		.single-title,
-		.page-title {}
-
-		.single-title {}
-
-		.page-title {}
-
-		.archive-title { }
-
-		/* want to style individual post classes? Booya! */
-		.post-id {}         /* post by id (i.e. post-3) */
-		.post {}            /* general post style */
-		.page {}            /* general article on a page style */
-		.attachment {}      /* general style on an attatchment */
-		.sticky {}          /* sticky post style */
-		.hentry {}          /* hentry class */
-		.category-slug {}   /* style by category (i.e. category-videos) */
-		.tag-slug {}        /* style by tag (i.e. tag-news) */
-
-		/* post meta */
-		.byline {
-			color: #999;
-
-			time {}
-		}
-
-		/* entry content */
-		.entry-content {
-
-			p {}
-
-
-			ul, ol, table, dl {}
-
-			ul, ol {
-
-				li {
-					margin: 10px;
-				}
-
-
-			}
-
-			ul {
-
-				li {}
-
-			}
-
-			ol {
-				li {
-				}
-
-			}
-
-			blockquote {
-
-				&:before {}
-
-			}
-
-			dl {}
-
-			dt {}
-
-			dd {
-				margin-left: 0;
-				font-size: 0.9em;
-				color: #787878;
-				margin-bottom: 1.5em;
-			}
-
-			img {
-				margin: 0 0 0 0;
-				max-width: 100%;
-				height: auto;
-			}
-
-			/*
-			image alignment on a screen this size may be
-			a bit difficult. It's set to start aligning
-			and floating images at the next breakpoint,
-			but it's up to you. Feel free to change it up.
-			*/
-			.alignleft, img.alignleft {}
-			.alignright, img.alignright {}
-			.aligncenter, img.aligncenter {}
-
-			video, object {
-				max-width: 100%;
-				height: auto;
-			}
-
-			pre {
-				background: #eee;
-				border: 1px solid #cecece;
-				padding: 10px;
-			}
-
-		} /* end .entry-content */
-
-		.wp-caption {
-			background: #eee;
-			padding: 5px;
-
-			/* images inside wp-caption */
-			img {
-				margin-bottom: 0;
-				width: 100%;
-			}
-
-			p.wp-caption-text {
-				font-size: 0.85em;
-				margin: 4px 0 7px;
-				text-align: center;
-			}
-		
-		} /* end .wp-caption */
-		.sbver {
-			ul{
-				margin:0;
-				padding:0;
-				margin-top: 1.5em;
-			}
-			li{
-				list-style-type: none;
-				float: left;
-				margin-right: 10px;
-			}
-		}
-		.adtxt {
-			clear: both;
-		}
-		.related_entries li{
-			margin-bottom: 10px;
-		}
-		.home h3{
-			margin-top: 0px;
-		}
-		.archive h3{
-			margin-top: 0px;
-		}
-
-
-		/* image gallery styles */
-		.gallery {
-
-			dl {
-
-				a {}
-
-				img {}
-
-			}
-
-			dt {}
-
-			dd {}
-
-		} /* end .gallery */
-
-		/* gallery caption styles */
-		.gallery-caption {}
-
-		.size-full {}
-		.size-large {}
-		.size-medium {}
-		.size-thumbnail {}
-
-/******************************************************************
-PAGE NAVI STYLES
-******************************************************************/
-
-.page-navigation,
-.wp-prev-next {
-	margin: 1.1em 0 2.2em;
-}
-	.bones_page_navi {
-
-		li {
-			float: left;
-			margin-left: 10px;
-
-			a {
-				padding: 3px 6px;
-				display: block;
-				text-decoration: none;
-				position: relative;
-
-				&:hover,
-				&:focus {
-					color: #f01d4f;
-					text-decoration: underline;
-				}
-			}
-
-		}
-
-		/* current page link */
-		li.bpn-current {
-			padding: 3px 6px;
-			border-bottom: 2px solid #f01d4f;
-			position: relative;
-
-			a {
-				/* hovering on current page link */
-				&:hover,
-				&:focus {}
-
-			}
-
-		} /* end .bones_page_navi .bpn-current */
-
-		/* common styles for page-navi links */
-		li.bpn-prev-link,
-		li.bpn-next-link {
-			font-weight: 700;
-
-			a {
-				padding: 0;
-			}
-		}
-
-		/* remove the bg on end links */
-		li.bpn-prev-link a:hover,
-		li.bpn-next-link a:hover,
-		li.bpn-first-page-link a:hover,
-		li.bpn-last-page-link a:hover {
-			background: none;
-		}
-
-		/* previous link */
-		li.bpn-prev-link {
-			a {
-				&:hover,
-				&:focus {}
-			}
-		}
-
-		/* next page link */
-		li.bpn-next-link {
-			a {
-				&:hover,
-				&:focus {}
-			}
-		}
-
-		/* first page link */
-		li.bpn-first-page-link {
-			a {
-				&:hover,
-				&:focus {}
-			}
-		}
-
-		/* last page link */
-		li.bpn-last-page-link {
-			a {
-				&:hover,
-				&:focus {}
-			}
-		}
-
-	} /* end .bones_page_navi */
-
-	/* fallback previous & next links */
-	.wp-prev-next {
-
-		ul {}
-
-		.prev-link {
-			float: left;
-		}
-
-		.next-link {
-			float: right;
-		}
-
-	} /* end .wp-prev-next */
-
-/******************************************************************
-COMMENT STYLES
-******************************************************************/
-
-/* h3 comment title */
-#comments {
-
-	/* number of comments span */
-	span {}
-
-}
-
-.comment-nav {
-
-	ul {
-
-		li {}
-
-	}
-}
-
-
-.commentlist {
-
-	li {
-		position: relative;
-		clear: both;
-		overflow: hidden;
-		list-style-type: none;
-		margin-bottom: 1.5em;
-		padding: 0.7335em 10px;
-
-		&:last-child {
-			margin-bottom: 0;
-		}
-
-		ul.children {
-			margin-left:10px;
-
-			li {}
-
-			/* variations */
-			.comment {}
-			.alt {}
-			.odd {}
-			.even {}
-			.depth-1 {}           /* change number for different depth */
-			.byuser {}
-			.bypostauthor {}
-			.comment-author-admin {}
-
-		} /* end .commentlist li ul.children */
-	}
-
-	li[class*=depth-] {
-		margin-top: 1.1em;
-	}
-
-	li.depth-1 {
-		margin-left: 0;
-		margin-top: 0;
-	}
-
-	li:not(.depth-1) {
-		margin-right: -10px;
-		margin-left: -10px;
-		margin-top: 0;
-		padding-bottom: 0;
-	}
-
-	li.depth-2 {}
-	li.depth-3 {}
-	li.depth-4 {}
-	li.depth-5 {}
-
-	/* general comment classes */
-	.alt {}
-	.odd {
-		background: #eee;
-	}
-	.even {
-		background: #fefefe;
-	}
-	.parent {}
-	.comment {}
-	.children {}
-	.pingback {}
-	.bypostauthor {}
-	.comment-author {}
-	.comment-author-admin {}
-	.thread-alt {}
-	.thread-odd {}
-	.thread-even {}
-
-	/* vcard */
-	.vcard {
-		margin-left: 70px;
-
-		cite.fn {
-			font-weight: 700;
-			font-style: normal;
-
-			a.url {}
-
-		}
-
-		time {
-			float: right;
-
-			a {
-				color: #999;
-				text-decoration: none;
-
-				&:hover {
-					text-decoration: underline;
-				}
-
-			}
-
-		}
-
-		img.photo {}
-
-		img.avatar {
-			position: absolute;
-			left: 10px;
-			padding: 2px;
-			border: 1px solid #cecece;
-			background: #fff;
-		}
-
-	} /* end .commentlist .vcard */
-
-
-	/* comment meta */
-	.comment-meta {
-
-		a {}
-
-	}
-
-	.commentmetadata {
-
-		a {}
-
-	}
-
-	/* comment content */
-	.comment_content {
-		margin-left: 70px;
-
-		p {
-			margin: 0.7335em 0 1.5em;
-			font-size: 1em;
-			line-height: 1.5em;
-		}
-
-	} /* end .commentlist .comment_content */
-
-	/* comment reply link */
-	.comment-reply-link {
-		text-decoration: none;
-		float: right;
-		background: #4598bb;
-		padding: 3px 5px;
-		color: #fff;
-		opacity: 0.65;
-		margin-bottom: 10px;
-		font-weight: 700;
-		font-size: 0.9em;
-
-		&:hover,
-		&:focus {
-			opacity: 1;
-		}
-
-	} /* end .commentlist .comment-reply-link */
-
-} /* end .commentlist */
-
-/******************************************************************
-COMMENT FORM STYLES
-******************************************************************/
-
-.respond-form {
-	margin: 1.5em 10px;
-	padding-bottom: 2.2em;
-
-	form {
-		margin: 0.75em 0;
-
-		li {
-			list-style-type: none;
-			clear: both;
-			margin-bottom: 0.7335em;
-
-			label,
-			small {
-				display: none;
-			}
-		}
-
-		input[type=text],
-		input[type=email],
-		input[type=url],
-		textarea {
-			padding: 3px 6px;
-			background: #efefef;
-			border: 2px solid #cecece;
-			line-height: 1.5em;
-
-			&:focus {
-				background: #fff;
-			}
-
-			/* form validation */
-			&:invalid {
-				outline: none;
-				border-color: #fbc2c4;
-				background-color: #f6e7eb;
-				-webkit-box-shadow: none;
-				   -moz-box-shadow: none;
-				    -ms-box-shadow: none;
-						box-shadow: none;
-			}
-		}
-
-		input[type=text],
-		input[type=email],
-		input[type=url] {
-			max-width: 400px;
-			min-width: 250px;
-		}
-
-		textarea {
-			resize: none;
-			width: 97.3%;
-			height: 150px;
-		}
-
-	}
-}
-
-	/* comment submit button */
-	#submit {}
-
-	/* comment form title */
-	#comment-form-title {
-		font-size: 1.75em;
-		line-height: 1.4em;
-		margin-bottom: 0.375em;
-		border-top: 1px solid;
-		padding-top: 10px;
-		border-left: none;
-		margin-top: 1.5em;
-	}
-
-	/* cancel comment reply link */
-	#cancel-comment-reply {
-		a {}
-	}
-
-	/* logged in comments */
-	.comments-logged-in-as {}
-
-	/* allowed tags */
-	#allowed_tags {
-		margin: 1.5em 10px 0.7335em 0;
-	}
-
-	/* no comments */
-	.nocomments {
-		margin: 0 20px 1.1em;
-	}
-
-/*********************
-SIDEBARS & ASIDES
-*********************/
-
-.sidebar {}
-
-	.widgettitle {}
-
-	.widget {
-
-		ul {
-
-			li {
-
-				&:first-child {}
-
-				&:last-child {}
-
-				a {}
-
-				/* deep nesting */
-				ul {}
-
-			}
-
-		}
-
-	}
-
-/*********************
-FOOTER STYLES
-*********************/
-
-.footer {
-	clear: both;
-}
-
-	/*
-	if you checked out the link above:
-	http://www.alistapart.com/articles/organizing-mobile/
-	you'll want to style the footer nav
-	a bit more in-depth. Remember to keep
-	it simple because you'll have to
-	override these styles for the desktop
-	view.
-	*/
-	.footer-links {
-
-		ul {
-
-			li {}
-
-		}
-
-	} /* end .footer-links */
-
-
-	.copyright {}
-
-.wp-caption {
-max-width: 100%; /* When images are too wide for containing element, force them to fit. */
-height: auto; /* Override height to match resized width for correct aspect ratio. */
-}
-
-.pn{
-padding: 10px;
-background-color: #EEE;
-}
-
-/*********************
-Au
-*********************/
-.WPD-Red a{
-			background-color:red;
-			padding: 5px;
-			color: #fff;
-		}
-.WPD-Gold a{
-			background-color:#daa520;
-			padding: 5px;
-			color: #000;
-		}
-.WPD-Black a{
-			background-color:#000;
-			padding: 5px;
-			color: #fff;
-		}
-.WPD-Pink a{
-			background-color:#ffc0cb;
-			padding: 5px;
-			color: #fff;
-		}
-.WPD-Olive a{
-			background-color:#808000;
-			padding: 5px;
-			color: #fff;
-		}
-.WPD-Grey a{
-			background-color:#333;
-			padding: 5px;
-			color: #fff;
-		}
-.WPD-Green a{
-			background-color:green;
-			padding: 5px;
-			color: #fff;
-		}
-.WPD-Purple a{
-			background-color:purple;
-			padding: 5px;
-			color: #fff;
-		}
-.WPD-Blue a{
-			background-color:blue;
-			padding: 5px;
-			color: #fff;
-		}
-.WPD-lime a{
-			background-color:#00FF00;
-			padding: 5px;
-			color: #000;
-		}
-.WPD-Brown a{
-			background-color:#a52a2a;
-			padding: 5px;
-			color: #fff;
-		}
-.WPD-White a{
-			background-color:#fff;
-			padding: 5px;
-			color: #000;
-			border: 1px solid;
-			border-color: #CCC;
-		}
-.WPD-Yellow a{
-			background-color:yellow;
-			padding: 5px;
-			color: #000;
-		}
-.WPD-Orange a{
-			background-color:orange;
-			padding: 5px;
-			color: #fff;
-		}
-.WPD-Beige a{
-			background-color:#f5eece;
-			padding: 5px;
-			color: #000;
-		}
-
-		
-		
-
-
-:
-@linei:@has_childrenT:@options{ :@children[ƒo:Sass::Tree::CommentNode
-:
-@type:normal:@value["ô/******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Base Mobile Stylesheet
-
-Be light and don't over style since everything here will be
-loaded by mobile devices. You want to keep it as minimal as
-possible. This is called at the top of the main stylsheet
-and will be used across all viewports.
-
-******************************************************************/;i;	@;
-[ o;
-;;;["A/*********************
-GENERAL STYLES
-*********************/;i;	@;
-[ o:Sass::Tree::RuleNode:
-@rule["	body:@parsed_ruleso:"Sass::Selector::CommaSequence:@filename" ;i:@members[o:Sass::Selector::Sequence;[o:#Sass::Selector::SimpleSequence
-;@:@sourceso:Set:
-@hash{ ;i;[o:Sass::Selector::Element	;@;i:
-@name["	body:@namespace0:@subject0;i;T;	@:
-@tabsi ;
-[	o:Sass::Tree::PropNode;o:Sass::Script::Variable	;i:@underscored_name"wpdsans;	@;"wpdsans:@prop_syntax:new;i;	@;["font-family;i ;
-[ o;;o:Sass::Script::String;:identifier;"	16px;	@;";#;i;	@;["font-size;i ;
-[ o;;o;$;;%;"1.5;	@;";#;i;	@;["line-height;i ;
-[ o;;o;$;;%;"#565656;	@;";#;i;	@;["
-color;i ;
-[ o;
-;;;["^/********************
-WORDPRESS BODY CLASSES
-style a page via class
-********************/;i ;	@;
-[ o;;["	.rtl;o;;" ;i%;[o;;[o;
-;@B;o;;{ ;i%;[o:Sass::Selector::Class;@B;i%;["rtl;0;i%;T;	@;i ;
-[ o;
-;;;[">/* for sites that are read right to left (i.e. hebrew) */;i%;	@;
-[ o;;["
-.home;o;;" ;i&;[o;;[o;
-;@V;o;;{ ;i&;[o;&;@V;i&;["	home;0;i&;T;	@;i ;
-[ o;
-;;;["/* home page */;i&;	@;
-[ o;;["
-.blog;o;;" ;i';[o;;[o;
-;@j;o;;{ ;i';[o;&;@j;i';["	blog;0;i';T;	@;i ;
-[ o;
-;;;["/* blog template page */;i';	@;
-[ o;;[".archive;o;;" ;i(;[o;;[o;
-;@~;o;;{ ;i(;[o;&;@~;i(;["archive;0;i(;T;	@;i ;
-[ o;
-;;;["/* archive page */;i(;	@;
-[ o;;["
-.date;o;;" ;i);[o;;[o;
-;@ç;o;;{ ;i);[o;&;@ç;i);["	date;0;i);T;	@;i ;
-[ o;
-;;;["/* date archive page */;i);	@;
-[ o;;[".date-paged-1;o;;" ;i*;[o;;[o;
-;@°;o;;{ ;i*;[o;&;@°;i*;["date-paged-1;0;i*;T;	@;i ;
-[ o;
-;;;[">/* replace the number to the corresponding page number */;i*;	@;
-[ o;;[".search;o;;" ;i+;[o;;[o;
-;@µ;o;;{ ;i+;[o;&;@µ;i+;["search;0;i+;T;	@;i ;
-[ o;
-;;;["/* search page */;i+;	@;
-[ o;;[".search-results;o;;" ;i,;[o;;[o;
-;@…;o;;{ ;i,;[o;&;@…;i,;["search-results;0;i,;T;	@;i ;
-[ o;
-;;;["/* search result page */;i,;	@;
-[ o;;[".search-no-results;o;;" ;i-;[o;;[o;
-;@›;o;;{ ;i-;[o;&;@›;i-;["search-no-results;0;i-;T;	@;i ;
-[ o;
-;;;["!/* no results search page */;i-;	@;
-[ o;;[".search-paged-1;o;;" ;i.;[o;;[o;
-;@Ò;o;;{ ;i.;[o;&;@Ò;i.;["search-paged-1;0;i.;T;	@;i ;
-[ o;
-;;;["=/* individual paged search (i.e. body.search-paged-3) */;i.;	@;
-[ o;;[".error404;o;;" ;i/;[o;;[o;
-;@;o;;{ ;i/;[o;&;@;i/;["error404;0;i/;T;	@;i ;
-[ o;
-;;;["/* 404 page */;i/;	@;
-[ o;;[".single;o;;" ;i0;[o;;[o;
-;@;o;;{ ;i0;[o;&;@;i0;["single;0;i0;T;	@;i ;
-[ o;
-;;;["/* single post page */;i0;	@;
-[ o;;[".postid-1;o;;" ;i1;[o;;[o;
-;@-;o;;{ ;i1;[o;&;@-;i1;["postid-1;0;i1;T;	@;i ;
-[ o;
-;;;[";/* individual post page by id (i.e. body.postid-73) */;i1;	@;
-[ o;;[".single-paged-1;o;;" ;i2;[o;;[o;
-;@A;o;;{ ;i2;[o;&;@A;i2;["single-paged-1;0;i2;T;	@;i ;
-[ o;
-;;;["=/* individual paged single (i.e. body.single-paged-3) */;i2;	@;
-[ o;;[".attachment;o;;" ;i3;[o;;[o;
-;@U;o;;{ ;i3;[o;&;@U;i3;["attachment;0;i3;T;	@;i ;
-[ o;
-;;;["/* attatchment page */;i3;	@;
-[ o;;[".attachmentid-1;o;;" ;i4;[o;;[o;
-;@i;o;;{ ;i4;[o;&;@i;i4;["attachmentid-1;0;i4;T;	@;i ;
-[ o;
-;;;["C/* individual attatchment page (i.e. body.attachmentid-763) */;i4;	@;
-[ o;;[".attachment-mime-type;o;;" ;i5;[o;;[o;
-;@};o;;{ ;i5;[o;&;@};i5;["attachment-mime-type;0;i5;T;	@;i ;
-[ o;
-;;;[" /* style mime type pages */;i5;	@;
-[ o;;[".author;o;;" ;i6;[o;;[o;
-;@ë;o;;{ ;i6;[o;&;@ë;i6;["author;0;i6;T;	@;i ;
-[ o;
-;;;["/* author page */;i6;	@;
-[ o;;[".author-nicename;o;;" ;i7;[o;;[o;
-;@•;o;;{ ;i7;[o;&;@•;i7;["author-nicename;0;i7;T;	@;i ;
-[ o;
-;;;["7/* user nicename (i.e. body.author-samueladams) */;i7;	@;
-[ o;;[".author-paged-1;o;;" ;i8;[o;;[o;
-;@π;o;;{ ;i8;[o;&;@π;i8;["author-paged-1;0;i8;T;	@;i ;
-[ o;
-;;;["F/* paged author archives (i.e. body.author-paged-4) for page 4 */;i8;	@;
-[ o;;[".category;o;;" ;i9;[o;;[o;
-;@Õ;o;;{ ;i9;[o;&;@Õ;i9;["category;0;i9;T;	@;i ;
-[ o;
-;;;["/* category page */;i9;	@;
-[ o;;[".category-1;o;;" ;i:;[o;;[o;
-;@·;o;;{ ;i:;[o;&;@·;i:;["category-1;0;i:;T;	@;i ;
-[ o;
-;;;[":/* individual category page (i.e. body.category-6) */;i:;	@;
-[ o;;[".category-paged-1;o;;" ;i;;[o;;[o;
-;@ı;o;;{ ;i;;[o;&;@ı;i;;["category-paged-1;0;i;;T;	@;i ;
-[ o;
-;;;[">/* replace the number to the corresponding page number */;i;;	@;
-[ o;;["	.tag;o;;" ;i<;[o;;[o;
-;@	;o;;{ ;i<;[o;&;@	;i<;["tag;0;i<;T;	@;i ;
-[ o;
-;;;["/* tag page */;i<;	@;
-[ o;;[".tag-slug;o;;" ;i=;[o;;[o;
-;@;o;;{ ;i=;[o;&;@;i=;["tag-slug;0;i=;T;	@;i ;
-[ o;
-;;;["3/* individual tag page (i.e. body.tag-news) */;i=;	@;
-[ o;;[".tag-paged-1;o;;" ;i>;[o;;[o;
-;@1;o;;{ ;i>;[o;&;@1;i>;["tag-paged-1;0;i>;T;	@;i ;
-[ o;
-;;;[">/* replace the number to the corresponding page number */;i>;	@;
-[ o;;[".page-template;o;;" ;i?;[o;;[o;
-;@E;o;;{ ;i?;[o;&;@E;i?;["page-template;0;i?;T;	@;i ;
-[ o;
-;;;["$/* custom page template page */;i?;	@;
-[ o;;[".page-template-page-php;o;;" ;i@;[o;;[o;
-;@Y;o;;{ ;i@;[o;&;@Y;i@;["page-template-page-php;0;i@;T;	@;i ;
-[ o;
-;;;["H/* individual page template (i.e. body.page-template-contact-php */;i@;	@;
-[ o;;[".page-paged-1;o;;" ;iA;[o;;[o;
-;@m;o;;{ ;iA;[o;&;@m;iA;["page-paged-1;0;iA;T;	@;i ;
-[ o;
-;;;[">/* replace the number to the corresponding page number */;iA;	@;
-[ o;;[".page-parent;o;;" ;iB;[o;;[o;
-;@Å;o;;{ ;iB;[o;&;@Å;iB;["page-parent;0;iB;T;	@;i ;
-[ o;
-;;;["/* parent page template */;iB;	@;
-[ o;;[".page-child;o;;" ;iC;[o;;[o;
-;@ï;o;;{ ;iC;[o;&;@ï;iC;["page-child;0;iC;T;	@;i ;
-[ o;
-;;;["/* child page template */;iC;	@;
-[ o;;[".parent-pageid-1;o;;" ;iD;[o;;[o;
-;@©;o;;{ ;iD;[o;&;@©;iD;["parent-pageid-1;0;iD;T;	@;i ;
-[ o;
-;;;[">/* replace the number to the corresponding page number */;iD;	@;
-[ o;;[".logged-in;o;;" ;iE;[o;;[o;
-;@Ω;o;;{ ;iE;[o;&;@Ω;iE;["logged-in;0;iE;T;	@;i ;
-[ o;
-;;;["/* if user is logged in */;iE;	@;
-[ o;;[".paged;o;;" ;iF;[o;;[o;
-;@—;o;;{ ;iF;[o;&;@—;iF;["
-paged;0;iF;T;	@;i ;
-[ o;
-;;;["6/* paged items like search results or archives */;iF;	@;
-[ o;;[".paged-1;o;;" ;iG;[o;;[o;
-;@Â;o;;{ ;iG;[o;&;@Â;iG;["paged-1;0;iG;T;	@;i ;
-[ o;
-;;;["//* individual paged (i.e. body.paged-3) */;iG;	@;
-[ o;
-;;;["G/*********************
-LAYOUT & GRID STYLES
-*********************/;iI;	@;
-[ o;;["
-.wrap;o;;" ;iM;[o;;[o;
-;@˝;o;;{ ;iM;[o;&;@˝;iM;["	wrap;0;iM;T;	@;i ;
-[o;;o;$;;%;"96%;	@;";#;iN;	@;["
-width;i ;
-[ o;;o;$;;%;"0 auto;	@;";#;iO;	@;["margin;i ;
-[ o;
-;;;[">/*********************
-LINK STYLES
-*********************/;iR;	@;
-[ o;;["a;o;;" ;iV;[o;;[o;
-;@;o;;{ ;iV;[o;	;@;iV;["a;0;0;iV;T;	@;i ;
-[o;;o; 	;iW;!"link_color;	@;"link-color;";#;iW;	@;["
-color;i ;
-[ o;
-;;;["/* on hover */;iY;	@;
-[ o;;["&:hover, &:focus;o;;" ;iZ;[o;;[o;
-;@8;o;;{ ;iZ;[o:Sass::Selector::Parent;@8;iZo:Sass::Selector::Pseudo
-;:
-class;@8;iZ;["
-hover:	@arg0;0o;;[o;
-;@8;o;;{ ;iZ;[o;';@8;iZo;(
-;;);@8;iZ;["
-focus;*0;0;iZ;T;	@;i ;
-[o;;o; 	;i[;!"link_hover;	@;"link-hover;";#;i[;	@;["
-color;i ;
-[ o;
-;;;["/* on click */;i^;	@;
-[ o;;["&:active;o;;" ;i_;[o;;[o;
-;@^;o;;{ ;i_;[o;';@^;i_o;(
-;;);@^;i_;["active;*0;0;i_;T;	@;i ;
-[ o;
-;;;["/* mobile tap color */;ic;	@;
-[ o;;["&:link;o;;" ;id;[o;;[o;
-;@s;o;;{ ;id;[o;';@s;ido;(
-;;);@s;id;["	link;*0;0;id;T;	@;i ;
-[o;
-;;;["u/*
-this highlights links on iPhones/iPads.
-so it basically works like the :hover selector
-for mobile devices.
-*/;ie;	@;
-[ o;;o:Sass::Script::Funcall:
-@args[	o:Sass::Script::Number;i ;ij;	@:@denominator_units[ :@original"0:@numerator_units[ o;-;i ;ij;	@;.@à;/"0;0[ o;-;i ;ij;	@;.@à;/"0;0[ o;-;f0.29999999999999999 33;ij;	@;.@à;/"0.3;0[ :@keywords{ ;ij;	@;"	rgba:@splat0;";#;ij;	@;[" -webkit-tap-highlight-color;i ;
-[ o;;["&:visited;o;;" ;im;[o;;[o;
-;@û;o;;{ ;im;[o;';@û;imo;(
-;;);@û;im;["visited;*0;0;im;T;	@;i ;
-[o;;o; 	;in;!"link_visited;	@;"link-visited;";#;in;	@;["
-color;i ;
-[ o;
-;;;["°/******************************************************************
-H1, H2, H3, H4, H5 STYLES
-******************************************************************/;ir;	@;
-[ o;;["0h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5;o;;" ;iv;[o;;[o;
-;@∫;o;;{ ;iv;[o;	;@∫;iv;["h1;0;0o;;[o;
-;@∫;o;;{ ;iv;[o;&;@∫;iv;["h1;0o;;[o;
-;@∫;o;;{ ;iv;[o;	;@∫;iv;["h2;0;0o;;[o;
-;@∫;o;;{ ;iv;[o;&;@∫;iv;["h2;0o;;[o;
-;@∫;o;;{ ;iv;[o;	;@∫;iv;["h3;0;0o;;[o;
-;@∫;o;;{ ;iv;[o;&;@∫;iv;["h3;0o;;[o;
-;@∫;o;;{ ;iv;[o;	;@∫;iv;["h4;0;0o;;[o;
-;@∫;o;;{ ;iv;[o;&;@∫;iv;["h4;0o;;[o;
-;@∫;o;;{ ;iv;[o;	;@∫;iv;["h5;0;0o;;[o;
-;@∫;o;;{ ;iv;[o;&;@∫;iv;["h5;0;iv;T;	@;i ;
-[o;;o; 	;iw;!"wpdsans;	@;"wpdsans;";#;iw;	@;["font-family;i ;
-[ o;;o;$;;%;"optimizelegibility;	@;";#;ix;	@;["text-rendering;i ;
-[ o;;o;$;;%;"500;	@;";#;iy;	@;["font-weight;i ;
-[ o;
-;;;["w/*
-if you're going to use webfonts, be sure to check your weights
-http://css-tricks.com/watch-your-font-weight/
-*/;iz;	@;
-[ o;
-;;;[";/* removing text decoration from all headline links */;i;	@;
-[ o;;["a;o;;" ;i{;[o;;[o;
-;@6;o;;{ ;i{;[o;	;@6;i{;["a;0;0;i{;T;	@;i ;
-[o;;o;$;;%;"	none;	@;";#;i|;	@;["text-decoration;i ;
-[ o;;["h1, .h1;o;;" ;iÄ;[o;;[o;
-;@L;o;;{ ;iÄ;[o;	;@L;iÄ;["h1;0;0o;;[o;
-;@L;o;;{ ;iÄ;[o;&;@L;iÄ;["h1;0;iÄ;T;	@;i ;
-[o;;o;$;;%;"
-1.5em;	@;";#;iÅ;	@;["font-size;i ;
-[ o;;o;$;;%;"1.333em;	@;";#;iÇ;	@;["line-height;i ;
-[ o;;["h2, .h2;o;;" ;iÖ;[o;;[o;
-;@q;o;;{ ;iÖ;[o;	;@q;iÖ;["h2;0;0o;;[o;
-;@q;o;;{ ;iÖ;[o;&;@q;iÖ;["h2;0;iÖ;T;	@;i ;
-[o;;o;$;;%;"1.25em;	@;";#;iÜ;	@;["font-size;i ;
-[ o;;o;$;;%;"
-1.4em;	@;";#;iá;	@;["line-height;i ;
-[ o;;o;$;;%;"0.375em;	@;";#;ià;	@;["margin-bottom;i ;
-[ o;;o;$;;%;"5px solid;	@;";#;iâ;	@;["border-left;i ;
-[ o;;o;$;;%;"	10px;	@;";#;iä;	@;["padding-left;i ;
-[ o;;o;$;;%;"1.75em;	@;";#;iã;	@;["margin-top;i ;
-[ o;;[".related_entries h2;o;;" ;iç;[o;;[o;
-;@Æ;o;;{ ;iç;[o;&;@Æ;iç;["related_entries;0o;
-;@Æ;o;;{ ;iç;[o;	;@Æ;iç;["h2;0;0;iç;T;	@;i ;
-[o;;o;$;;%;"1.25em;	@;";#;ié;	@;["font-size;i ;
-[ o;;o;$;;%;"
-1.4em;	@;";#;iè;	@;["line-height;i ;
-[ o;;o;$;;%;"0.375em;	@;";#;iê;	@;["margin-bottom;i ;
-[ o;;o;$;;%;"1px solid;	@;";#;ië;	@;["border-top;i ;
-[ o;;o;$;;%;"	10px;	@;";#;ií;	@;["padding-top;i ;
-[ o;;o;$;;%;"	none;	@;";#;iì;	@;["border-left;i ;
-[ o;;o;$;;%;"
-1.5em;	@;";#;iî;	@;["margin-top;i ;
-[ o;;["h3, .h3;o;;" ;ió;[o;;[o;
-;@Ô;o;;{ ;ió;[o;	;@Ô;ió;["h3;0;0o;;[o;
-;@Ô;o;;{ ;ió;[o;&;@Ô;ió;["h3;0;ió;T;	@;i ;
-[o;;o;$;;%;"
-1.2em;	@;";#;iò;	@;["font-size;i ;
-[ o;;o;$;;%;"0.375em;	@;";#;iô;	@;["margin-bottom;i ;
-[ o;;["h4, .h4;o;;" ;iú;[o;;[o;
-;@;o;;{ ;iú;[o;	;@;iú;["h4;0;0o;;[o;
-;@;o;;{ ;iú;[o;&;@;iú;["h4;0;iú;T;	@;i ;
-[o;;o;$;;%;"
-1.1em;	@;";#;iù;	@;["font-size;i ;
-[ o;;o;$;;%;"700;	@;";#;iû;	@;["font-weight;i ;
-[ o;;["h5, .h5;o;;" ;i°;[o;;[o;
-;@9;o;;{ ;i°;[o;	;@9;i°;["h5;0;0o;;[o;
-;@9;o;;{ ;i°;[o;&;@9;i°;["h5;0;i°;T;	@;i ;
-[	o;;o;$;;%;"0.846em;	@;";#;i¢;	@;["font-size;i ;
-[ o;;o;$;;%;"2.09em;	@;";#;i£;	@;["line-height;i ;
-[ o;;o;$;;%;"uppercase;	@;";#;i§;	@;["text-transform;i ;
-[ o;;o;$;;%;"2px;	@;";#;i•;	@;["letter-spacing;i ;
-[ o;
-;;;["@/*********************
-HEADER SYTLES
-*********************/;i®;	@;
-[ o;;[".header;o;;" ;i¨;[o;;[o;
-;@n;o;;{ ;i¨;[o;&;@n;i¨;["header;0;i¨;T;	@;i ;
-[ o;;["
-#logo;o;;" ;iÆ;[o;;[o;
-;@~;o;;{ ;iÆ;[o:Sass::Selector::Id;@~;iÆ;["	logo;0;iÆ;T;	@;i ;
-[ o;
-;;;["D/*********************
-NAVIGATION STYLES
-*********************/;i∞;	@;
-[ o;
-;;;["ª/*
-all navs have a .nav class applied via
-the wp_menu function, this is so we can
-easily just write on group of styles for
-the navs on the site and our css is cleaner
-and moe scalable.
-*/;i¥;	@;
-[ o;;["	.nav;o;;" ;iº;[o;;[o;
-;@ñ;o;;{ ;iº;[o;&;@ñ;iº;["nav;0;iº;T;	@;i ;
-[o;;o;$;;%;"1px solid #ccc;	@;";#;iΩ;	@;["border;i ;
-[ o;;o;$;;%;"0;	@;";#;iæ;	@;["border-bottom;i ;
-[ o;;["li;o;;" ;i¿;[o;;[o;
-;@≤;o;;{ ;i¿;[o;	;@≤;i¿;["li;0;0;i¿;T;	@;i ;
-[
-o;;["a;o;;" ;i¬;[o;;[o;
-;@¬;o;;{ ;i¬;[o;	;@¬;i¬;["a;0;0;i¬;T;	@;i ;
-[o;;o;$;;%;"
-block;	@;";#;i√;	@;["display;i ;
-[ o;;o;$;;%;"	none;	@;";#;iƒ;	@;["text-decoration;i ;
-[ o;;o;$;;%;"10px 10px;	@;";#;i≈;	@;["padding;i ;
-[ o;;o;$;;%;"	#eee;	@;";#;i∆;	@;["background-color;i ;
-[ o;;o;$;;%;"1px solid #ccc;	@;";#;i«;	@;["border-bottom;i ;
-[ o;
-;;;["«/*
-remember this is for mobile ONLY, so there's no need
-to even declare hover styles here, you can do it in
-the style.scss file where it's relevant. We want to
-keep this file as small as possible!
-*/;i…;	@;
-[ o;;["&:hover, &:focus;o;;" ;iœ;[o;;[o;
-;@Ù;o;;{ ;iœ;[o;';@Ù;iœo;(
-;;);@Ù;iœ;["
-hover;*0;0o;;[o;
-;@Ù;o;;{ ;iœ;[o;';@Ù;iœo;(
-;;);@Ù;iœ;["
-focus;*0;0;iœ;T;	@;i ;
-[ o;;["&:first-child;o;;" ;i‘;[o;;[o;
-;@;o;;{ ;i‘;[o;';@;i‘o;(
-;;);@;i‘;["first-child;*0;0;i‘;T;	@;i ;
-[ o;;["&:last-child;o;;" ;i÷;[o;;[o;
-;@ ;o;;{ ;i÷;[o;';@ ;i÷o;(
-;;);@ ;i÷;["last-child;*0;0;i÷;T;	@;i ;
-[ o;
-;;;["/*
-so you really have to rethink your dropdowns for mobile.
-you don't want to have it expand too much because the
-screen is so small. How you manage your menu should
-depend on the project. Here's some great info on it:
-http://www.alistapart.com/articles/organizing-mobile/
-*/;iÿ;	@;
-[ o;;["ul.sub-menu,
-		ul.children;o;;" ;i‡;[o;;[o;
-;@5;o;;{ ;i‡;[o;	;@5;i‡;["ul;0o;&;@5;i‡;["sub-menu;0o;;["
-o;
-;@5;o;;{ ;i‡;[o;	;@5;i‡;["ul;0o;&;@5;i‡;["children;0;i‡;T;	@;i ;
-[o;;["li;o;;" ;i‚;[o;;[o;
-;@U;o;;{ ;i‚;[o;	;@U;i‚;["li;0;0;i‚;T;	@;i ;
-[o;;["a;o;;" ;i‰;[o;;[o;
-;@e;o;;{ ;i‰;[o;	;@e;i‰;["a;0;0;i‰;T;	@;i ;
-[o;;o;$;;%;"	30px;	@;";#;iÂ;	@;["padding-left;i ;
-[ o;;["&:hover,
-					&:focus;o;;" ;iË;[o;;[o;
-;@{;o;;{ ;iË;[o;';@{;iËo;(
-;;);@{;iË;["
-hover;*0;0o;;["
-o;
-;@{;o;;{ ;iË;[o;';@{;iËo;(
-;;);@{;iË;["
-focus;*0;0;iË;T;	@;i ;
-[ o;;["&:link;o;;" ;iÍ;[o;;[o;
-;@ó;o;;{ ;iÍ;[o;';@ó;iÍo;(
-;;);@ó;iÍ;["	link;*0;0;iÍ;T;	@;i ;
-[ o;;["&:first-child;o;;" ;iÓ;[o;;[o;
-;@®;o;;{ ;iÓ;[o;';@®;iÓo;(
-;;);@®;iÓ;["first-child;*0;0;iÓ;T;	@;i ;
-[ o;;["&:last-child;o;;" ;i;[o;;[o;
-;@π;o;;{ ;i;[o;';@π;io;(
-;;);@π;i;["last-child;*0;0;i;T;	@;i ;
-[ o;
-;;;["/* end .menu li */;iˆ;	@;
-[ o;
-;;;["!/* highlight current page */;i¯;	@;
-[ o;;["Kli.current-menu-item,
-	li.current_page_item,
-	li.current-page-ancestor;o;;" ;i˚;[o;;[o;
-;@“;o;;{ ;i˚;[o;	;@“;i˚;["li;0o;&;@“;i˚;["current-menu-item;0o;;["
-o;
-;@“;o;;{ ;i˚;[o;	;@“;i˚;["li;0o;&;@“;i˚;["current_page_item;0o;;["
-o;
-;@“;o;;{ ;i˚;[o;	;@“;i˚;["li;0o;&;@“;i˚;["current-page-ancestor;0;i˚;T;	@;i ;
-[o;;["a;o;;" ;i˝;[o;;[o;
-;@ˇ;o;;{ ;i˝;[o;	;@ˇ;i˝;["a;0;0;i˝;T;	@;i ;
-[ o;
-;;;["#/* end current highlighters */;iˇ;	@;
-[ o;
-;;;["/* end .nav */;i;	@;
-[ o;
-;;;["I/*********************
-POSTS & CONTENT STYLES
-*********************/;i;	@;
-[ o;;[".archive article;o;;" ;i;[o;;[o;
-;@;o;;{ ;i;[o;&;@;i;["archive;0o;
-;@;o;;{ ;i;[o;	;@;i;["article;0;0;i;T;	@;i ;
-[o;;o;$;;%;"1px solid;	@;";#;i;	@;["border-top;i ;
-[ o;;o;$;;%;"#cccccc;	@;";#;i	;	@;["border-color;i ;
-[ o;;o;$;;%;"	20px;	@;";#;i
-;	@;["padding-top;i ;
-[ o;;[".home article;o;;" ;i;[o;;[o;
-;@D;o;;{ ;i;[o;&;@D;i;["	home;0o;
-;@D;o;;{ ;i;[o;	;@D;i;["article;0;0;i;T;	@;i ;
-[o;;o;$;;%;"1px solid;	@;";#;i;	@;["border-top;i ;
-[ o;;o;$;;%;"#cccccc;	@;";#;i;	@;["border-color;i ;
-[ o;;o;$;;%;"	20px;	@;";#;i;	@;["padding-top;i ;
-[ o;;["#content;o;;" ;i;[o;;[o;
-;@m;o;;{ ;i;[o;3;@m;i;["content;0;i;T;	@;i ;
-[o;;o;$;;%;"
-2.2em;	@;";#;i;	@;["margin-top;i ;
-[ o;;[".hentry;o;;" ;i;[o;;[o;
-;@É;o;;{ ;i;[o;&;@É;i;["hentry;0;i;T;	@;i ;
-[o;;["header;o;;" ;i;[o;;[o;
-;@ì;o;;{ ;i;[o;	;@ì;i;["header;0;0;i;T;	@;i ;
-[ o;;["footer;o;;" ;i;[o;;[o;
-;@£;o;;{ ;i;[o;	;@£;i;["footer;0;0;i;T;	@;i ;
-[ o;
-;;;["/* end .hentry */;i;	@;
-[ o;;["!.single-title,
-		.page-title;o;;" ;i;[o;;[o;
-;@∑;o;;{ ;i;[o;&;@∑;i;["single-title;0o;;["
-o;
-;@∑;o;;{ ;i;[o;&;@∑;i;["page-title;0;i;T;	@;i ;
-[ o;;[".single-title;o;;" ;i!;[o;;[o;
-;@—;o;;{ ;i!;[o;&;@—;i!;["single-title;0;i!;T;	@;i ;
-[ o;;[".page-title;o;;" ;i#;[o;;[o;
-;@·;o;;{ ;i#;[o;&;@·;i#;["page-title;0;i#;T;	@;i ;
-[ o;;[".archive-title;o;;" ;i%;[o;;[o;
-;@Ò;o;;{ ;i%;[o;&;@Ò;i%;["archive-title;0;i%;T;	@;i ;
-[ o;
-;;;["8/* want to style individual post classes? Booya! */;i';	@;
-[ o;;[".post-id;o;;" ;i(;[o;;[o;
-;@;o;;{ ;i(;[o;&;@;i(;["post-id;0;i(;T;	@;i ;
-[ o;
-;;;["#/* post by id (i.e. post-3) */;i(;	@;
-[ o;;["
-.post;o;;" ;i);[o;;[o;
-;@;o;;{ ;i);[o;&;@;i);["	post;0;i);T;	@;i ;
-[ o;
-;;;["/* general post style */;i);	@;
-[ o;;["
-.page;o;;" ;i*;[o;;[o;
-;@-;o;;{ ;i*;[o;&;@-;i*;["	page;0;i*;T;	@;i ;
-[ o;
-;;;["*/* general article on a page style */;i*;	@;
-[ o;;[".attachment;o;;" ;i+;[o;;[o;
-;@A;o;;{ ;i+;[o;&;@A;i+;["attachment;0;i+;T;	@;i ;
-[ o;
-;;;["*/* general style on an attatchment */;i+;	@;
-[ o;;[".sticky;o;;" ;i,;[o;;[o;
-;@U;o;;{ ;i,;[o;&;@U;i,;["sticky;0;i,;T;	@;i ;
-[ o;
-;;;["/* sticky post style */;i,;	@;
-[ o;;[".hentry;o;;" ;i-;[o;;[o;
-;@i;o;;{ ;i-;[o;&;@i;i-;["hentry;0;i-;T;	@;i ;
-[ o;
-;;;["/* hentry class */;i-;	@;
-[ o;;[".category-slug;o;;" ;i.;[o;;[o;
-;@};o;;{ ;i.;[o;&;@};i.;["category-slug;0;i.;T;	@;i ;
-[ o;
-;;;["3/* style by category (i.e. category-videos) */;i.;	@;
-[ o;;[".tag-slug;o;;" ;i/;[o;;[o;
-;@ë;o;;{ ;i/;[o;&;@ë;i/;["tag-slug;0;i/;T;	@;i ;
-[ o;
-;;;["'/* style by tag (i.e. tag-news) */;i/;	@;
-[ o;
-;;;["/* post meta */;i1;	@;
-[ o;;[".byline;o;;" ;i2;[o;;[o;
-;@©;o;;{ ;i2;[o;&;@©;i2;["byline;0;i2;T;	@;i ;
-[o;;o;$;;%;"	#999;	@;";#;i3;	@;["
-color;i ;
-[ o;;["	time;o;;" ;i5;[o;;[o;
-;@ø;o;;{ ;i5;[o;	;@ø;i5;["	time;0;0;i5;T;	@;i ;
-[ o;
-;;;["/* entry content */;i8;	@;
-[ o;;[".entry-content;o;;" ;i9;[o;;[o;
-;@”;o;;{ ;i9;[o;&;@”;i9;["entry-content;0;i9;T;	@;i ;
-[o;;["p;o;;" ;i;;[o;;[o;
-;@„;o;;{ ;i;;[o;	;@„;i;;["p;0;0;i;;T;	@;i ;
-[ o;;["ul, ol, table, dl;o;;" ;i>;[	o;;[o;
-;@Û;o;;{ ;i>;[o;	;@Û;i>;["ul;0;0o;;[o;
-;@Û;o;;{ ;i>;[o;	;@Û;i>;["ol;0;0o;;[o;
-;@Û;o;;{ ;i>;[o;	;@Û;i>;["
-table;0;0o;;[o;
-;@Û;o;;{ ;i>;[o;	;@Û;i>;["dl;0;0;i>;T;	@;i ;
-[ o;;["ul, ol;o;;" ;i@;[o;;[o;
-;@	;o;;{ ;i@;[o;	;@	;i@;["ul;0;0o;;[o;
-;@	;o;;{ ;i@;[o;	;@	;i@;["ol;0;0;i@;T;	@;i ;
-[o;;["li;o;;" ;iB;[o;;[o;
-;@7	;o;;{ ;iB;[o;	;@7	;iB;["li;0;0;iB;T;	@;i ;
-[o;;o;$;;%;"	10px;	@;";#;iC;	@;["margin;i ;
-[ o;;["ul;o;;" ;iI;[o;;[o;
-;@M	;o;;{ ;iI;[o;	;@M	;iI;["ul;0;0;iI;T;	@;i ;
-[o;;["li;o;;" ;iK;[o;;[o;
-;@]	;o;;{ ;iK;[o;	;@]	;iK;["li;0;0;iK;T;	@;i ;
-[ o;;["ol;o;;" ;iO;[o;;[o;
-;@m	;o;;{ ;iO;[o;	;@m	;iO;["ol;0;0;iO;T;	@;i ;
-[o;;["li;o;;" ;iP;[o;;[o;
-;@}	;o;;{ ;iP;[o;	;@}	;iP;["li;0;0;iP;T;	@;i ;
-[ o;;["blockquote;o;;" ;iU;[o;;[o;
-;@ç	;o;;{ ;iU;[o;	;@ç	;iU;["blockquote;0;0;iU;T;	@;i ;
-[o;;["&:before;o;;" ;iW;[o;;[o;
-;@ù	;o;;{ ;iW;[o;';@ù	;iWo;(
-;;);@ù	;iW;["before;*0;0;iW;T;	@;i ;
-[ o;;["dl;o;;" ;i[;[o;;[o;
-;@Æ	;o;;{ ;i[;[o;	;@Æ	;i[;["dl;0;0;i[;T;	@;i ;
-[ o;;["dt;o;;" ;i];[o;;[o;
-;@æ	;o;;{ ;i];[o;	;@æ	;i];["dt;0;0;i];T;	@;i ;
-[ o;;["dd;o;;" ;i_;[o;;[o;
-;@Œ	;o;;{ ;i_;[o;	;@Œ	;i_;["dd;0;0;i_;T;	@;i ;
-[	o;;o;$;;%;"0;	@;";#;i`;	@;["margin-left;i ;
-[ o;;o;$;;%;"
-0.9em;	@;";#;ia;	@;["font-size;i ;
-[ o;;o;$;;%;"#787878;	@;";#;ib;	@;["
-color;i ;
-[ o;;o;$;;%;"
-1.5em;	@;";#;ic;	@;["margin-bottom;i ;
-[ o;;["img;o;;" ;if;[o;;[o;
-;@ˆ	;o;;{ ;if;[o;	;@ˆ	;if;["img;0;0;if;T;	@;i ;
-[o;;o;$;;%;"0 0 0 0;	@;";#;ig;	@;["margin;i ;
-[ o;;o;$;;%;"	100%;	@;";#;ih;	@;["max-width;i ;
-[ o;;o;$;;%;"	auto;	@;";#;ii;	@;["height;i ;
-[ o;
-;;;["π/*
-image alignment on a screen this size may be
-a bit difficult. It's set to start aligning
-and floating images at the next breakpoint,
-but it's up to you. Feel free to change it up.
-*/;il;	@;
-[ o;;[".alignleft, img.alignleft;o;;" ;ir;[o;;[o;
-;@
-;o;;{ ;ir;[o;&;@
-;ir;["alignleft;0o;;[o;
-;@
-;o;;{ ;ir;[o;	;@
-;ir;["img;0o;&;@
-;ir;["alignleft;0;ir;T;	@;i ;
-[ o;;[" .alignright, img.alignright;o;;" ;is;[o;;[o;
-;@8
-;o;;{ ;is;[o;&;@8
-;is;["alignright;0o;;[o;
-;@8
-;o;;{ ;is;[o;	;@8
-;is;["img;0o;&;@8
-;is;["alignright;0;is;T;	@;i ;
-[ o;;["".aligncenter, img.aligncenter;o;;" ;it;[o;;[o;
-;@T
-;o;;{ ;it;[o;&;@T
-;it;["aligncenter;0o;;[o;
-;@T
-;o;;{ ;it;[o;	;@T
-;it;["img;0o;&;@T
-;it;["aligncenter;0;it;T;	@;i ;
-[ o;;["video, object;o;;" ;iv;[o;;[o;
-;@p
-;o;;{ ;iv;[o;	;@p
-;iv;["
-video;0;0o;;[o;
-;@p
-;o;;{ ;iv;[o;	;@p
-;iv;["object;0;0;iv;T;	@;i ;
-[o;;o;$;;%;"	100%;	@;";#;iw;	@;["max-width;i ;
-[ o;;o;$;;%;"	auto;	@;";#;ix;	@;["height;i ;
-[ o;;["pre;o;;" ;i{;[o;;[o;
-;@ï
-;o;;{ ;i{;[o;	;@ï
-;i{;["pre;0;0;i{;T;	@;i ;
-[o;;o;$;;%;"	#eee;	@;";#;i|;	@;["background;i ;
-[ o;;o;$;;%;"1px solid #cecece;	@;";#;i};	@;["border;i ;
-[ o;;o;$;;%;"	10px;	@;";#;i~;	@;["padding;i ;
-[ o;
-;;;["/* end .entry-content */;iÅ;	@;
-[ o;;[".wp-caption;o;;" ;iÉ;[o;;[o;
-;@ª
-;o;;{ ;iÉ;[o;&;@ª
-;iÉ;["wp-caption;0;iÉ;T;	@;i ;
-[
-o;;o;$;;%;"	#eee;	@;";#;iÑ;	@;["background;i ;
-[ o;;o;$;;%;"5px;	@;";#;iÖ;	@;["padding;i ;
-[ o;
-;;;["#/* images inside wp-caption */;iá;	@;
-[ o;;["img;o;;" ;ià;[o;;[o;
-;@€
-;o;;{ ;ià;[o;	;@€
-;ià;["img;0;0;ià;T;	@;i ;
-[o;;o;$;;%;"0;	@;";#;iâ;	@;["margin-bottom;i ;
-[ o;;o;$;;%;"	100%;	@;";#;iä;	@;["
-width;i ;
-[ o;;["p.wp-caption-text;o;;" ;iç;[o;;[o;
-;@˜
-;o;;{ ;iç;[o;	;@˜
-;iç;["p;0o;&;@˜
-;iç;["wp-caption-text;0;iç;T;	@;i ;
-[o;;o;$;;%;"0.85em;	@;";#;ié;	@;["font-size;i ;
-[ o;;o;$;;%;"4px 0 7px;	@;";#;iè;	@;["margin;i ;
-[ o;;o;$;;%;"center;	@;";#;iê;	@;["text-align;i ;
-[ o;
-;;;["/* end .wp-caption */;iì;	@;
-[ o;;[".sbver;o;;" ;iî;[o;;[o;
-;@ ;o;;{ ;iî;[o;&;@ ;iî;["
-sbver;0;iî;T;	@;i ;
-[o;;["ul;o;;" ;iï;[o;;[o;
-;@0;o;;{ ;iï;[o;	;@0;iï;["ul;0;0;iï;T;	@;i ;
-[o;;o;$;;%;"0;	@;";#;iñ;	@;["margin;i ;
-[ o;;o;$;;%;"0;	@;";#;ió;	@;["padding;i ;
-[ o;;o;$;;%;"
-1.5em;	@;";#;iò;	@;["margin-top;i ;
-[ o;;["li;o;;" ;iö;[o;;[o;
-;@R;o;;{ ;iö;[o;	;@R;iö;["li;0;0;iö;T;	@;i ;
-[o;;o;$;;%;"	none;	@;";#;iõ;	@;["list-style-type;i ;
-[ o;;o;$;;%;"	left;	@;";#;iú;	@;["
-float;i ;
-[ o;;o;$;;%;"	10px;	@;";#;iù;	@;["margin-right;i ;
-[ o;;[".adtxt;o;;" ;i†;[o;;[o;
-;@t;o;;{ ;i†;[o;&;@t;i†;["
-adtxt;0;i†;T;	@;i ;
-[o;;o;$;;%;"	both;	@;";#;i°;	@;["
-clear;i ;
-[ o;;[".related_entries li;o;;" ;i£;[o;;[o;
-;@ä;o;;{ ;i£;[o;&;@ä;i£;["related_entries;0o;
-;@ä;o;;{ ;i£;[o;	;@ä;i£;["li;0;0;i£;T;	@;i ;
-[o;;o;$;;%;"	10px;	@;";#;i§;	@;["margin-bottom;i ;
-[ o;;[".home h3;o;;" ;i¶;[o;;[o;
-;@ß;o;;{ ;i¶;[o;&;@ß;i¶;["	home;0o;
-;@ß;o;;{ ;i¶;[o;	;@ß;i¶;["h3;0;0;i¶;T;	@;i ;
-[o;;o;$;;%;"0px;	@;";#;iß;	@;["margin-top;i ;
-[ o;;[".archive h3;o;;" ;i©;[o;;[o;
-;@ƒ;o;;{ ;i©;[o;&;@ƒ;i©;["archive;0o;
-;@ƒ;o;;{ ;i©;[o;	;@ƒ;i©;["h3;0;0;i©;T;	@;i ;
-[o;;o;$;;%;"0px;	@;";#;i™;	@;["margin-top;i ;
-[ o;
-;;;["/* image gallery styles */;iÆ;	@;
-[ o;;[".gallery;o;;" ;iØ;[o;;[o;
-;@Â;o;;{ ;iØ;[o;&;@Â;iØ;["gallery;0;iØ;T;	@;i ;
-[o;;["dl;o;;" ;i±;[o;;[o;
-;@ı;o;;{ ;i±;[o;	;@ı;i±;["dl;0;0;i±;T;	@;i ;
-[o;;["a;o;;" ;i≥;[o;;[o;
-;@;o;;{ ;i≥;[o;	;@;i≥;["a;0;0;i≥;T;	@;i ;
-[ o;;["img;o;;" ;iµ;[o;;[o;
-;@;o;;{ ;iµ;[o;	;@;iµ;["img;0;0;iµ;T;	@;i ;
-[ o;;["dt;o;;" ;iπ;[o;;[o;
-;@%;o;;{ ;iπ;[o;	;@%;iπ;["dt;0;0;iπ;T;	@;i ;
-[ o;;["dd;o;;" ;iª;[o;;[o;
-;@5;o;;{ ;iª;[o;	;@5;iª;["dd;0;0;iª;T;	@;i ;
-[ o;
-;;;["/* end .gallery */;iΩ;	@;
-[ o;
-;;;["!/* gallery caption styles */;iø;	@;
-[ o;;[".gallery-caption;o;;" ;i¿;[o;;[o;
-;@M;o;;{ ;i¿;[o;&;@M;i¿;["gallery-caption;0;i¿;T;	@;i ;
-[ o;;[".size-full;o;;" ;i¬;[o;;[o;
-;@];o;;{ ;i¬;[o;&;@];i¬;["size-full;0;i¬;T;	@;i ;
-[ o;;[".size-large;o;;" ;i√;[o;;[o;
-;@m;o;;{ ;i√;[o;&;@m;i√;["size-large;0;i√;T;	@;i ;
-[ o;;[".size-medium;o;;" ;iƒ;[o;;[o;
-;@};o;;{ ;iƒ;[o;&;@};iƒ;["size-medium;0;iƒ;T;	@;i ;
-[ o;;[".size-thumbnail;o;;" ;i≈;[o;;[o;
-;@ç;o;;{ ;i≈;[o;&;@ç;i≈;["size-thumbnail;0;i≈;T;	@;i ;
-[ o;
-;;;["ò/******************************************************************
-PAGE NAVI STYLES
-******************************************************************/;i«;	@;
-[ o;;["$.page-navigation,
-.wp-prev-next;o;;" ;iÃ;[o;;[o;
-;@°;o;;{ ;iÃ;[o;&;@°;iÃ;["page-navigation;0o;;["
-o;
-;@°;o;;{ ;iÃ;[o;&;@°;iÃ;["wp-prev-next;0;iÃ;T;	@;i ;
-[o;;o;$;;%;"1.1em 0 2.2em;	@;";#;iÕ;	@;["margin;i ;
-[ o;;[".bones_page_navi;o;;" ;iœ;[o;;[o;
-;@¡;o;;{ ;iœ;[o;&;@¡;iœ;["bones_page_navi;0;iœ;T;	@;i ;
-[o;;["li;o;;" ;i—;[o;;[o;
-;@—;o;;{ ;i—;[o;	;@—;i—;["li;0;0;i—;T;	@;i ;
-[o;;o;$;;%;"	left;	@;";#;i“;	@;["
-float;i ;
-[ o;;o;$;;%;"	10px;	@;";#;i”;	@;["margin-left;i ;
-[ o;;["a;o;;" ;i’;[o;;[o;
-;@Ì;o;;{ ;i’;[o;	;@Ì;i’;["a;0;0;i’;T;	@;i ;
-[
-o;;o;$;;%;"3px 6px;	@;";#;i÷;	@;["padding;i ;
-[ o;;o;$;;%;"
-block;	@;";#;i◊;	@;["display;i ;
-[ o;;o;$;;%;"	none;	@;";#;iÿ;	@;["text-decoration;i ;
-[ o;;o;$;;%;"relative;	@;";#;iŸ;	@;["position;i ;
-[ o;;["&:hover,
-				&:focus;o;;" ;i‹;[o;;[o;
-;@;o;;{ ;i‹;[o;';@;i‹o;(
-;;);@;i‹;["
-hover;*0;0o;;["
-o;
-;@;o;;{ ;i‹;[o;';@;i‹o;(
-;;);@;i‹;["
-focus;*0;0;i‹;T;	@;i ;
-[o;;o;$;;%;"#f01d4f;	@;";#;i›;	@;["
-color;i ;
-[ o;;o;$;;%;"underline;	@;";#;iﬁ;	@;["text-decoration;i ;
-[ o;
-;;;["/* current page link */;i‰;	@;
-[ o;;["li.bpn-current;o;;" ;iÂ;[o;;[o;
-;@A;o;;{ ;iÂ;[o;	;@A;iÂ;["li;0o;&;@A;iÂ;["bpn-current;0;iÂ;T;	@;i ;
-[	o;;o;$;;%;"3px 6px;	@;";#;iÊ;	@;["padding;i ;
-[ o;;o;$;;%;"2px solid #f01d4f;	@;";#;iÁ;	@;["border-bottom;i ;
-[ o;;o;$;;%;"relative;	@;";#;iË;	@;["position;i ;
-[ o;;["a;o;;" ;iÍ;[o;;[o;
-;@f;o;;{ ;iÍ;[o;	;@f;iÍ;["a;0;0;iÍ;T;	@;i ;
-[o;
-;;;["(/* hovering on current page link */;iÎ;	@;
-[ o;;["&:hover,
-				&:focus;o;;" ;iÌ;[o;;[o;
-;@z;o;;{ ;iÌ;[o;';@z;iÌo;(
-;;);@z;iÌ;["
-hover;*0;0o;;["
-o;
-;@z;o;;{ ;iÌ;[o;';@z;iÌo;(
-;;);@z;iÌ;["
-focus;*0;0;iÌ;T;	@;i ;
-[ o;
-;;;[",/* end .bones_page_navi .bpn-current */;iÒ;	@;
-[ o;
-;;;[",/* common styles for page-navi links */;iÛ;	@;
-[ o;;[")li.bpn-prev-link,
-		li.bpn-next-link;o;;" ;iı;[o;;[o;
-;@û;o;;{ ;iı;[o;	;@û;iı;["li;0o;&;@û;iı;["bpn-prev-link;0o;;["
-o;
-;@û;o;;{ ;iı;[o;	;@û;iı;["li;0o;&;@û;iı;["bpn-next-link;0;iı;T;	@;i ;
-[o;;o;$;;%;"700;	@;";#;iˆ;	@;["font-weight;i ;
-[ o;;["a;o;;" ;i¯;[o;;[o;
-;@ƒ;o;;{ ;i¯;[o;	;@ƒ;i¯;["a;0;0;i¯;T;	@;i ;
-[o;;o;$;;%;"0;	@;";#;i˘;	@;["padding;i ;
-[ o;
-;;;["%/* remove the bg on end links */;i˝;	@;
-[ o;;["|li.bpn-prev-link a:hover,
-		li.bpn-next-link a:hover,
-		li.bpn-first-page-link a:hover,
-		li.bpn-last-page-link a:hover;o;;" ;i;[	o;;[o;
-;@ﬁ;o;;{ ;i;[o;	;@ﬁ;i;["li;0o;&;@ﬁ;i;["bpn-prev-link;0o;
-;@ﬁ;o;;{ ;i;[o;	;@ﬁ;i;["a;0o;(
-;;);@ﬁ;i;["
-hover;*0;0o;;["
-o;
-;@ﬁ;o;;{ ;i;[o;	;@ﬁ;i;["li;0o;&;@ﬁ;i;["bpn-next-link;0o;
-;@ﬁ;o;;{ ;i;[o;	;@ﬁ;i;["a;0o;(
-;;);@ﬁ;i;["
-hover;*0;0o;;["
-o;
-;@ﬁ;o;;{ ;i;[o;	;@ﬁ;i;["li;0o;&;@ﬁ;i;["bpn-first-page-link;0o;
-;@ﬁ;o;;{ ;i;[o;	;@ﬁ;i;["a;0o;(
-;;);@ﬁ;i;["
-hover;*0;0o;;["
-o;
-;@ﬁ;o;;{ ;i;[o;	;@ﬁ;i;["li;0o;&;@ﬁ;i;["bpn-last-page-link;0o;
-;@ﬁ;o;;{ ;i;[o;	;@ﬁ;i;["a;0o;(
-;;);@ﬁ;i;["
-hover;*0;0;i;T;	@;i ;
-[o;;o;$;;%;"	none;	@;";#;i;	@;["background;i ;
-[ o;
-;;;["/* previous link */;i;	@;
-[ o;;["li.bpn-prev-link;o;;" ;i;[o;;[o;
-;@J;o;;{ ;i;[o;	;@J;i;["li;0o;&;@J;i;["bpn-prev-link;0;i;T;	@;i ;
-[o;;["a;o;;" ;i;[o;;[o;
-;@];o;;{ ;i;[o;	;@];i;["a;0;0;i;T;	@;i ;
-[o;;["&:hover,
-				&:focus;o;;" ;i	;[o;;[o;
-;@m;o;;{ ;i	;[o;';@m;i	o;(
-;;);@m;i	;["
-hover;*0;0o;;["
-o;
-;@m;o;;{ ;i	;[o;';@m;i	o;(
-;;);@m;i	;["
-focus;*0;0;i	;T;	@;i ;
-[ o;
-;;;["/* next page link */;i;	@;
-[ o;;["li.bpn-next-link;o;;" ;i;[o;;[o;
-;@ç;o;;{ ;i;[o;	;@ç;i;["li;0o;&;@ç;i;["bpn-next-link;0;i;T;	@;i ;
-[o;;["a;o;;" ;i;[o;;[o;
-;@†;o;;{ ;i;[o;	;@†;i;["a;0;0;i;T;	@;i ;
-[o;;["&:hover,
-				&:focus;o;;" ;i;[o;;[o;
-;@∞;o;;{ ;i;[o;';@∞;io;(
-;;);@∞;i;["
-hover;*0;0o;;["
-o;
-;@∞;o;;{ ;i;[o;';@∞;io;(
-;;);@∞;i;["
-focus;*0;0;i;T;	@;i ;
-[ o;
-;;;["/* first page link */;i;	@;
-[ o;;["li.bpn-first-page-link;o;;" ;i;[o;;[o;
-;@–;o;;{ ;i;[o;	;@–;i;["li;0o;&;@–;i;["bpn-first-page-link;0;i;T;	@;i ;
-[o;;["a;o;;" ;i;[o;;[o;
-;@„;o;;{ ;i;[o;	;@„;i;["a;0;0;i;T;	@;i ;
-[o;;["&:hover,
-				&:focus;o;;" ;i;[o;;[o;
-;@Û;o;;{ ;i;[o;';@Û;io;(
-;;);@Û;i;["
-hover;*0;0o;;["
-o;
-;@Û;o;;{ ;i;[o;';@Û;io;(
-;;);@Û;i;["
-focus;*0;0;i;T;	@;i ;
-[ o;
-;;;["/* last page link */;i;	@;
-[ o;;["li.bpn-last-page-link;o;;" ;i;[o;;[o;
-;@;o;;{ ;i;[o;	;@;i;["li;0o;&;@;i;["bpn-last-page-link;0;i;T;	@;i ;
-[o;;["a;o;;" ;i;[o;;[o;
-;@&;o;;{ ;i;[o;	;@&;i;["a;0;0;i;T;	@;i ;
-[o;;["&:hover,
-				&:focus;o;;" ;i!;[o;;[o;
-;@6;o;;{ ;i!;[o;';@6;i!o;(
-;;);@6;i!;["
-hover;*0;0o;;["
-o;
-;@6;o;;{ ;i!;[o;';@6;i!o;(
-;;);@6;i!;["
-focus;*0;0;i!;T;	@;i ;
-[ o;
-;;;["/* end .bones_page_navi */;i%;	@;
-[ o;
-;;;[")/* fallback previous & next links */;i';	@;
-[ o;;[".wp-prev-next;o;;" ;i(;[o;;[o;
-;@Z;o;;{ ;i(;[o;&;@Z;i(;["wp-prev-next;0;i(;T;	@;i ;
-[o;;["ul;o;;" ;i*;[o;;[o;
-;@j;o;;{ ;i*;[o;	;@j;i*;["ul;0;0;i*;T;	@;i ;
-[ o;;[".prev-link;o;;" ;i,;[o;;[o;
-;@z;o;;{ ;i,;[o;&;@z;i,;["prev-link;0;i,;T;	@;i ;
-[o;;o;$;;%;"	left;	@;";#;i-;	@;["
-float;i ;
-[ o;;[".next-link;o;;" ;i0;[o;;[o;
-;@ê;o;;{ ;i0;[o;&;@ê;i0;["next-link;0;i0;T;	@;i ;
-[o;;o;$;;%;"
-right;	@;";#;i1;	@;["
-float;i ;
-[ o;
-;;;["/* end .wp-prev-next */;i4;	@;
-[ o;
-;;;["ñ/******************************************************************
-COMMENT STYLES
-******************************************************************/;i6;	@;
-[ o;
-;;;["/* h3 comment title */;i:;	@;
-[ o;;["#comments;o;;" ;i;;[o;;[o;
-;@≤;o;;{ ;i;;[o;3;@≤;i;;["comments;0;i;;T;	@;i ;
-[o;
-;;;[""/* number of comments span */;i=;	@;
-[ o;;["	span;o;;" ;i>;[o;;[o;
-;@∆;o;;{ ;i>;[o;	;@∆;i>;["	span;0;0;i>;T;	@;i ;
-[ o;;[".comment-nav;o;;" ;iB;[o;;[o;
-;@÷;o;;{ ;iB;[o;&;@÷;iB;["comment-nav;0;iB;T;	@;i ;
-[o;;["ul;o;;" ;iD;[o;;[o;
-;@Ê;o;;{ ;iD;[o;	;@Ê;iD;["ul;0;0;iD;T;	@;i ;
-[o;;["li;o;;" ;iF;[o;;[o;
-;@ˆ;o;;{ ;iF;[o;	;@ˆ;iF;["li;0;0;iF;T;	@;i ;
-[ o;;[".commentlist;o;;" ;iL;[o;;[o;
-;@;o;;{ ;iL;[o;&;@;iL;["commentlist;0;iL;T;	@;i ;
-['o;;["li;o;;" ;iN;[o;;[o;
-;@;o;;{ ;iN;[o;	;@;iN;["li;0;0;iN;T;	@;i ;
-[o;;o;$;;%;"relative;	@;";#;iO;	@;["position;i ;
-[ o;;o;$;;%;"	both;	@;";#;iP;	@;["
-clear;i ;
-[ o;;o;$;;%;"hidden;	@;";#;iQ;	@;["overflow;i ;
-[ o;;o;$;;%;"	none;	@;";#;iR;	@;["list-style-type;i ;
-[ o;;o;$;;%;"
-1.5em;	@;";#;iS;	@;["margin-bottom;i ;
-[ o;;o;$;;%;"0.7335em 10px;	@;";#;iT;	@;["padding;i ;
-[ o;;["&:last-child;o;;" ;iV;[o;;[o;
-;@J;o;;{ ;iV;[o;';@J;iVo;(
-;;);@J;iV;["last-child;*0;0;iV;T;	@;i ;
-[o;;o;$;;%;"0;	@;";#;iW;	@;["margin-bottom;i ;
-[ o;;["ul.children;o;;" ;iZ;[o;;[o;
-;@a;o;;{ ;iZ;[o;	;@a;iZ;["ul;0o;&;@a;iZ;["children;0;iZ;T;	@;i ;
-[o;;o;$;;%;"	10px;	@;";#;i[;	@;["margin-left;i ;
-[ o;;["li;o;;" ;i];[o;;[o;
-;@z;o;;{ ;i];[o;	;@z;i];["li;0;0;i];T;	@;i ;
-[ o;
-;;;["/* variations */;i_;	@;
-[ o;;[".comment;o;;" ;i`;[o;;[o;
-;@é;o;;{ ;i`;[o;&;@é;i`;["comment;0;i`;T;	@;i ;
-[ o;;["	.alt;o;;" ;ia;[o;;[o;
-;@û;o;;{ ;ia;[o;&;@û;ia;["alt;0;ia;T;	@;i ;
-[ o;;["	.odd;o;;" ;ib;[o;;[o;
-;@Æ;o;;{ ;ib;[o;&;@Æ;ib;["odd;0;ib;T;	@;i ;
-[ o;;["
-.even;o;;" ;ic;[o;;[o;
-;@æ;o;;{ ;ic;[o;&;@æ;ic;["	even;0;ic;T;	@;i ;
-[ o;;[".depth-1;o;;" ;id;[o;;[o;
-;@Œ;o;;{ ;id;[o;&;@Œ;id;["depth-1;0;id;T;	@;i ;
-[ o;
-;;;[",/* change number for different depth */;id;	@;
-[ o;;[".byuser;o;;" ;ie;[o;;[o;
-;@‚;o;;{ ;ie;[o;&;@‚;ie;["byuser;0;ie;T;	@;i ;
-[ o;;[".bypostauthor;o;;" ;if;[o;;[o;
-;@Ú;o;;{ ;if;[o;&;@Ú;if;["bypostauthor;0;if;T;	@;i ;
-[ o;;[".comment-author-admin;o;;" ;ig;[o;;[o;
-;@;o;;{ ;ig;[o;&;@;ig;["comment-author-admin;0;ig;T;	@;i ;
-[ o;
-;;;["*/* end .commentlist li ul.children */;ii;	@;
-[ o;;["li[class*=depth-];o;;" ;il;[o;;[o;
-;@;o;;{ ;il;[o;	;@;il;["li;0o:Sass::Selector::Attribute;["depth-;@;il:@flags0;["
-class;0:@operator"*=;0;il;T;	@;i ;
-[o;;o;$;;%;"
-1.1em;	@;";#;im;	@;["margin-top;i ;
-[ o;;["li.depth-1;o;;" ;ip;[o;;[o;
-;@2;o;;{ ;ip;[o;	;@2;ip;["li;0o;&;@2;ip;["depth-1;0;ip;T;	@;i ;
-[o;;o;$;;%;"0;	@;";#;iq;	@;["margin-left;i ;
-[ o;;o;$;;%;"0;	@;";#;ir;	@;["margin-top;i ;
-[ o;;["li:not(.depth-1);o;;" ;iu;[o;;[o;
-;@Q;o;;{ ;iu;[o;	;@Q;iu;["li;0o;(
-;;);@Q;iu;["not;*[".depth-1;0;iu;T;	@;i ;
-[	o;;o;-;iÒ;iv;	@;.[ ;/"
--10px;0["px;";#;iv;	@;["margin-right;i ;
-[ o;;o;-;iÒ;iw;	@;.[ ;/"
--10px;0["px;";#;iw;	@;["margin-left;i ;
-[ o;;o;$;;%;"0;	@;";#;ix;	@;["margin-top;i ;
-[ o;;o;$;;%;"0;	@;";#;iy;	@;["padding-bottom;i ;
-[ o;;["li.depth-2;o;;" ;i|;[o;;[o;
-;@Ñ;o;;{ ;i|;[o;	;@Ñ;i|;["li;0o;&;@Ñ;i|;["depth-2;0;i|;T;	@;i ;
-[ o;;["li.depth-3;o;;" ;i};[o;;[o;
-;@ó;o;;{ ;i};[o;	;@ó;i};["li;0o;&;@ó;i};["depth-3;0;i};T;	@;i ;
-[ o;;["li.depth-4;o;;" ;i~;[o;;[o;
-;@™;o;;{ ;i~;[o;	;@™;i~;["li;0o;&;@™;i~;["depth-4;0;i~;T;	@;i ;
-[ o;;["li.depth-5;o;;" ;i;[o;;[o;
-;@Ω;o;;{ ;i;[o;	;@Ω;i;["li;0o;&;@Ω;i;["depth-5;0;i;T;	@;i ;
-[ o;
-;;;[""/* general comment classes */;iÅ;	@;
-[ o;;["	.alt;o;;" ;iÇ;[o;;[o;
-;@‘;o;;{ ;iÇ;[o;&;@‘;iÇ;["alt;0;iÇ;T;	@;i ;
-[ o;;["	.odd;o;;" ;iÉ;[o;;[o;
-;@‰;o;;{ ;iÉ;[o;&;@‰;iÉ;["odd;0;iÉ;T;	@;i ;
-[o;;o;$;;%;"	#eee;	@;";#;iÑ;	@;["background;i ;
-[ o;;["
-.even;o;;" ;iÜ;[o;;[o;
-;@˙;o;;{ ;iÜ;[o;&;@˙;iÜ;["	even;0;iÜ;T;	@;i ;
-[o;;o;$;;%;"#fefefe;	@;";#;iá;	@;["background;i ;
-[ o;;[".parent;o;;" ;iâ;[o;;[o;
-;@;o;;{ ;iâ;[o;&;@;iâ;["parent;0;iâ;T;	@;i ;
-[ o;;[".comment;o;;" ;iä;[o;;[o;
-;@ ;o;;{ ;iä;[o;&;@ ;iä;["comment;0;iä;T;	@;i ;
-[ o;;[".children;o;;" ;iã;[o;;[o;
-;@0;o;;{ ;iã;[o;&;@0;iã;["children;0;iã;T;	@;i ;
-[ o;;[".pingback;o;;" ;iå;[o;;[o;
-;@@;o;;{ ;iå;[o;&;@@;iå;["pingback;0;iå;T;	@;i ;
-[ o;;[".bypostauthor;o;;" ;iç;[o;;[o;
-;@P;o;;{ ;iç;[o;&;@P;iç;["bypostauthor;0;iç;T;	@;i ;
-[ o;;[".comment-author;o;;" ;ié;[o;;[o;
-;@`;o;;{ ;ié;[o;&;@`;ié;["comment-author;0;ié;T;	@;i ;
-[ o;;[".comment-author-admin;o;;" ;iè;[o;;[o;
-;@p;o;;{ ;iè;[o;&;@p;iè;["comment-author-admin;0;iè;T;	@;i ;
-[ o;;[".thread-alt;o;;" ;iê;[o;;[o;
-;@Ä;o;;{ ;iê;[o;&;@Ä;iê;["thread-alt;0;iê;T;	@;i ;
-[ o;;[".thread-odd;o;;" ;ië;[o;;[o;
-;@ê;o;;{ ;ië;[o;&;@ê;ië;["thread-odd;0;ië;T;	@;i ;
-[ o;;[".thread-even;o;;" ;ií;[o;;[o;
-;@†;o;;{ ;ií;[o;&;@†;ií;["thread-even;0;ií;T;	@;i ;
-[ o;
-;;;["/* vcard */;iî;	@;
-[ o;;[".vcard;o;;" ;iï;[o;;[o;
-;@¥;o;;{ ;iï;[o;&;@¥;iï;["
-vcard;0;iï;T;	@;i ;
-[
-o;;o;$;;%;"	70px;	@;";#;iñ;	@;["margin-left;i ;
-[ o;;["cite.fn;o;;" ;iò;[o;;[o;
-;@ ;o;;{ ;iò;[o;	;@ ;iò;["	cite;0o;&;@ ;iò;["fn;0;iò;T;	@;i ;
-[o;;o;$;;%;"700;	@;";#;iô;	@;["font-weight;i ;
-[ o;;o;$;;%;"normal;	@;";#;iö;	@;["font-style;i ;
-[ o;;["
-a.url;o;;" ;iú;[o;;[o;
-;@È;o;;{ ;iú;[o;	;@È;iú;["a;0o;&;@È;iú;["url;0;iú;T;	@;i ;
-[ o;;["	time;o;;" ;i†;[o;;[o;
-;@¸;o;;{ ;i†;[o;	;@¸;i†;["	time;0;0;i†;T;	@;i ;
-[o;;o;$;;%;"
-right;	@;";#;i°;	@;["
-float;i ;
-[ o;;["a;o;;" ;i£;[o;;[o;
-;@;o;;{ ;i£;[o;	;@;i£;["a;0;0;i£;T;	@;i ;
-[o;;o;$;;%;"	#999;	@;";#;i§;	@;["
-color;i ;
-[ o;;o;$;;%;"	none;	@;";#;i•;	@;["text-decoration;i ;
-[ o;;["&:hover;o;;" ;iß;[o;;[o;
-;@.;o;;{ ;iß;[o;';@.;ißo;(
-;;);@.;iß;["
-hover;*0;0;iß;T;	@;i ;
-[o;;o;$;;%;"underline;	@;";#;i®;	@;["text-decoration;i ;
-[ o;;["img.photo;o;;" ;iØ;[o;;[o;
-;@E;o;;{ ;iØ;[o;	;@E;iØ;["img;0o;&;@E;iØ;["
-photo;0;iØ;T;	@;i ;
-[ o;;["img.avatar;o;;" ;i±;[o;;[o;
-;@X;o;;{ ;i±;[o;	;@X;i±;["img;0o;&;@X;i±;["avatar;0;i±;T;	@;i ;
-[
-o;;o;$;;%;"absolute;	@;";#;i≤;	@;["position;i ;
-[ o;;o;$;;%;"	10px;	@;";#;i≥;	@;["	left;i ;
-[ o;;o;$;;%;"2px;	@;";#;i¥;	@;["padding;i ;
-[ o;;o;$;;%;"1px solid #cecece;	@;";#;iµ;	@;["border;i ;
-[ o;;o;$;;%;"	#fff;	@;";#;i∂;	@;["background;i ;
-[ o;
-;;;[""/* end .commentlist .vcard */;iπ;	@;
-[ o;
-;;;["/* comment meta */;iº;	@;
-[ o;;[".comment-meta;o;;" ;iΩ;[o;;[o;
-;@ë;o;;{ ;iΩ;[o;&;@ë;iΩ;["comment-meta;0;iΩ;T;	@;i ;
-[o;;["a;o;;" ;iø;[o;;[o;
-;@°;o;;{ ;iø;[o;	;@°;iø;["a;0;0;iø;T;	@;i ;
-[ o;;[".commentmetadata;o;;" ;i√;[o;;[o;
-;@±;o;;{ ;i√;[o;&;@±;i√;["commentmetadata;0;i√;T;	@;i ;
-[o;;["a;o;;" ;i≈;[o;;[o;
-;@¡;o;;{ ;i≈;[o;	;@¡;i≈;["a;0;0;i≈;T;	@;i ;
-[ o;
-;;;["/* comment content */;i…;	@;
-[ o;;[".comment_content;o;;" ;i ;[o;;[o;
-;@’;o;;{ ;i ;[o;&;@’;i ;["comment_content;0;i ;T;	@;i ;
-[o;;o;$;;%;"	70px;	@;";#;iÀ;	@;["margin-left;i ;
-[ o;;["p;o;;" ;iÕ;[o;;[o;
-;@Î;o;;{ ;iÕ;[o;	;@Î;iÕ;["p;0;0;iÕ;T;	@;i ;
-[o;;o;$;;%;"0.7335em 0 1.5em;	@;";#;iŒ;	@;["margin;i ;
-[ o;;o;$;;%;"1em;	@;";#;iœ;	@;["font-size;i ;
-[ o;;o;$;;%;"
-1.5em;	@;";#;i–;	@;["line-height;i ;
-[ o;
-;;;[",/* end .commentlist .comment_content */;i”;	@;
-[ o;
-;;;["/* comment reply link */;i’;	@;
-[ o;;[".comment-reply-link;o;;" ;i÷;[o;;[o;
-;@;o;;{ ;i÷;[o;&;@;i÷;["comment-reply-link;0;i÷;T;	@;i ;
-[o;;o;$;;%;"	none;	@;";#;i◊;	@;["text-decoration;i ;
-[ o;;o;$;;%;"
-right;	@;";#;iÿ;	@;["
-float;i ;
-[ o;;o;$;;%;"#4598bb;	@;";#;iŸ;	@;["background;i ;
-[ o;;o;$;;%;"3px 5px;	@;";#;i⁄;	@;["padding;i ;
-[ o;;o;$;;%;"	#fff;	@;";#;i€;	@;["
-color;i ;
-[ o;;o;$;;%;"	0.65;	@;";#;i‹;	@;["opacity;i ;
-[ o;;o;$;;%;"	10px;	@;";#;i›;	@;["margin-bottom;i ;
-[ o;;o;$;;%;"700;	@;";#;iﬁ;	@;["font-weight;i ;
-[ o;;o;$;;%;"
-0.9em;	@;";#;iﬂ;	@;["font-size;i ;
-[ o;;["&:hover,
-		&:focus;o;;" ;i‚;[o;;[o;
-;@[;o;;{ ;i‚;[o;';@[;i‚o;(
-;;);@[;i‚;["
-hover;*0;0o;;["
-o;
-;@[;o;;{ ;i‚;[o;';@[;i‚o;(
-;;);@[;i‚;["
-focus;*0;0;i‚;T;	@;i ;
-[o;;o;$;;%;"1;	@;";#;i„;	@;["opacity;i ;
-[ o;
-;;;["//* end .commentlist .comment-reply-link */;iÊ;	@;
-[ o;
-;;;["/* end .commentlist */;iË;	@;
-[ o;
-;;;["õ/******************************************************************
-COMMENT FORM STYLES
-******************************************************************/;iÍ;	@;
-[ o;;[".respond-form;o;;" ;iÓ;[o;;[o;
-;@â;o;;{ ;iÓ;[o;&;@â;iÓ;["respond-form;0;iÓ;T;	@;i ;
-[o;;o;$;;%;"1.5em 10px;	@;";#;iÔ;	@;["margin;i ;
-[ o;;o;$;;%;"
-2.2em;	@;";#;i;	@;["padding-bottom;i ;
-[ o;;["	form;o;;" ;iÚ;[o;;[o;
-;@•;o;;{ ;iÚ;[o;	;@•;iÚ;["	form;0;0;iÚ;T;	@;i ;
-[
-o;;o;$;;%;"0.75em 0;	@;";#;iÛ;	@;["margin;i ;
-[ o;;["li;o;;" ;iı;[o;;[o;
-;@ª;o;;{ ;iı;[o;	;@ª;iı;["li;0;0;iı;T;	@;i ;
-[	o;;o;$;;%;"	none;	@;";#;iˆ;	@;["list-style-type;i ;
-[ o;;o;$;;%;"	both;	@;";#;i˜;	@;["
-clear;i ;
-[ o;;o;$;;%;"0.7335em;	@;";#;i¯;	@;["margin-bottom;i ;
-[ o;;["label,
-			small;o;;" ;i˚;[o;;[o;
-;@›;o;;{ ;i˚;[o;	;@›;i˚;["
-label;0;0o;;["
-o;
-;@›;o;;{ ;i˚;[o;	;@›;i˚;["
-small;0;0;i˚;T;	@;i ;
-[o;;o;$;;%;"	none;	@;";#;i¸;	@;["display;i ;
-[ o;;["Iinput[type=text],
-		input[type=email],
-		input[type=url],
-		textarea;o;;" ;i;[	o;;[o;
-;@˝;o;;{ ;i;[o;	;@˝;i;["
-input;0o;4;["	text;@˝;i;50;["	type;0;6"=;0o;;["
-o;
-;@˝;o;;{ ;i;[o;	;@˝;i;["
-input;0o;4;["
-email;@˝;i;50;["	type;0;6"=;0o;;["
-o;
-;@˝;o;;{ ;i;[o;	;@˝;i;["
-input;0o;4;["url;@˝;i;50;["	type;0;6"=;0o;;["
-o;
-;@˝;o;;{ ;i;[o;	;@˝;i;["textarea;0;0;i;T;	@;i ;
-[o;;o;$;;%;"3px 6px;	@;";#;i;	@;["padding;i ;
-[ o;;o;$;;%;"#efefef;	@;";#;i;	@;["background;i ;
-[ o;;o;$;;%;"2px solid #cecece;	@;";#;i;	@;["border;i ;
-[ o;;o;$;;%;"
-1.5em;	@;";#;i;	@;["line-height;i ;
-[ o;;["&:focus;o;;" ;i	;[o;;[o;
-;@U;o;;{ ;i	;[o;';@U;i	o;(
-;;);@U;i	;["
-focus;*0;0;i	;T;	@;i ;
-[o;;o;$;;%;"	#fff;	@;";#;i
-;	@;["background;i ;
-[ o;
-;;;["/* form validation */;i;	@;
-[ o;;["&:invalid;o;;" ;i;[o;;[o;
-;@p;o;;{ ;i;[o;';@p;io;(
-;;);@p;i;["invalid;*0;0;i;T;	@;i ;
-[o;;o;$;;%;"	none;	@;";#;i;	@;["outline;i ;
-[ o;;o;$;;%;"#fbc2c4;	@;";#;i;	@;["border-color;i ;
-[ o;;o;$;;%;"#f6e7eb;	@;";#;i;	@;["background-color;i ;
-[ o;;o;$;;%;"	none;	@;";#;i;	@;["-webkit-box-shadow;i ;
-[ o;;o;$;;%;"	none;	@;";#;i;	@;["-moz-box-shadow;i ;
-[ o;;o;$;;%;"	none;	@;";#;i;	@;["-ms-box-shadow;i ;
-[ o;;o;$;;%;"	none;	@;";#;i;	@;["box-shadow;i ;
-[ o;;["=input[type=text],
-		input[type=email],
-		input[type=url];o;;" ;i;[o;;[o;
-;@´;o;;{ ;i;[o;	;@´;i;["
-input;0o;4;["	text;@´;i;50;["	type;0;6"=;0o;;["
-o;
-;@´;o;;{ ;i;[o;	;@´;i;["
-input;0o;4;["
-email;@´;i;50;["	type;0;6"=;0o;;["
-o;
-;@´;o;;{ ;i;[o;	;@´;i;["
-input;0o;4;["url;@´;i;50;["	type;0;6"=;0;i;T;	@;i ;
-[o;;o;$;;%;"
-400px;	@;";#;i;	@;["max-width;i ;
-[ o;;o;$;;%;"
-250px;	@;";#;i;	@;["min-width;i ;
-[ o;;["textarea;o;;" ;i ;[o;;[o;
-;@Ì;o;;{ ;i ;[o;	;@Ì;i ;["textarea;0;0;i ;T;	@;i ;
-[o;;o;$;;%;"	none;	@;";#;i!;	@;["resize;i ;
-[ o;;o;$;;%;"
-97.3%;	@;";#;i";	@;["
-width;i ;
-[ o;;o;$;;%;"
-150px;	@;";#;i#;	@;["height;i ;
-[ o;
-;;;[" /* comment submit button */;i);	@;
-[ o;;["#submit;o;;" ;i*;[o;;[o;
-;@;o;;{ ;i*;[o;3;@;i*;["submit;0;i*;T;	@;i ;
-[ o;
-;;;["/* comment form title */;i,;	@;
-[ o;;["#comment-form-title;o;;" ;i-;[o;;[o;
-;@';o;;{ ;i-;[o;3;@';i-;["comment-form-title;0;i-;T;	@;i ;
-[o;;o;$;;%;"1.75em;	@;";#;i.;	@;["font-size;i ;
-[ o;;o;$;;%;"
-1.4em;	@;";#;i/;	@;["line-height;i ;
-[ o;;o;$;;%;"0.375em;	@;";#;i0;	@;["margin-bottom;i ;
-[ o;;o;$;;%;"1px solid;	@;";#;i1;	@;["border-top;i ;
-[ o;;o;$;;%;"	10px;	@;";#;i2;	@;["padding-top;i ;
-[ o;;o;$;;%;"	none;	@;";#;i3;	@;["border-left;i ;
-[ o;;o;$;;%;"
-1.5em;	@;";#;i4;	@;["margin-top;i ;
-[ o;
-;;;["$/* cancel comment reply link */;i7;	@;
-[ o;;["#cancel-comment-reply;o;;" ;i8;[o;;[o;
-;@e;o;;{ ;i8;[o;3;@e;i8;["cancel-comment-reply;0;i8;T;	@;i ;
-[o;;["a;o;;" ;i9;[o;;[o;
-;@u;o;;{ ;i9;[o;	;@u;i9;["a;0;0;i9;T;	@;i ;
-[ o;
-;;;["/* logged in comments */;i<;	@;
-[ o;;[".comments-logged-in-as;o;;" ;i=;[o;;[o;
-;@â;o;;{ ;i=;[o;&;@â;i=;["comments-logged-in-as;0;i=;T;	@;i ;
-[ o;
-;;;["/* allowed tags */;i?;	@;
-[ o;;["#allowed_tags;o;;" ;i@;[o;;[o;
-;@ù;o;;{ ;i@;[o;3;@ù;i@;["allowed_tags;0;i@;T;	@;i ;
-[o;;o;$;;%;"1.5em 10px 0.7335em 0;	@;";#;iA;	@;["margin;i ;
-[ o;
-;;;["/* no comments */;iD;	@;
-[ o;;[".nocomments;o;;" ;iE;[o;;[o;
-;@∑;o;;{ ;iE;[o;&;@∑;iE;["nocomments;0;iE;T;	@;i ;
-[o;;o;$;;%;"0 20px 1.1em;	@;";#;iF;	@;["margin;i ;
-[ o;
-;;;["D/*********************
-SIDEBARS & ASIDES
-*********************/;iI;	@;
-[ o;;[".sidebar;o;;" ;iM;[o;;[o;
-;@—;o;;{ ;iM;[o;&;@—;iM;["sidebar;0;iM;T;	@;i ;
-[ o;;[".widgettitle;o;;" ;iO;[o;;[o;
-;@·;o;;{ ;iO;[o;&;@·;iO;["widgettitle;0;iO;T;	@;i ;
-[ o;;[".widget;o;;" ;iQ;[o;;[o;
-;@Ò;o;;{ ;iQ;[o;&;@Ò;iQ;["widget;0;iQ;T;	@;i ;
-[o;;["ul;o;;" ;iS;[o;;[o;
-;@;o;;{ ;iS;[o;	;@;iS;["ul;0;0;iS;T;	@;i ;
-[o;;["li;o;;" ;iU;[o;;[o;
-;@;o;;{ ;iU;[o;	;@;iU;["li;0;0;iU;T;	@;i ;
-[
-o;;["&:first-child;o;;" ;iW;[o;;[o;
-;@!;o;;{ ;iW;[o;';@!;iWo;(
-;;);@!;iW;["first-child;*0;0;iW;T;	@;i ;
-[ o;;["&:last-child;o;;" ;iY;[o;;[o;
-;@2;o;;{ ;iY;[o;';@2;iYo;(
-;;);@2;iY;["last-child;*0;0;iY;T;	@;i ;
-[ o;;["a;o;;" ;i[;[o;;[o;
-;@C;o;;{ ;i[;[o;	;@C;i[;["a;0;0;i[;T;	@;i ;
-[ o;
-;;;["/* deep nesting */;i];	@;
-[ o;;["ul;o;;" ;i^;[o;;[o;
-;@W;o;;{ ;i^;[o;	;@W;i^;["ul;0;0;i^;T;	@;i ;
-[ o;
-;;;["@/*********************
-FOOTER STYLES
-*********************/;if;	@;
-[ o;;[".footer;o;;" ;ij;[o;;[o;
-;@k;o;;{ ;ij;[o;&;@k;ij;["footer;0;ij;T;	@;i ;
-[o;;o;$;;%;"	both;	@;";#;ik;	@;["
-clear;i ;
-[ o;
-;;;["ı/*
-if you checked out the link above:
-http://www.alistapart.com/articles/organizing-mobile/
-you'll want to style the footer nav
-a bit more in-depth. Remember to keep
-it simple because you'll have to
-override these styles for the desktop
-view.
-*/;in;	@;
-[ o;;[".footer-links;o;;" ;iw;[o;;[o;
-;@Ö;o;;{ ;iw;[o;&;@Ö;iw;["footer-links;0;iw;T;	@;i ;
-[o;;["ul;o;;" ;iy;[o;;[o;
-;@ï;o;;{ ;iy;[o;	;@ï;iy;["ul;0;0;iy;T;	@;i ;
-[o;;["li;o;;" ;i{;[o;;[o;
-;@•;o;;{ ;i{;[o;	;@•;i{;["li;0;0;i{;T;	@;i ;
-[ o;
-;;;["/* end .footer-links */;i;	@;
-[ o;;[".copyright;o;;" ;iÇ;[o;;[o;
-;@π;o;;{ ;iÇ;[o;&;@π;iÇ;["copyright;0;iÇ;T;	@;i ;
-[ o;;[".wp-caption;o;;" ;iÑ;[o;;[o;
-;@…;o;;{ ;iÑ;[o;&;@…;iÑ;["wp-caption;0;iÑ;T;	@;i ;
-[	o;;o;$;;%;"	100%;	@;";#;iÖ;	@;["max-width;i ;
-[ o;
-;;;["N/* When images are too wide for containing element, force them to fit. */;iÖ;	@;
-[ o;;o;$;;%;"	auto;	@;";#;iÜ;	@;["height;i ;
-[ o;
-;;;["K/* Override height to match resized width for correct aspect ratio. */;iÜ;	@;
-[ o;;[".pn;o;;" ;iâ;[o;;[o;
-;@Ì;o;;{ ;iâ;[o;&;@Ì;iâ;["pn;0;iâ;T;	@;i ;
-[o;;o;$;;%;"	10px;	@;";#;iä;	@;["padding;i ;
-[ o;;o;$;;%;"	#EEE;	@;";#;iã;	@;["background-color;i ;
-[ o;
-;;;["5/*********************
-Au
-*********************/;ié;	@;
-[ o;;[".WPD-Red a;o;;" ;ië;[o;;[o;
-;@;o;;{ ;ië;[o;&;@;ië;["WPD-Red;0o;
-;@;o;;{ ;ië;[o;	;@;ië;["a;0;0;ië;T;	@;i ;
-[o;;o;$;;%;"red;	@;";#;ií;	@;["background-color;i ;
-[ o;;o;$;;%;"5px;	@;";#;iì;	@;["padding;i ;
-[ o;;o;$;;%;"	#fff;	@;";#;iî;	@;["
-color;i ;
-[ o;;[".WPD-Gold a;o;;" ;iñ;[o;;[o;
-;@6;o;;{ ;iñ;[o;&;@6;iñ;["WPD-Gold;0o;
-;@6;o;;{ ;iñ;[o;	;@6;iñ;["a;0;0;iñ;T;	@;i ;
-[o;;o;$;;%;"#daa520;	@;";#;ió;	@;["background-color;i ;
-[ o;;o;$;;%;"5px;	@;";#;iò;	@;["padding;i ;
-[ o;;o;$;;%;"	#000;	@;";#;iô;	@;["
-color;i ;
-[ o;;[".WPD-Black a;o;;" ;iõ;[o;;[o;
-;@_;o;;{ ;iõ;[o;&;@_;iõ;["WPD-Black;0o;
-;@_;o;;{ ;iõ;[o;	;@_;iõ;["a;0;0;iõ;T;	@;i ;
-[o;;o;$;;%;"	#000;	@;";#;iú;	@;["background-color;i ;
-[ o;;o;$;;%;"5px;	@;";#;iù;	@;["padding;i ;
-[ o;;o;$;;%;"	#fff;	@;";#;iû;	@;["
-color;i ;
-[ o;;[".WPD-Pink a;o;;" ;i†;[o;;[o;
-;@à;o;;{ ;i†;[o;&;@à;i†;["WPD-Pink;0o;
-;@à;o;;{ ;i†;[o;	;@à;i†;["a;0;0;i†;T;	@;i ;
-[o;;o;$;;%;"#ffc0cb;	@;";#;i°;	@;["background-color;i ;
-[ o;;o;$;;%;"5px;	@;";#;i¢;	@;["padding;i ;
-[ o;;o;$;;%;"	#fff;	@;";#;i£;	@;["
-color;i ;
-[ o;;[".WPD-Olive a;o;;" ;i•;[o;;[o;
-;@±;o;;{ ;i•;[o;&;@±;i•;["WPD-Olive;0o;
-;@±;o;;{ ;i•;[o;	;@±;i•;["a;0;0;i•;T;	@;i ;
-[o;;o;$;;%;"#808000;	@;";#;i¶;	@;["background-color;i ;
-[ o;;o;$;;%;"5px;	@;";#;iß;	@;["padding;i ;
-[ o;;o;$;;%;"	#fff;	@;";#;i®;	@;["
-color;i ;
-[ o;;[".WPD-Grey a;o;;" ;i™;[o;;[o;
-;@⁄;o;;{ ;i™;[o;&;@⁄;i™;["WPD-Grey;0o;
-;@⁄;o;;{ ;i™;[o;	;@⁄;i™;["a;0;0;i™;T;	@;i ;
-[o;;o;$;;%;"	#333;	@;";#;i´;	@;["background-color;i ;
-[ o;;o;$;;%;"5px;	@;";#;i¨;	@;["padding;i ;
-[ o;;o;$;;%;"	#fff;	@;";#;i≠;	@;["
-color;i ;
-[ o;;[".WPD-Green a;o;;" ;iØ;[o;;[o;
-;@;o;;{ ;iØ;[o;&;@;iØ;["WPD-Green;0o;
-;@;o;;{ ;iØ;[o;	;@;iØ;["a;0;0;iØ;T;	@;i ;
-[o;;o;$;;%;"
-green;	@;";#;i∞;	@;["background-color;i ;
-[ o;;o;$;;%;"5px;	@;";#;i±;	@;["padding;i ;
-[ o;;o;$;;%;"	#fff;	@;";#;i≤;	@;["
-color;i ;
-[ o;;[".WPD-Purple a;o;;" ;i¥;[o;;[o;
-;@,;o;;{ ;i¥;[o;&;@,;i¥;["WPD-Purple;0o;
-;@,;o;;{ ;i¥;[o;	;@,;i¥;["a;0;0;i¥;T;	@;i ;
-[o;;o;$;;%;"purple;	@;";#;iµ;	@;["background-color;i ;
-[ o;;o;$;;%;"5px;	@;";#;i∂;	@;["padding;i ;
-[ o;;o;$;;%;"	#fff;	@;";#;i∑;	@;["
-color;i ;
-[ o;;[".WPD-Blue a;o;;" ;iπ;[o;;[o;
-;@U;o;;{ ;iπ;[o;&;@U;iπ;["WPD-Blue;0o;
-;@U;o;;{ ;iπ;[o;	;@U;iπ;["a;0;0;iπ;T;	@;i ;
-[o;;o;$;;%;"	blue;	@;";#;i∫;	@;["background-color;i ;
-[ o;;o;$;;%;"5px;	@;";#;iª;	@;["padding;i ;
-[ o;;o;$;;%;"	#fff;	@;";#;iº;	@;["
-color;i ;
-[ o;;[".WPD-lime a;o;;" ;iæ;[o;;[o;
-;@~;o;;{ ;iæ;[o;&;@~;iæ;["WPD-lime;0o;
-;@~;o;;{ ;iæ;[o;	;@~;iæ;["a;0;0;iæ;T;	@;i ;
-[o;;o;$;;%;"#00FF00;	@;";#;iø;	@;["background-color;i ;
-[ o;;o;$;;%;"5px;	@;";#;i¿;	@;["padding;i ;
-[ o;;o;$;;%;"	#000;	@;";#;i¡;	@;["
-color;i ;
-[ o;;[".WPD-Brown a;o;;" ;i√;[o;;[o;
-;@ß;o;;{ ;i√;[o;&;@ß;i√;["WPD-Brown;0o;
-;@ß;o;;{ ;i√;[o;	;@ß;i√;["a;0;0;i√;T;	@;i ;
-[o;;o;$;;%;"#a52a2a;	@;";#;iƒ;	@;["background-color;i ;
-[ o;;o;$;;%;"5px;	@;";#;i≈;	@;["padding;i ;
-[ o;;o;$;;%;"	#fff;	@;";#;i∆;	@;["
-color;i ;
-[ o;;[".WPD-White a;o;;" ;i»;[o;;[o;
-;@–;o;;{ ;i»;[o;&;@–;i»;["WPD-White;0o;
-;@–;o;;{ ;i»;[o;	;@–;i»;["a;0;0;i»;T;	@;i ;
-[
-o;;o;$;;%;"	#fff;	@;";#;i…;	@;["background-color;i ;
-[ o;;o;$;;%;"5px;	@;";#;i ;	@;["padding;i ;
-[ o;;o;$;;%;"	#000;	@;";#;iÀ;	@;["
-color;i ;
-[ o;;o;$;;%;"1px solid;	@;";#;iÃ;	@;["border;i ;
-[ o;;o;$;;%;"	#CCC;	@;";#;iÕ;	@;["border-color;i ;
-[ o;;[".WPD-Yellow a;o;;" ;iœ;[o;;[o;
-;@;o;;{ ;iœ;[o;&;@;iœ;["WPD-Yellow;0o;
-;@;o;;{ ;iœ;[o;	;@;iœ;["a;0;0;iœ;T;	@;i ;
-[o;;o;$;;%;"yellow;	@;";#;i–;	@;["background-color;i ;
-[ o;;o;$;;%;"5px;	@;";#;i—;	@;["padding;i ;
-[ o;;o;$;;%;"	#000;	@;";#;i“;	@;["
-color;i ;
-[ o;;[".WPD-Orange a;o;;" ;i‘;[o;;[o;
-;@.;o;;{ ;i‘;[o;&;@.;i‘;["WPD-Orange;0o;
-;@.;o;;{ ;i‘;[o;	;@.;i‘;["a;0;0;i‘;T;	@;i ;
-[o;;o;$;;%;"orange;	@;";#;i’;	@;["background-color;i ;
-[ o;;o;$;;%;"5px;	@;";#;i÷;	@;["padding;i ;
-[ o;;o;$;;%;"	#fff;	@;";#;i◊;	@;["
-color;i ;
-[ o;;[".WPD-Beige a;o;;" ;iŸ;[o;;[o;
-;@W;o;;{ ;iŸ;[o;&;@W;iŸ;["WPD-Beige;0o;
-;@W;o;;{ ;iŸ;[o;	;@W;iŸ;["a;0;0;iŸ;T;	@;i ;
-[o;;o;$;;%;"#f5eece;	@;";#;i⁄;	@;["background-color;i ;
-[ o;;o;$;;%;"5px;	@;";#;i€;	@;["padding;i ;
-[ o;;o;$;;%;"	#000;	@;";#;i‹;	@;["
-color;i ;
-[ 
