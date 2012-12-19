@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /******************************************************************
 Site Name:
 Author:
@@ -1606,41 +1607,48 @@ Au
 }
 
 /* line 943, ../scss/_base.scss */
+.WPD-Gray a {
+  background-color: #333;
+  padding: 5px;
+  color: #fff;
+}
+
+/* line 948, ../scss/_base.scss */
 .WPD-Green a {
   background-color: green;
   padding: 5px;
   color: #fff;
 }
 
-/* line 948, ../scss/_base.scss */
+/* line 953, ../scss/_base.scss */
 .WPD-Purple a {
   background-color: purple;
   padding: 5px;
   color: #fff;
 }
 
-/* line 953, ../scss/_base.scss */
+/* line 958, ../scss/_base.scss */
 .WPD-Blue a {
   background-color: blue;
   padding: 5px;
   color: #fff;
 }
 
-/* line 958, ../scss/_base.scss */
+/* line 963, ../scss/_base.scss */
 .WPD-lime a {
   background-color: #00FF00;
   padding: 5px;
   color: #000;
 }
 
-/* line 963, ../scss/_base.scss */
+/* line 968, ../scss/_base.scss */
 .WPD-Brown a {
   background-color: #a52a2a;
   padding: 5px;
   color: #fff;
 }
 
-/* line 968, ../scss/_base.scss */
+/* line 973, ../scss/_base.scss */
 .WPD-White a {
   background-color: #fff;
   padding: 5px;
@@ -1649,21 +1657,21 @@ Au
   border-color: #CCC;
 }
 
-/* line 975, ../scss/_base.scss */
+/* line 980, ../scss/_base.scss */
 .WPD-Yellow a {
   background-color: yellow;
   padding: 5px;
   color: #000;
 }
 
-/* line 980, ../scss/_base.scss */
+/* line 985, ../scss/_base.scss */
 .WPD-Orange a {
   background-color: orange;
   padding: 5px;
   color: #fff;
 }
 
-/* line 985, ../scss/_base.scss */
+/* line 990, ../scss/_base.scss */
 .WPD-Beige a {
   background-color: #f5eece;
   padding: 5px;
