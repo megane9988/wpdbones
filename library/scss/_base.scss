@@ -188,6 +188,7 @@ and moe scalable.
 .nav {
 	border: 1px solid #ccc;
 	border-bottom: 0;
+	clear: both;
 
 	li {
 
@@ -906,6 +907,13 @@ height: auto; /* Override height to match resized width for correct aspect ratio
 padding: 10px;
 background-color: #EEE;
 }
+
+#logo img{
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 10px;
+}
+
 
 /*********************
 Au

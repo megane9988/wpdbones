@@ -82,13 +82,14 @@
 				<div id="inner-header" class="wrap clearfix">
 					
 					<!-- to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> -->
-					<p id="logo" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>
+					<p id="logo" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><img src="http://i0.wp.com/wp-d.org/wp-content/uploads/599893_4337399042342_1300542086_n.jpg?resize=150%2C150" alt="" title="WP-D" class="aligncenter size-thumbnail wp-image-160" data-recalc-dims="1" /></a></p>
+
 					
 					<!-- if you'd like to use the site description you can un-comment it below -->
-					<?php // bloginfo('description'); ?>
+					<p class="h1" style="margin: 0; padding-top: 20px;">WP-D</p><?php bloginfo('description'); ?>
 					
 					
-					<nav role="navigation">
+					<nav role="navigation" class="clearfix">
 						<?php wpdbones_main_nav(); ?>
 					</nav>
 				
