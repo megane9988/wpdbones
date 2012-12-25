@@ -14,7 +14,7 @@
 							
 									<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
 							
-									<p class="byline vcard"><?php _e("Posted", "bonestheme"); ?> <time class="updated" datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('F jS, Y'); ?></time><br /><?php _e("by", "bonestheme"); ?> <span class="author <?php the_author(); ?>"><?php the_author_posts_link(); ?></span> <span class="amp">&amp;</span> <?php _e("filed under", "bonestheme"); ?> <?php the_category(', '); ?>.</p>
+									<p class="byline vcard"><?php _e("Posted", "bonestheme"); ?> <time class="updated" datetime="<?php echo the_time('Y-m-j'); ?>" 投稿日：<?php the_time('Y年m月d日（D）'); ?></time><br /><?php _e("by", "bonestheme"); ?> <span class="author <?php the_author(); ?>"><?php the_author_posts_link(); ?></span> <span class="amp">&amp;</span> <?php _e("filed under", "bonestheme"); ?> <?php the_category(', '); ?>.</p>
 						
 								</header> <!-- end article header -->
 								<div class="sbver">
