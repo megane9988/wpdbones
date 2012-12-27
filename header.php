@@ -86,7 +86,7 @@
 
 					
 					<!-- if you'd like to use the site description you can un-comment it below -->
-					<p class="h1" style="margin: 0; padding-top: 20px;">WP-D</p><?php bloginfo('description'); ?>
+					<p class="h1" style="margin: 0; padding-top: 20px;"><a href="<?php echo home_url(); ?>" rel="nofollow">WP-D</a></p><?php bloginfo('description'); ?>
 					
 					
 					<nav role="navigation" class="clearfix">
