@@ -747,7 +747,6 @@ COMMENT FORM STYLES
 
 .respond-form {
 	margin: 1.5em 10px;
-	padding-bottom: 2.2em;
 
 	form {
 		margin: 0.75em 0;
@@ -997,7 +996,56 @@ Au
 			padding: 5px;
 			color: #000;
 		}
+.WPD-Aqua a{
+			background-color:#f5eece;
+			padding: 5px;
+			color: #00ffff;
+		}
+.WPD-Ivory a{
+			background-color:#fffff0;
+			padding: 5px;
+			color: #000;
+		}
+.WPD-Navy a{
+			background-color:#000080;
+			padding: 5px;
+			color: #fff;
+		}
+.WPD-Salmon a{
+			background-color:#fa8072;
+			padding: 5px;
+			color: #000;
+		}
 
+a.yarpp-thumbnail-megane{
+			border: 1px solid rgba(127,127,127,0.1);
+			width: 130px;
+			height: 210px;
+			margin: 5px;
+			margin-left: 0px;
+			vertical-align: top;
+}
+span.yarpp-thumbnail-title-megane {
+			font-size: 0.8em;
+			max-height: 5.3em;
+			line-height: 1.4em;
+			margin: 7px;
+			margin-top: 0px;
+			width: 120px;
+			text-decoration: inherit;
+			overflow: hidden;
+}
+.yarpp-thumbnail-title-megane,.yarpp-thumbnail-megane{
+	display: inline-block;
+}
+.yarpp-thumbnails-horizontal .yarpp-thumbnail-megane > img, .yarpp-thumbnails-horizontal .yarpp-thumbnail-default {
+display: block;
+}
+.yarpp-thumbnail-megane > img, .yarpp-thumbnail-default {
+width: 120px;
+height: 120px;
+margin: 5px;
+}
 		
 		
 

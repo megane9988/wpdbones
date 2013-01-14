@@ -28,17 +28,21 @@
 								<div class="sbver">
 									<?php SocialButtonVertical(); ?>
 								</div>
+
 								<div class="adtxt">
 									<?php do_action('wpdbones-ad-content-below'); ?>
 								</div>	
-<ul class="pn">
-	<li><?php previous_post_link('前の記事：%link を読む'); ?></li>
-	<li><?php next_post_link('次の記事：%link を読む'); ?></li>
-</ul>
+  <div class="related_entries">
+  <?php related_posts(); ?>
+  </div>
+					<!-- end article footer -->
+								<?php comments_template(); ?>
+
 								<footer class="article-footer">
-<div class="otherPosts">
+									<?php the_tags('<p class="tags"><span class="tags-title">Tags:</span> ', ', ', '</p>'); ?>
+<div class="otherPosts clearfix">
 	<h3 class="<?php the_author_meta('display_name') ?>"><?php the_author_posts_link(); ?>の過去記事一覧</h3>
-	<div class="posts">
+	<div class="posts yarpp-thumbnails-horizontal">
 		<?php
             $author = get_the_author_meta('ID');
 			$otherPosts = get_posts(array(
@@ -47,21 +51,24 @@
 				));
 			if($otherPosts) :
 		?>
-		<ul>
+
 		<?php foreach( $otherPosts as $op ) : ?>
-			<li><a href="<?php echo get_permalink($op->ID); ?>"><?php echo get_the_title($op->ID); ?></a></li>
+			<a class="yarpp-thumbnail-megane" href="<?php echo get_permalink($op->ID); ?>"><?php echo get_the_post_thumbnail($op->ID); ?>
+				<span class="yarpp-thumbnail-title-megane"><?php echo get_the_title($op->ID); ?></span></a>
 		<?php endforeach; ?>
-		</ul>
 		<?php else : ?>
 		<p>過去記事はまだありません。</p>
 		<?php endif; ?>
 	</div>
 </div>
-									<?php the_tags('<p class="tags"><span class="tags-title">Tags:</span> ', ', ', '</p>'); ?>
+
 							
-								</footer> <!-- end article footer -->
-					
-								<?php comments_template(); ?>
+								</footer> 
+
+<ul class="pn">
+	<li><?php previous_post_link('前の記事：%link を読む'); ?></li>
+	<li><?php next_post_link('次の記事：%link を読む'); ?></li>
+</ul>
 					
 							</article> <!-- end article -->
 					
