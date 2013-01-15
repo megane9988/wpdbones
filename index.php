@@ -57,7 +57,7 @@
 								 	</div>
 								<?php endif; ?>
 							   <h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-							    <p class="byline vcard"><?php _e("Posted", "bonestheme"); ?> <time class="updated" datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('Y年m月d日（D）'); ?></time><br /><?php _e("by", "bonestheme"); ?> <span class="author <?php the_author(); ?>"><?php the_author_posts_link(); ?></span><span style="margin-left: 5px;"><?php the_category(', '); ?></span><br><?php comments_number(); ?></p>			
+							    <p class="byline vcard"><time class="updated" datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('Y年m月d日（D）'); ?></time> | <span class="author <?php the_author(); ?>"><?php the_author_posts_link(); ?></span> | <span style="margin-left: 5px;"><?php the_category(', '); ?></span> | <?php comments_number(); ?></p>			
 						    </section> <!-- end article section -->
 						
 						    <footer class="article-footer">
