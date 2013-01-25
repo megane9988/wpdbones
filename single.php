@@ -13,9 +13,6 @@
 								<header class="article-header">
 							
 									<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
-							
-									<p class="byline vcard"><time class="updated" datetime="<?php echo the_time('Y-m-j'); ?>" ><?php the_time('Y年m月d日（D）'); ?></time> | <span class="author <?php the_author(); ?>"><?php the_author_posts_link(); ?></span> <span class="amp"></span> | <?php the_category(', '); ?> | <?php comments_number(); ?>
-									</p>
 						
 								</header> <!-- end article header -->
 								<div class="sbver">
@@ -25,6 +22,9 @@
 								<section class="entry-content clearfix" itemprop="articleBody">
 									<?php the_content(); ?>
 								</section> <!-- end article section -->
+								<hr>						
+									<p class="byline vcard"><time class="updated" datetime="<?php echo the_time('Y-m-j'); ?>" ><?php the_time('Y年m月d日（D）'); ?></time> | <span class="author <?php the_author(); ?>"><?php the_author_posts_link(); ?></span> <span class="amp"></span> | <?php the_category(', '); ?> | <?php comments_number(); ?>
+									</p>
 								<div class="sbver">
 									<?php SocialButtonVertical(); ?>
 								</div>
