@@ -288,7 +288,7 @@ function SocialButtonVertical()
 <ul>
 <li>
     <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button"
-  data-hatena-bookmark-layout="vertical"
+  data-hatena-bookmark-layout="vertical-balloon"
   data-hatena-bookmark-url="<?php the_permalink(); ?>">
   <img src="http://b.st-hatena.com/images/entry-button/button-only.gif"
       alt="このエントリーをはてなブックマークに追加" width="20" height="20"
@@ -328,7 +328,6 @@ set_post_thumbnail_size(200, 200, true);
 
 // add actions
 add_image_size('meganeogp', 200, 200, true);
-remove_action( 'wp_head', 'jetpack_og_tags' );
 add_action( 'wpdbones-ad-header', 'wpdbones_ad_header' );
 add_action('wp_footer', 'wpdbones_bookmarks');
 add_action('wp_footer', 'scrollside');
