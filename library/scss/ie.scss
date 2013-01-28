@@ -20,8 +20,8 @@ import the mixins file so SASS can understand the variables.
 
 /* import mixins */
 @import "mixins";
-
 @import "481up";
+@import "grid";
 @import "768up";
 @import "1030up";
 
