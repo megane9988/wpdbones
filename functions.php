@@ -119,6 +119,14 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 
 function wpdbones_ad_content_side(){
 if ( function_exists('wp_is_mobile') && wp_is_mobile() ) :?>
+<div id="socialside" class="socialwidget">
+<p style="background-color: #145470;color: #fff;padding: 10px;margin-top: 0px;">フォローして新着情報をキャッチ！</p>
+<div class="fb-like-box" data-href="https://www.facebook.com/pages/WP-D/292801787485325" data-width="292" data-show-faces="false" data-stream="false" data-border-color="#000" data-header="true" style="background-color:#fff;width: 100%;"></div>
+<div style="margin-top: 10px;background-color: #fff;text-align: center;padding: 10px 0 5px 0;">
+<a href="https://twitter.com/wp_d_official" class="twitter-follow-button" data-show-count="false" data-lang="ja" data-size="large">@wp_d_officialさんをフォロー</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+</div>
 <script type="text/javascript"><!--
 google_ad_client = "ca-pub-2866035444666228";
 /* 小さいの */
@@ -131,13 +139,21 @@ google_ad_height = 60;
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
 <?php else: ?>
-<div class="clr"></div>
+<div id="socialside" class="socialwidget">
+<p style="background-color: #145470;color: #fff;padding: 10px;margin-top: 0px;">フォローして新着情報をキャッチ！</p>
+<div class="fb-like-box" data-href="https://www.facebook.com/pages/WP-D/292801787485325" data-width="292" data-show-faces="false" data-stream="false" data-border-color="#000" data-header="true" style="background-color:#fff;width: 100%;"></div>
+
+<div style="margin-top: 10px;background-color: #fff;text-align: center;padding: 10px 0 5px 0;">
+<a href="https://twitter.com/wp_d_official" class="twitter-follow-button" data-show-count="false" data-lang="ja" data-size="large">@wp_d_officialさんをフォロー</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+</div>
 <script type="text/javascript"><!--
 google_ad_client = "ca-pub-2866035444666228";
-/* 新2 */
-google_ad_slot = "5845455406";
-google_ad_width = 300;
-google_ad_height = 250;
+/* 336x280, 作成済み 09/04/19 */
+google_ad_slot = "4267328340";
+google_ad_width = 336;
+google_ad_height = 280;
 //-->
 </script>
 <script type="text/javascript"
@@ -145,6 +161,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
 <?php endif;
 }
+
 
 
 /**

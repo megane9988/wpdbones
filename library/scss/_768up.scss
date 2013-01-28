@@ -116,7 +116,18 @@ NAVIGATION STYLES
 *********************/
 
 .nav {
-	background: #eee;
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffffff 0%, #e9e5e2 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e9e5e2)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#e9e5e2 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffffff 0%,#e9e5e2 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffffff 0%,#e9e5e2 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ffffff 0%,#e9e5e2 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e9e5e2',GradientType=0 ); /* IE6-9 */
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+
 	border: 0;
 
 	li {
@@ -125,6 +136,9 @@ NAVIGATION STYLES
 
 		a {
 			border-bottom: 0;
+			padding-left: 20px;
+			padding-right: 20px;
+			border-right: 1px solid #ccc;
 
 			/*
 			you can use hover styles here even though this size
@@ -155,7 +169,7 @@ NAVIGATION STYLES
 
 				a {
 					padding-left: 10px;
-					border-right: 0;
+					border-right: 10px;
 					display: block;
 					width: 180px;
 					border-bottom: 1px solid #ccc;

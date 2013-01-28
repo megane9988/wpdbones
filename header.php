@@ -3,7 +3,7 @@
 <!--[if lt IE 7]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if (IE 7)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8"><![endif]-->
 <!--[if (IE 8)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9"><![endif]-->
-<!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
+<html <?php language_attributes(); ?> class="no-js">
 	
 	<head>
 		<meta charset="utf-8">
@@ -46,6 +46,7 @@
 		<!-- end of wordpress head -->
 			
 		
+<script type='text/javascript' src='http://wp-d.org/wp-content/themes/wpdbones/library/js/respond.min.js'></script>
 	</head>
 	
 	<body <?php body_class(); ?>>

@@ -9,16 +9,14 @@
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
 							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-						
-								<header class="article-header">
-							
-									<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
-						
-								</header> <!-- end article header -->
+								<?php do_action('wpdbones-ad-content-above'); ?>
 								<div class="sbver">
 									<?php SocialButtonVertical(); ?>
 								</div>
-								<?php do_action('wpdbones-ad-content-above'); ?>
+								<header class="article-header" style="clear:both">							
+									<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
+						
+								</header> <!-- end article header -->
 								<section class="entry-content clearfix" itemprop="articleBody">
 									<?php the_content(); ?>
 								</section> <!-- end article section -->
