@@ -139,8 +139,7 @@ function bones_scripts_and_styles() {
     }
 
     //adding scripts file in the footer
-    wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
-    wp_register_script( 'scrole', get_stylesheet_directory_uri() . '/library/js/jquery.exflexfixed-0.3.0.js', array( 'jquery' ), '', true );
+    wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/wpdbonesfooter.js', array( 'jquery' ), '', true );
 
     // enqueue styles and scripts
     wp_enqueue_script( 'bones-modernizr' );
@@ -153,7 +152,6 @@ function bones_scripts_and_styles() {
     */
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'bones-js' );
-    wp_enqueue_script( 'scrole' );
 
   }
 }
@@ -371,7 +369,7 @@ function bones_filter_ptags_on_images($content){
    return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 }
 
-// This removes the annoying […] to a Read More link
+// This removes the annoying [�因 to a Read More link
 function bones_excerpt_more($more) {
 	global $post;
 	// edit here if you like

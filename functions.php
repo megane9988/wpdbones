@@ -121,7 +121,7 @@ function wpdbones_ad_content_side(){
 if ( function_exists('wp_is_mobile') && wp_is_mobile() ) :?>
 <div id="socialside" class="socialwidget">
 <p style="background-color: #145470;color: #fff;padding: 10px;margin-top: 0px;">フォローして新着情報をキャッチ！</p>
-<div class="fb-like-box" data-href="https://www.facebook.com/pages/WP-D/292801787485325" data-width="292" data-show-faces="false" data-stream="false" data-border-color="#000" data-header="true" style="background-color:#fff;width: 100%;"></div>
+<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FWP-D%2F292801787485325&amp;width=292&amp;height=62&amp;show_faces=false&amp;colorscheme=light&amp;stream=false&amp;border_color&amp;header=false&amp;appId=269852913138083" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:292px; height:62px;" allowTransparency="true"></iframe>
 <div style="margin-top: 10px;background-color: #fff;text-align: center;padding: 10px 0 5px 0;">
 <a href="https://twitter.com/wp_d_official" class="twitter-follow-button" data-show-count="false" data-lang="ja" data-size="large">@wp_d_officialさんをフォロー</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
@@ -141,8 +141,9 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <?php else: ?>
 <div id="socialside" class="socialwidget">
 <p style="background-color: #145470;color: #fff;padding: 10px;margin-top: 0px;">フォローして新着情報をキャッチ！</p>
-<div class="fb-like-box" data-href="https://www.facebook.com/pages/WP-D/292801787485325" data-width="292" data-show-faces="false" data-stream="false" data-border-color="#000" data-header="true" style="background-color:#fff;width: 100%;"></div>
-
+<div class="fb-like-box" style="background-color:#fff;width: 100%;">
+  <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FWP-D%2F292801787485325&amp;width=292&amp;height=198&amp;show_faces=true&amp;colorscheme=light&amp;stream=false&amp;border_color&amp;header=false&amp;appId=269852913138083" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100%; height:198px;" allowTransparency="true"></iframe>
+</div>
 <div style="margin-top: 10px;background-color: #fff;text-align: center;padding: 10px 0 5px 0;">
 <a href="https://twitter.com/wp_d_official" class="twitter-follow-button" data-show-count="false" data-lang="ja" data-size="large">@wp_d_officialさんをフォロー</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>

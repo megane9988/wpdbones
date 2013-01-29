@@ -1,5 +1,5 @@
 3.2.3 (Media Mark)
-07baa1361579f02160eb4faaa75838357b50ed01
+b744db260d059fe0ac835c16c3296f0ee4531b2b
 o:Sass::Tree::RootNode
 :@template"<I
 
@@ -1065,7 +1065,7 @@ margin: 5px;
 .socialwidget{
 	background-color: #eee;
 	padding: 10px;
-	height: 210px;
+	height: 345px;
 	margin-bottom: 20px;
 }
 
@@ -2606,6 +2606,6 @@ width;i ;
 [	o;;o;$;;%;"	#eee;	@;";#;i';	@;["background-color;i ;
 [ o;;o;$;;%;"	10px;	@;";#;i(;	@;["padding;i ;
 [ o;;o;$;;%;"
-210px;	@;";#;i);	@;["height;i ;
+345px;	@;";#;i);	@;["height;i ;
 [ o;;o;$;;%;"	20px;	@;";#;i*;	@;["margin-bottom;i ;
 [ 
