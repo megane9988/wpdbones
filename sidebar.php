@@ -10,6 +10,9 @@
 						<h4 class="widgettitle">おすすめ図書</h4>
 						<a style="float: left; margin-right: 10px; "  href="http://wp-d.org/2013/01/24/2146/"><img style="width:100px;height:100px;" src="http://wp-d.org/wp-content/uploads/2013/01/kindle-200x200.jpg" alt="おすすめ図書"></a>
 						<p><a href="http://wp-d.org/2013/01/24/2146/">PHPをよく知らずにWordPressを扱う人にぜひ読んでほしい電子書籍の紹介（著者インタビュー）</a></p>
+						<div style="clear: both"></div>
+						<a style="float: left; margin-right: 10px; "  href="http://wp-d.org/2013/01/14/1938/"><img style="width:100px;height:100px;" src="http://i0.wp.com/wp-d.org/wp-content/uploads/2013/01/book2012.jpg?zoom=2&resize=200%2C200" alt="おすすめ図書"></a>
+						<p><a href="http://wp-d.org/2013/01/14/1938/">新春座談会 このコンピュータ書がすごい！ 2013年版</a></p>
 <h4 class="widgettitle" style="clear:both">ヘッドラインはじめました。</h4>
 <a style="float: left; margin-right: 10px;"  href="http://wp-d.org/2013/02/02/2378/" alt="ヘッドライン"><img  style="width:100px;height:100px;" src="http://wp-d.org/wp-content/uploads/2013/02/84685848_400x300-200x200.jpg" alt="おすすめ図書"></a>
 						<p><a href="http://wp-d.org/2013/02/02/2378/">2013年2月2日のWP-Dヘッドライン</a></p>
