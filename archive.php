@@ -1,22 +1,21 @@
 <?php get_header(); ?>
-			
 			<div id="content">
-			
+
 				<div id="inner-content" class="wrap clearfix">
-				
+
 				    <div id="main" class="eightcol first clearfix" role="main">
-				
+
 					    <?php if (is_category()) { ?>
 						    <h1 class="archive-title h2">
 							    <span><?php _e("Posts Categorized:", "bonestheme"); ?></span> <?php single_cat_title(); ?>
 					    	</h1>
-					    
-					    <?php } elseif (is_tag()) { ?> 
+
+					    <?php } elseif (is_tag()) { ?>
 						    <h1 class="archive-title h2">
 							    <span><?php _e("Posts Tagged:", "bonestheme"); ?></span> <?php single_tag_title(); ?>
 						    </h1>
-					    
-					    <?php } elseif (is_author()) { 
+
+					    <?php } elseif (is_author()) {
 					    	global $post;
 					    	$author_id = $post->post_author;
 					    ?>
@@ -29,12 +28,12 @@
 						    <h1 class="archive-title h2">
 	    						<span><?php _e("Daily Archives:", "bonestheme"); ?></span> <?php the_time('l, F j, Y'); ?>
 						    </h1>
-		
+
 		    			<?php } elseif (is_month()) { ?>
 			    		    <h1 class="archive-title h2">
 				    	    	<span><?php _e("Monthly Archives:", "bonestheme"); ?></span> <?php the_time('F Y'); ?>
 					        </h1>
-					
+
 					    <?php } elseif (is_year()) { ?>
 					        <h1 class="archive-title h2">
 					    	    <span><?php _e("Yearly Archives:", "bonestheme"); ?></span> <?php the_time('Y'); ?>
@@ -42,7 +41,7 @@
 					    <?php } ?>
 
 					    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-					    <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">	
+					    <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 						    <section class="entry-content clearfix">
 						   		<?php if ( has_post_thumbnail() )/*サムネイルがある時*/:?>
 								<div class="archivethum">
@@ -57,15 +56,15 @@
 								 	</div>
 								<?php endif; ?>
 							   <h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-							    <p class="byline vcard"><time class="updated" datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('Y年m月d日（D）'); ?></time> | <span class="author <?php the_author(); ?>"><?php the_author_posts_link(); ?></span> | <span style="margin-left: 5px;"><?php the_category(', '); ?></span> | <?php comments_number(); ?></p>			
+							    <p class="byline vcard"><time class="updated" datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('Y年m月d日（D）'); ?></time> | <span class="author <?php the_author(); ?>"><?php the_author_posts_link(); ?></span> | <span style="margin-left: 5px;"><?php the_category(', '); ?></span> | <?php comments_number(); ?></p>
 						    </section> <!-- end article section -->
-						
+
 						    <footer class="article-footer">
-							
+
 						    </footer> <!-- end article footer -->
 					    </article> <!-- end article -->
-					    <?php endwhile; ?>	
-					
+					    <?php endwhile; ?>
+
 					        <?php if (function_exists('bones_page_navi')) { ?>
 						        <?php bones_page_navi(); ?>
 					        <?php } else { ?>
@@ -76,9 +75,9 @@
 							        </ul>
 					    	    </nav>
 					        <?php } ?>
-					
+
 					    <?php else : ?>
-					
+
     					    <article id="post-not-found" class="hentry clearfix">
     						    <header class="article-header">
     							    <h1><?php _e("Oops, Post Not Found!", "bonestheme"); ?></h1>
@@ -90,15 +89,15 @@
     		    				    <p><?php _e("This is the error message in the archive.php template.", "bonestheme"); ?></p>
     			    			</footer>
     				    	</article>
-					
+
 					    <?php endif; ?>
-			
+
     				</div> <!-- end #main -->
-    
+
 	    			<?php get_sidebar(); ?>
-                
+
                 </div> <!-- end #inner-content -->
-                
+
 			</div> <!-- end #content -->
 
 <?php get_footer(); ?>
