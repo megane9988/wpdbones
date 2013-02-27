@@ -4,6 +4,26 @@
  */
 
 /*********************
+SCRIPTS & ENQUEUEING
+*********************/
+
+// loading modernizr and jquery, and reply script
+function wpdbones_scripts_and_styles() {
+  if (!is_admin()) {
+    
+    remove_filter( 'style_loader_src', 'bones_remove_wp_ver_css_js', 9999 );
+  	
+  	wp_dequeue_style( 'bones-stylesheet' );
+  	wp_dequeue_style( 'bones-ie-only' );
+  	
+    wp_enqueue_style( 'wpdbones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '20130227', 'all' );
+    wp_enqueue_style( 'bones-ie-only', '', array('wpdbones-stylesheet') );
+
+  }
+}
+add_action('wp_enqueue_scripts', 'wpdbones_scripts_and_styles', 9999);
+
+/*********************
 MENUS & NAVIGATION
 *********************/
 
