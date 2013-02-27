@@ -9,6 +9,7 @@
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
 							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+								<?php echo adrotate_ad(1); ?>
 								<?php do_action('wpdbones-ad-content-above'); ?>
 								<div class="sbver">
 									<?php SocialButtonVertical(); ?>
