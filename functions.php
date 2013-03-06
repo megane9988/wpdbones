@@ -16,7 +16,7 @@ function wpdbones_scripts_and_styles() {
   	wp_dequeue_style( 'bones-stylesheet' );
   	wp_dequeue_style( 'bones-ie-only' );
   	
-    wp_enqueue_style( 'wpdbones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '20130227', 'all' );
+    wp_enqueue_style( 'wpdbones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '20130307', 'all' );
     wp_enqueue_style( 'bones-ie-only', '', array('wpdbones-stylesheet') );
 
   }
@@ -163,7 +163,7 @@ google_ad_height = 60;
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
 <?php else: ?>
-  
+
   <h4 class="widgettitle">WP-D監修の本が出ます！</h4>
             <a href="http://www.amazon.co.jp/gp/product/4844363298/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=4844363298&linkCode=as2&tag=hajihaji9988-22" target="_blank">プロが選ぶ WordPress優良プラグイン事典</a><img src="http://www.assoc-amazon.jp/e/ir?t=hajihaji9988-22&l=as2&o=9&a=4844363298" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
             <a href="http://www.amazon.co.jp/gp/product/4844363298/ref=as_li_ss_il?ie=UTF8&camp=247&creative=7399&creativeASIN=4844363298&linkCode=as2&tag=hajihaji9988-22" target="_blank"><img border="0" src="http://wp-d.org/wp-content/uploads/2013/03/pro.jpg" ></a>
