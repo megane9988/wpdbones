@@ -4,7 +4,7 @@
 					<?php if ( is_active_sidebar( 'sidebar1' ) ) : ?>
 
 						<?php dynamic_sidebar( 'sidebar1' ); ?>
-						<?php if ( function_exists('wp_is_mobile') && wp_is_mobile() ) :?>
+<!-- 						<?php if ( function_exists('wp_is_mobile') && wp_is_mobile() ) :?>
 						<?php else: ?>						
 						<div class="scrollside">
 						<h4 class="widgettitle">おすすめ図書</h4>						
@@ -15,7 +15,7 @@
 						<p><a href="http://wp-d.org/2013/01/24/2146/">PHPをよく知らずにWordPressを扱う人にぜひ読んでほしい電子書籍の紹介（著者インタビュー）</a></p>
 						<div style="clear: both"></div>
 						</div>
-						<?php endif; ?>
+						<?php endif; ?> -->
 					<?php else : ?>
 
 						<!-- This content shows up if there are no widgets defined in the backend. -->
