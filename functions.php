@@ -197,7 +197,6 @@ function filter_facebook_locale($locale){
 }
 add_filter('fb_locale','filter_facebook_locale');
 
-
 /**
  * scrole
  */
@@ -231,6 +230,23 @@ function wpdbones_bookmarks(){
   a("//connect.facebook.net/ja_JP/all.js#xfbml=1","facebook-jssdk");
 })(this, document);</script>
 	<?php
+}
+
+add_filter('nginxchampuru_get_cache', 'nginxchampuru_get_cache', 10, 2);
+function nginxchampuru_get_cache($key, $url = null) {
+    global $nginxchampuru;
+    if (!$url) {
+        $url = $nginxchampuru->get_the_url();
+    }
+    $keys = array(
+        $key,
+        $nginxchampuru->get_cache_key($url.'@ktai'),
+        $nginxchampuru->get_cache_key($url.'@smartphone'),
+    );
+    if ($key !== $nginxchampuru->get_cache_key($url)) {
+        $keys[] = $nginxchampuru->get_cache_key($url);
+    }
+    return $nginxchampuru->get_cache_file($keys);
 }
 
 function SocialButtonVertical()
@@ -269,7 +285,6 @@ function SocialButtonVertical()
 </ul>
 </div>
 <?php }
-
 
 // アイキャッチ画像を使用
 add_theme_support('post-thumbnails');
