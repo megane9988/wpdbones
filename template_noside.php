@@ -31,8 +31,6 @@ Template Name: No side
 							    <?php the_tags('<p class="tags"><span class="tags-title">Tags:</span> ', ', ', '</p>'); ?>
 							
 						    </footer> <!-- end article footer -->
-						    
-						    <?php comments_template(); ?>
 					
 					    </article> <!-- end article -->
 					
