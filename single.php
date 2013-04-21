@@ -30,21 +30,13 @@
 								<div class="adtxt">
 									<?php do_action('wpdbones-ad-content-below'); ?>
 								</div>	
-  <div class="related_entries">
-  <?php related_posts(); ?>
-  </div>
-					<!-- end article footer -->
-								<?php comments_template(); ?>
-
-								<footer class="article-footer">
-									<?php the_tags('<p class="tags"><span class="tags-title">Tags:</span> ', ', ', '</p>'); ?>
-<div class="otherPosts clearfix">
+								<div class="otherPosts clearfix">
 	<h3 class="<?php the_author_meta('display_name') ?>"><?php the_author_posts_link(); ?>の過去記事一覧</h3>
 	<div class="posts yarpp-thumbnails-horizontal">
 		<?php
             $author = get_the_author_meta('ID');
 			$otherPosts = get_posts(array(
-					'numberposts' => 5,
+					'numberposts' => 10,
                     'author' => $author
 				));
 			if($otherPosts) :
@@ -59,8 +51,15 @@
 		<?php endif; ?>
 	</div>
 </div>
+					<!-- end article footer -->
+								<?php comments_template(); ?>
 
-							
+								<footer class="article-footer">
+									<?php the_tags('<p class="tags"><span class="tags-title">Tags:</span> ', ', ', '</p>'); ?>
+
+  <div class="related_entries">
+  <?php related_posts(); ?>
+  </div>	
 								</footer> 
 
 <ul class="pn">
