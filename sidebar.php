@@ -26,8 +26,3 @@
 
 					<?php endif; ?>
 				</div>
-
-							
-						<a style="float: left; margin-right: 10px; "  href="http://www.amazon.co.jp/gp/product/4844363298/ref=as_li_ss_il?ie=UTF8&camp=247&creative=7399&creativeASIN=4844363298&linkCode=as2&tag=hajihaji9988-22" target="_blank"><img style="width:100px;" src="http://ws.assoc-amazon.jp/widgets/q?_encoding=UTF8&ASIN=4844363298&Format=_SL160_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=hajihaji9988-22" alt="おすすめ図書"></a>
-						<p><a href="http://www.amazon.co.jp/gp/product/4844363298/ref=as_li_ss_il?ie=UTF8&camp=247&creative=7399&creativeASIN=4844363298&linkCode=as2&tag=hajihaji9988-22" target="_blank">WP-D監修の本が出ました！プロが選ぶ WordPress優良プラグイン事典</a></p>
-						<div style="clear: both"></div>
