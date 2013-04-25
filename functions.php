@@ -229,6 +229,7 @@ function wpdbones_bookmarks(){
   a("//platform.twitter.com/widgets.js","twitter-wjs");
   a("//connect.facebook.net/ja_JP/all.js#xfbml=1","facebook-jssdk");
 })(this, document);</script>
+<script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
 	<?php
 }
 
@@ -281,6 +282,14 @@ function SocialButtonVertical()
   data-width="70"
   data-show-faces="false">
     </div>
+</li>
+<li>
+<a href="https://getpocket.com/save"
+class="pocket-btn"
+data-lang="en"
+data-save-url="<?php get_permalink(); ?>"
+data-pocket-count="vertical"
+data-pocket-align="left" >Pocket</a>
 </li>
 </ul>
 </div>
