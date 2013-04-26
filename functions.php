@@ -16,7 +16,7 @@ function wpdbones_scripts_and_styles() {
   	wp_dequeue_style( 'bones-stylesheet' );
   	wp_dequeue_style( 'bones-ie-only' );
   	
-    wp_enqueue_style( 'wpdbones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '20130426_4', 'all' );
+    wp_enqueue_style( 'wpdbones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '20130427', 'all' );
     wp_enqueue_style( 'bones-ie-only', '', array('wpdbones-stylesheet') );
 
   }
